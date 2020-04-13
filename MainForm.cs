@@ -64,8 +64,11 @@ namespace PointOfSale
         private void btnStock_Click(object sender, EventArgs e)
         {
             frmStockIn frmStock = new frmStockIn();
+            frmStock.TopLevel = false;
+            MainPanel.Controls.Add(frmStock);
+            frmStock.BringToFront();
             frmStock.LoadProduct();
-            frmStock.ShowDialog();
+            frmStock.Show();
         }
     }
 }

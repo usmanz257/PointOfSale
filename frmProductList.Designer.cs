@@ -32,12 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductList));
             this.dataGridProduct = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtSearchProduct = new MetroFramework.Controls.MetroTextBox();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +42,12 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtSearchProduct = new MetroFramework.Controls.MetroTextBox();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,100 +98,6 @@
             this.dataGridProduct.Size = new System.Drawing.Size(1116, 435);
             this.dataGridProduct.TabIndex = 7;
             this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnAddProduct);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1116, 40);
-            this.panel1.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txtSearchProduct);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(576, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 40);
-            this.panel2.TabIndex = 3;
-            // 
-            // txtSearchProduct
-            // 
-            // 
-            // 
-            // 
-            this.txtSearchProduct.CustomButton.Image = null;
-            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(421, 1);
-            this.txtSearchProduct.CustomButton.Name = "";
-            this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(23, 23);
-            this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSearchProduct.CustomButton.TabIndex = 1;
-            this.txtSearchProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSearchProduct.CustomButton.UseSelectable = true;
-            this.txtSearchProduct.CustomButton.Visible = false;
-            this.txtSearchProduct.DisplayIcon = true;
-            this.txtSearchProduct.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.Icon")));
-            this.txtSearchProduct.Lines = new string[0];
-            this.txtSearchProduct.Location = new System.Drawing.Point(22, 9);
-            this.txtSearchProduct.MaxLength = 32767;
-            this.txtSearchProduct.Name = "txtSearchProduct";
-            this.txtSearchProduct.PasswordChar = '\0';
-            this.txtSearchProduct.PromptText = "Search Product";
-            this.txtSearchProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSearchProduct.SelectedText = "";
-            this.txtSearchProduct.SelectionLength = 0;
-            this.txtSearchProduct.SelectionStart = 0;
-            this.txtSearchProduct.ShortcutsEnabled = true;
-            this.txtSearchProduct.Size = new System.Drawing.Size(445, 25);
-            this.txtSearchProduct.TabIndex = 0;
-            this.txtSearchProduct.UseSelectable = true;
-            this.txtSearchProduct.WaterMark = "Search Product";
-            this.txtSearchProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSearchProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAddProduct.FlatAppearance.BorderSize = 0;
-            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAddProduct.Image")));
-            this.btnAddProduct.Location = new System.Drawing.Point(1050, 0);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(33, 40);
-            this.btnAddProduct.TabIndex = 2;
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1083, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 40);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PRODUCT LIST";
             // 
             // Column1
             // 
@@ -275,6 +181,101 @@
             this.Delete.Name = "Delete";
             this.Delete.Width = 6;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.btnAddProduct);
+            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1116, 40);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtSearchProduct);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(576, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(474, 40);
+            this.panel2.TabIndex = 3;
+            // 
+            // txtSearchProduct
+            // 
+            // 
+            // 
+            // 
+            this.txtSearchProduct.CustomButton.Image = null;
+            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(421, 1);
+            this.txtSearchProduct.CustomButton.Name = "";
+            this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSearchProduct.CustomButton.TabIndex = 1;
+            this.txtSearchProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSearchProduct.CustomButton.UseSelectable = true;
+            this.txtSearchProduct.CustomButton.Visible = false;
+            this.txtSearchProduct.DisplayIcon = true;
+            this.txtSearchProduct.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.Icon")));
+            this.txtSearchProduct.Lines = new string[0];
+            this.txtSearchProduct.Location = new System.Drawing.Point(22, 9);
+            this.txtSearchProduct.MaxLength = 32767;
+            this.txtSearchProduct.Name = "txtSearchProduct";
+            this.txtSearchProduct.PasswordChar = '\0';
+            this.txtSearchProduct.PromptText = "Search Product";
+            this.txtSearchProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSearchProduct.SelectedText = "";
+            this.txtSearchProduct.SelectionLength = 0;
+            this.txtSearchProduct.SelectionStart = 0;
+            this.txtSearchProduct.ShortcutsEnabled = true;
+            this.txtSearchProduct.Size = new System.Drawing.Size(445, 25);
+            this.txtSearchProduct.TabIndex = 0;
+            this.txtSearchProduct.UseSelectable = true;
+            this.txtSearchProduct.WaterMark = "Search Product";
+            this.txtSearchProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSearchProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAddProduct.Image")));
+            this.btnAddProduct.Location = new System.Drawing.Point(1050, 0);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(33, 40);
+            this.btnAddProduct.TabIndex = 2;
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1083, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(33, 40);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PRODUCT LIST";
+            // 
             // frmProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -300,7 +301,7 @@
         private System.Windows.Forms.DataGridView dataGridProduct;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroTextBox txtSearchProduct;
