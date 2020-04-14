@@ -77,6 +77,12 @@
     <Compile Include="frmCategoryList.Designer.cs">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="frmProductList.Designer.cs">
       <DependentUpon>frmProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchProductStockin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchProductStockin.Designer.cs">
+      <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStockIn.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductList.resx">
       <DependentUpon>frmProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchProductStockin.resx">
+      <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockIn.resx">
       <DependentUpon>frmStockIn.cs</DependentUpon>

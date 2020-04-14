@@ -67,7 +67,6 @@ namespace PointOfSale
             frmStock.TopLevel = false;
             MainPanel.Controls.Add(frmStock);
             frmStock.BringToFront();
-            frmStock.LoadProduct();
             frmStock.Show();
         }
     }
