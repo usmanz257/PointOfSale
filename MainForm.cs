@@ -18,6 +18,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            cn.Close();
            //cn.Open();
         }
 
@@ -68,6 +69,17 @@ namespace PointOfSale
             MainPanel.Controls.Add(frmStock);
             frmStock.BringToFront();
             frmStock.Show();
+        }
+
+        private void btnPOS_Click(object sender, EventArgs e)
+        {
+            frmPOS frm = new frmPOS();
+            frm.ShowDialog();
+        }
+
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

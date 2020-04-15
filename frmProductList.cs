@@ -86,5 +86,10 @@ namespace PointOfSale
         {
             this.Dispose();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
