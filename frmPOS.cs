@@ -196,7 +196,7 @@ namespace PointOfSale
         {
             int i = dataGridSale.CurrentRow.Index;
             id = dataGridSale[1, i].Value.ToString();
-            price = dataGridSale[3,i].Value.ToString();
+            price = dataGridSale[4,i].Value.ToString();
         }
 
         private void label11_Click(object sender, EventArgs e)

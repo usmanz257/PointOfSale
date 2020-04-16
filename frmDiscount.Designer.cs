@@ -131,6 +131,7 @@
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(470, 30);
             this.txtAmount.TabIndex = 9;
+         
             // 
             // label4
             // 

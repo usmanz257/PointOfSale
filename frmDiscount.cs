@@ -40,9 +40,6 @@ namespace PointOfSale
             {
                txtAmount.Text="0.00";
             }
-
-            
-
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
