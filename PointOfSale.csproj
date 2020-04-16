@@ -77,6 +77,12 @@
     <Compile Include="frmCategoryList.Designer.cs">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDiscount.Designer.cs">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLookup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +113,23 @@
     <Compile Include="frmQty.Designer.cs">
       <DependentUpon>frmQty.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReceipt.Designer.cs">
+      <DependentUpon>frmReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchProductStockin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSearchProductStockin.Designer.cs">
       <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettle.Designer.cs">
+      <DependentUpon>frmSettle.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStockIn.cs">
       <SubType>Form</SubType>
@@ -139,6 +157,9 @@
     <EmbeddedResource Include="frmCategoryList.resx">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDiscount.resx">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLookup.resx">
       <DependentUpon>frmLookup.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,8 +175,14 @@
     <EmbeddedResource Include="frmQty.resx">
       <DependentUpon>frmQty.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReceipt.resx">
+      <DependentUpon>frmReceipt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSearchProductStockin.resx">
       <DependentUpon>frmSearchProductStockin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettle.resx">
+      <DependentUpon>frmSettle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockIn.resx">
       <DependentUpon>frmStockIn.cs</DependentUpon>
@@ -173,6 +200,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SalesReceipt.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

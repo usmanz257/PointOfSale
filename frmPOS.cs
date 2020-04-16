@@ -11,6 +11,8 @@ namespace PointOfSale
 {
     public partial class frmPOS : Form
     {
+        string id;
+        string price;
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         SqlDataReader dr;
@@ -22,7 +24,7 @@ namespace PointOfSale
             cn = new SqlConnection(dbcon.MyConnection());
             this.KeyPreview = true;
         }
-        private void getTransNo()
+        public void getTransNo()
         {
             try 
             {
@@ -105,25 +107,31 @@ namespace PointOfSale
         {
             try
             {
+                bool hasrecord = false;
                 dataGridSale.Rows.Clear();
                 int i = 0;
                 double total = 0;
+                double discount = 0;
                 cn.Close();
                 cn.Open();
-                cm = new SqlCommand("select c.id, c.pcode, p.pdesc, c.price, c.qty, c.disc, c.total from tblCart as c inner join tblProduct as p on c.pcode=p.pcode where transno like '" + lblTransNo.Text + "'", cn);
+                cm = new SqlCommand("select c.id, c.pcode, p.pdesc, c.price, c.qty, c.disc, c.total from tblCart as c inner join tblProduct as p on c.pcode=p.pcode where transno like '" + lblTransNo.Text + "' and status like 'Pending'", cn);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
                     total += Double.Parse(dr["Total"].ToString());
-                    dataGridSale.Rows.Add(i,dr["Id"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["Total"].ToString()).ToString("#,##0.00"));
+                    discount += Double.Parse(dr["disc"].ToString());
+                    dataGridSale.Rows.Add(i, dr["Id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["Total"].ToString()).ToString("#,##0.00"));
+                    hasrecord = true;
                 }
                 dr.Close();
                 cn.Close();
-                lblTotal.Text = total.ToString("#,##0.00");
+                this.lblTotal.Text = total.ToString("#,##0.00");
+                this.lblDiscount.Text = discount.ToString("#,##0.00");
                 GetCartTotal();
+                if (hasrecord == true) { btnSettle.Enabled = true; btnDiscount.Enabled = true; } else { btnSettle.Enabled = false; btnDiscount.Enabled = false; };
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 cn.Close();
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -131,13 +139,15 @@ namespace PointOfSale
         }
         public void GetCartTotal()
         {
-
+            
+            double discount = Double.Parse(lblDiscount.Text);
             double sales = Double.Parse(lblTotal.Text);
-            double discount = 0;
             double vat = sales * dbcon.GetVal();
             double vatable = sales - vat;
+            lblTotal.Text = sales.ToString("#,##0.00");
             lblVat.Text = vat.ToString("#,##0.00");
             lblVatable.Text = vatable.ToString("#,##0.00");
+            this.lblDisplayTotal.Text = sales.ToString("#,##0.00");
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -172,6 +182,39 @@ namespace PointOfSale
                     loadCart();
                 }
             }
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            frmDiscount frm = new frmDiscount(this);
+            frm.lblID.Text = id;
+            frm.txtprice.Text = price;
+            frm.ShowDialog();
+        }
+
+        private void dataGridSale_SelectionChanged(object sender, EventArgs e)
+        {
+            int i = dataGridSale.CurrentRow.Index;
+            id = dataGridSale[1, i].Value.ToString();
+            price = dataGridSale[3,i].Value.ToString();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("hh:MM:ss tt");
+            lblDateDay.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void btnSettle_Click(object sender, EventArgs e)
+        {
+            frmSettle frm = new frmSettle(this);
+            frm.txtSale.Text = lblDisplayTotal.Text;
+            frm.ShowDialog();
         }
     }
 }
