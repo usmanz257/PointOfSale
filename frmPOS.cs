@@ -206,8 +206,8 @@ namespace PointOfSale
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("hh:MM:ss tt");
-            lblDateDay.Text = DateTime.Now.ToLongDateString();
+            //lblTime.Text = DateTime.Now.ToString("hh:MM:ss tt");
+            //lblDateDay.Text = DateTime.Now.ToLongDateString();
         }
 
         private void btnSettle_Click(object sender, EventArgs e)

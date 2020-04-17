@@ -47,7 +47,7 @@ namespace PointOfSale
         {
             try
             {
-                if ((double.Parse(txtChange.Text) <= 0) || (txtChange.Text == String.Empty))
+                if ((double.Parse(txtChange.Text) < 0) || (txtChange.Text == String.Empty))
                 {
                     MessageBox.Show("Insufficient amount. Please enter the correct amount!", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -68,6 +68,9 @@ namespace PointOfSale
                         cn.Close();
                         
                     }
+                    frmReceipt frm = new frmReceipt(fpos);
+                    frm.Loadreport();
+                    frm.ShowDialog();
                     MessageBox.Show("Payment successfully saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     fpos.getTransNo();
                     fpos.loadCart();
