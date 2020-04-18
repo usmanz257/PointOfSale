@@ -47,7 +47,7 @@ namespace PointOfSale
         {
             try
             {
-                if ((double.Parse(txtChange.Text) < 0) || (txtChange.Text == String.Empty))
+                 if ((double.Parse(txtChange.Text) < 0) || (txtChange.Text == String.Empty))
                 {
                     MessageBox.Show("Insufficient amount. Please enter the correct amount!", "warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -58,7 +58,8 @@ namespace PointOfSale
                     for (int i = 0; i < fpos.dataGridSale.Rows.Count; i++)
                     {
                         cn.Open();
-                        cm = new SqlCommand ("update tblproduct set qty = qty - " + int.Parse(fpos.dataGridSale.Rows[i].Cells[5].Value.ToString()) + " where pcode = '" + int.Parse(fpos.dataGridSale.Rows[i].Cells[2].Value.ToString())+"'", cn);
+                        string query = string.Format("update tblproduct set qty = qty - '{0}' where pcode = '{1}'", int.Parse(fpos.dataGridSale.Rows[i].Cells[5].Value.ToString()), fpos.dataGridSale.Rows[i].Cells[2].Value.ToString());
+                        cm = new SqlCommand (query,cn);
                         cm.ExecuteNonQuery();                      
                         cn.Close();
 
@@ -68,9 +69,9 @@ namespace PointOfSale
                         cn.Close();
                         
                     }
-                    frmReceipt frm = new frmReceipt(fpos);
-                    frm.Loadreport();
-                    frm.ShowDialog();
+                    //frmReceipt frm = new frmReceipt(fpos);
+                    //frm.Loadreport(txtCash.Text, txtChange.Text);
+                    //frm.ShowDialog();
                     MessageBox.Show("Payment successfully saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     fpos.getTransNo();
                     fpos.loadCart();

@@ -216,5 +216,11 @@ namespace PointOfSale
             frm.txtSale.Text = lblDisplayTotal.Text;
             frm.ShowDialog();
         }
+
+        private void btnDailySale_Click(object sender, EventArgs e)
+        {
+            frmSoldItems frm = new frmSoldItems();
+            frm.ShowDialog();
+        }
     }
 }
