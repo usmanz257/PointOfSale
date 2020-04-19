@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCloseMainForm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnUserSettings = new System.Windows.Forms.Button();
@@ -44,8 +42,10 @@
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnDashBoard = new System.Windows.Forms.Button();
             this.btnPOS = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCloseMainForm = new System.Windows.Forms.Button();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,6 +60,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1298, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCloseMainForm
+            // 
+            this.btnCloseMainForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseMainForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCloseMainForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseMainForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseMainForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseMainForm.Image")));
+            this.btnCloseMainForm.Location = new System.Drawing.Point(1259, 0);
+            this.btnCloseMainForm.Name = "btnCloseMainForm";
+            this.btnCloseMainForm.Size = new System.Drawing.Size(39, 45);
+            this.btnCloseMainForm.TabIndex = 2;
+            this.btnCloseMainForm.UseVisualStyleBackColor = true;
+            this.btnCloseMainForm.Click += new System.EventHandler(this.btnCloseMainForm_Click);
             // 
             // panel2
             // 
@@ -83,34 +97,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 603);
             this.panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Administrator";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblName
-            // 
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblName.Location = new System.Drawing.Point(17, 90);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(206, 23);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Username";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Location = new System.Drawing.Point(253, 45);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1197, 603);
-            this.MainPanel.TabIndex = 2;
             // 
             // btnStock
             // 
@@ -166,6 +152,7 @@
             this.btnUserSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUserSettings.UseVisualStyleBackColor = true;
+            this.btnUserSettings.Click += new System.EventHandler(this.btnUserSettings_Click);
             // 
             // btnSystemSettings
             // 
@@ -296,6 +283,27 @@
             this.btnPOS.UseVisualStyleBackColor = true;
             this.btnPOS.Click += new System.EventHandler(this.btnPOS_Click);
             // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(17, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(206, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Administrator";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblName.Location = new System.Drawing.Point(17, 90);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(206, 23);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Username";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.man_user_pngrepo_com;
@@ -306,19 +314,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnCloseMainForm
+            // MainPanel
             // 
-            this.btnCloseMainForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseMainForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCloseMainForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseMainForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseMainForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseMainForm.Image")));
-            this.btnCloseMainForm.Location = new System.Drawing.Point(1259, 0);
-            this.btnCloseMainForm.Name = "btnCloseMainForm";
-            this.btnCloseMainForm.Size = new System.Drawing.Size(39, 45);
-            this.btnCloseMainForm.TabIndex = 2;
-            this.btnCloseMainForm.UseVisualStyleBackColor = true;
-            this.btnCloseMainForm.Click += new System.EventHandler(this.btnCloseMainForm_Click);
+            this.MainPanel.Location = new System.Drawing.Point(253, 45);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1197, 603);
+            this.MainPanel.TabIndex = 2;
             // 
             // MainForm
             // 

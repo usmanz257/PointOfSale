@@ -81,5 +81,14 @@ namespace PointOfSale
         {
 
         }
+
+        private void btnUserSettings_Click(object sender, EventArgs e)
+        {
+            frmUserAccounts frm = new frmUserAccounts();
+            frm.TopLevel = false;
+            MainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }
