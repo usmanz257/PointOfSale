@@ -63,6 +63,10 @@ namespace PointOfSale
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            if (dataGridSale.Rows.Count > 0)
+            {
+                return;
+            }
             getTransNo();
             txtSearchProduct.Enabled = true;
             txtSearchProduct.Focus();
@@ -163,8 +167,20 @@ namespace PointOfSale
         }
 
         private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
+         {
+            if (dataGridSale.Rows.Count > 0)
+            {
+                MessageBox.Show("Unable to logout, Please cancel the transection.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (MessageBox.Show("logout Application?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+              
+                this.Hide();
+                frmSecurity frm = new frmSecurity();
+                frm.ShowDialog();
+            }
+            
         }
 
         private void dataGridSale_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -220,6 +236,10 @@ namespace PointOfSale
         private void btnDailySale_Click(object sender, EventArgs e)
         {
             frmSoldItems frm = new frmSoldItems();
+            frm.dt1.Enabled = false;
+            frm.dt2.Enabled = false;
+            frm.cboCashier.Enabled = false;
+            frm.cboCashier.Text = lblUser.Text;
             frm.ShowDialog();
         }
     }

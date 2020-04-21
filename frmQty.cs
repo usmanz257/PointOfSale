@@ -42,22 +42,66 @@ namespace PointOfSale
         {
             if ((e.KeyChar == 13) && (txtQty.Text != String.Empty))
             {
-                cn.Close();
+                String id="";
+                bool found = false;
                 cn.Open();
-                cm = new SqlCommand("insert into tblCart (transno, pcode, price, qty, sdate)values(@transno, @pcode, @price, @qty, @sdate)",cn);
-                cm.Parameters.AddWithValue("@transno", transno);
+                cm = new SqlCommand("Select * from tblcart where transno = @transno and pcode =@pcode", cn);
+                cm.Parameters.AddWithValue("@transno",fpos.lblTransNo.Text);
                 cm.Parameters.AddWithValue("@pcode", pcode);
-                cm.Parameters.AddWithValue("@price", price);
-                cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
-                cm.Parameters.AddWithValue("@sdate", DateTime.Now);
-                cm.ExecuteNonQuery();
+                dr = cm.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    found = true;
+                    id = dr["id"].ToString();
+                }
+                else { found = false; }
+                dr.Close();
                 cn.Close();
-                fpos.txtSearchProduct.Clear();
-                fpos.txtSearchProduct.Focus();
-                fpos.loadCart();
-                this.Dispose();
+                if (found == true)
+                {
+                    cn.Close();
+                    cn.Open();
+                    cm = new SqlCommand("update tblCart set qty = (qty + " + int.Parse(txtQty.Text) + ") where id = '" + id + "'", cn);           
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    fpos.txtSearchProduct.Clear();
+                    fpos.txtSearchProduct.Focus();
+                    fpos.loadCart();
+                    this.Dispose();
+
+                }
+                else
+                {
+                    cn.Close();
+                    cn.Open();
+                    cm = new SqlCommand("insert into tblCart (transno, pcode, price, qty, sdate, cashier)values(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                    cm.Parameters.AddWithValue("@transno", transno);
+                    cm.Parameters.AddWithValue("@pcode", pcode);
+                    cm.Parameters.AddWithValue("@price", price);
+                    cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
+                    cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+                    cm.Parameters.AddWithValue("@cashier", fpos.lblUser.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    fpos.txtSearchProduct.Clear();
+                    fpos.txtSearchProduct.Focus();
+                    fpos.loadCart();
+                    this.Dispose();
+
+                }
+
+
+             
                 
             }
+        }
+
+        private void txtQty_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

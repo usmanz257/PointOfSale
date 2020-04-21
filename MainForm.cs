@@ -90,5 +90,17 @@ namespace PointOfSale
             frm.BringToFront();
             frm.Show();
         }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSold_Click(object sender, EventArgs e)
+        {
+            frmSoldItems frm = new frmSoldItems();
+            frm.ShowDialog();
+
+        }
     }
 }
