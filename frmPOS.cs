@@ -238,6 +238,7 @@ namespace PointOfSale
             frmSoldItems frm = new frmSoldItems();
             frm.dt1.Enabled = false;
             frm.dt2.Enabled = false;
+            frm.suser = this.lblUser.Text;
             frm.cboCashier.Enabled = false;
             frm.cboCashier.Text = lblUser.Text;
             frm.ShowDialog();
