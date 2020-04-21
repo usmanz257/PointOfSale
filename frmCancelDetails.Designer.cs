@@ -42,8 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.txtCancelQty = new System.Windows.Forms.Label();
+            this.txtCancelQty = new System.Windows.Forms.TextBox();
+            this.lblCancelQty = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtVoid = new System.Windows.Forms.TextBox();
@@ -190,22 +190,21 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Price ";
             // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(692, 276);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(325, 30);
-            this.textBox6.TabIndex = 14;
-            // 
             // txtCancelQty
             // 
-            this.txtCancelQty.AutoSize = true;
-            this.txtCancelQty.Location = new System.Drawing.Point(532, 279);
+            this.txtCancelQty.Location = new System.Drawing.Point(692, 276);
             this.txtCancelQty.Name = "txtCancelQty";
-            this.txtCancelQty.Size = new System.Drawing.Size(132, 23);
-            this.txtCancelQty.TabIndex = 13;
-            this.txtCancelQty.Text = "Cancel Quantity";
+            this.txtCancelQty.Size = new System.Drawing.Size(325, 30);
+            this.txtCancelQty.TabIndex = 14;
+            // 
+            // lblCancelQty
+            // 
+            this.lblCancelQty.AutoSize = true;
+            this.lblCancelQty.Location = new System.Drawing.Point(532, 279);
+            this.lblCancelQty.Name = "lblCancelQty";
+            this.lblCancelQty.Size = new System.Drawing.Size(132, 23);
+            this.lblCancelQty.TabIndex = 13;
+            this.lblCancelQty.Text = "Cancel Quantity";
             // 
             // txtTotal
             // 
@@ -331,6 +330,7 @@
             this.btnCancelOrder.TabIndex = 27;
             this.btnCancelOrder.Text = "Cancel Order";
             this.btnCancelOrder.UseVisualStyleBackColor = false;
+            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
             // txtQty
             // 
@@ -382,8 +382,8 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.txtCancelQty);
+            this.Controls.Add(this.lblCancelQty);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescription);
@@ -417,7 +417,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label txtCancelQty;
+        private System.Windows.Forms.Label lblCancelQty;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -429,7 +429,7 @@
         public System.Windows.Forms.TextBox txtPcode;
         public System.Windows.Forms.TextBox txtDescription;
         public System.Windows.Forms.TextBox txtPrice;
-        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox txtCancelQty;
         public System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.Button btnCancelOrder;

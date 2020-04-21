@@ -76,7 +76,7 @@ namespace PointOfSale
             string colname = dataGridSaleHistory.Columns[e.ColumnIndex].Name;
             if (colname == "colCancel")
             {
-                frmCancelDetails f = new frmCancelDetails();
+                frmCancelDetails f = new frmCancelDetails(this);
                 f.txtID.Text = dataGridSaleHistory.Rows[e.RowIndex].Cells[1].Value.ToString();
                 f.txtTransno.Text = dataGridSaleHistory.Rows[e.RowIndex].Cells[2].Value.ToString();
                 f.txtPcode.Text = dataGridSaleHistory.Rows[e.RowIndex].Cells[3].Value.ToString();
