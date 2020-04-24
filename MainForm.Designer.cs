@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCloseMainForm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSold = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnUserSettings = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.btnSold = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1298, 45);
+            this.panel1.Size = new System.Drawing.Size(1400, 45);
             this.panel1.TabIndex = 0;
             // 
             // btnCloseMainForm
@@ -69,7 +69,7 @@
             this.btnCloseMainForm.FlatAppearance.BorderSize = 0;
             this.btnCloseMainForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseMainForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseMainForm.Image")));
-            this.btnCloseMainForm.Location = new System.Drawing.Point(1259, 0);
+            this.btnCloseMainForm.Location = new System.Drawing.Point(1361, 0);
             this.btnCloseMainForm.Name = "btnCloseMainForm";
             this.btnCloseMainForm.Size = new System.Drawing.Size(39, 45);
             this.btnCloseMainForm.TabIndex = 2;
@@ -99,6 +99,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 646);
             this.panel2.TabIndex = 1;
+            // 
+            // btnSold
+            // 
+            this.btnSold.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSold.FlatAppearance.BorderSize = 0;
+            this.btnSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSold.ForeColor = System.Drawing.Color.White;
+            this.btnSold.Image = ((System.Drawing.Image)(resources.GetObject("btnSold.Image")));
+            this.btnSold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSold.Location = new System.Drawing.Point(2, 461);
+            this.btnSold.Name = "btnSold";
+            this.btnSold.Size = new System.Drawing.Size(245, 39);
+            this.btnSold.TabIndex = 4;
+            this.btnSold.Text = "   Sales History";
+            this.btnSold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSold.UseVisualStyleBackColor = true;
+            this.btnSold.Click += new System.EventHandler(this.btnSold_Click);
             // 
             // btnStock
             // 
@@ -191,6 +210,7 @@
             this.btnRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRecords.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRecords.UseVisualStyleBackColor = true;
+            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
             // 
             // btnbrand
             // 
@@ -324,30 +344,11 @@
             this.MainPanel.TabIndex = 2;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
-            // btnSold
-            // 
-            this.btnSold.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSold.FlatAppearance.BorderSize = 0;
-            this.btnSold.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSold.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSold.ForeColor = System.Drawing.Color.White;
-            this.btnSold.Image = ((System.Drawing.Image)(resources.GetObject("btnSold.Image")));
-            this.btnSold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSold.Location = new System.Drawing.Point(2, 461);
-            this.btnSold.Name = "btnSold";
-            this.btnSold.Size = new System.Drawing.Size(245, 39);
-            this.btnSold.TabIndex = 4;
-            this.btnSold.Text = "   Sales History";
-            this.btnSold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSold.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSold.UseVisualStyleBackColor = true;
-            this.btnSold.Click += new System.EventHandler(this.btnSold_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1298, 691);
+            this.ClientSize = new System.Drawing.Size(1400, 691);
             this.ControlBox = false;
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel2);

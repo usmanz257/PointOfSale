@@ -131,6 +131,12 @@
     <Compile Include="frmReceipt.Designer.cs">
       <DependentUpon>frmReceipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecords.Designer.cs">
+      <DependentUpon>frmRecords.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchProductStockin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReceipt.resx">
       <DependentUpon>frmReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecords.resx">
+      <DependentUpon>frmRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchProductStockin.resx">
       <DependentUpon>frmSearchProductStockin.cs</DependentUpon>

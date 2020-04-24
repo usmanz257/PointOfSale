@@ -102,5 +102,15 @@ namespace PointOfSale
             frm.ShowDialog();
 
         }
+
+        private void btnRecords_Click(object sender, EventArgs e)
+        {
+            frmRecords frm = new frmRecords();
+            frm.TopLevel = false;
+            frm.LoadCriticalItems();
+            MainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

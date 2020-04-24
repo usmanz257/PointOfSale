@@ -47,6 +47,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.txtReorder = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,7 +175,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.DarkGray;
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(369, 340);
+            this.btnCancel.Location = new System.Drawing.Point(365, 407);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(108, 46);
             this.btnCancel.TabIndex = 18;
@@ -185,7 +187,7 @@
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(264, 340);
+            this.btnUpdate.Location = new System.Drawing.Point(260, 407);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 46);
             this.btnUpdate.TabIndex = 17;
@@ -197,7 +199,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(160, 340);
+            this.btnSave.Location = new System.Drawing.Point(156, 407);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 46);
             this.btnSave.TabIndex = 16;
@@ -221,12 +223,30 @@
             this.txtBarcode.Size = new System.Drawing.Size(574, 30);
             this.txtBarcode.TabIndex = 20;
             // 
+            // txtReorder
+            // 
+            this.txtReorder.Location = new System.Drawing.Point(160, 350);
+            this.txtReorder.Name = "txtReorder";
+            this.txtReorder.Size = new System.Drawing.Size(574, 30);
+            this.txtReorder.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 354);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 23);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Re-Order";
+            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 403);
+            this.ClientSize = new System.Drawing.Size(779, 465);
             this.ControlBox = false;
+            this.Controls.Add(this.txtReorder);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnCancel);
@@ -276,5 +296,7 @@
         public System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtBarcode;
+        public System.Windows.Forms.TextBox txtReorder;
+        private System.Windows.Forms.Label label7;
     }
 }
