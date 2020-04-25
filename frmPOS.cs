@@ -246,5 +246,24 @@ namespace PointOfSale
             frm.ShowDialog();
         }
 
+        private void frmPOS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btnNew_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                btnSearch_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                btnDiscount_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                btnSettle_Click(sender, e);
+            }
+        }
     }
 }

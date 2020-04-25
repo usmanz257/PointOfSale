@@ -787,6 +787,7 @@
             this.Name = "frmPOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "+";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmPOS_KeyDown);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -23,6 +23,7 @@ namespace PointOfSale
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             fpos = fp;
+            this.KeyPreview = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -145,6 +146,16 @@ namespace PointOfSale
             txtCash.Focus();
         }
 
-       
+        private void frmSettle_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }else if (e.KeyCode == Keys.Enter)
+            {
+                btnEnter_Click(sender, e);
+            }
+        }
     } 
 }

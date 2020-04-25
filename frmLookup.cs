@@ -22,7 +22,7 @@ namespace PointOfSale
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             f = frm;
-           
+            this.KeyPreview = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -74,6 +74,14 @@ namespace PointOfSale
         private void txtSearchProduct_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmLookup_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
         }
     }
 }

@@ -22,6 +22,7 @@ namespace PointOfSale
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             f = frm;
+            this.KeyPreview = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -59,6 +60,15 @@ namespace PointOfSale
                 cn.Close();
                 MessageBox.Show(ex.Message);
 
+            }
+        }
+
+        private void frmDiscount_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
             }
         }
     }
