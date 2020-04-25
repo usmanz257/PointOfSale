@@ -17,6 +17,7 @@ namespace PointOfSale
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        int qty;
         public frmPOS()
         {
             InitializeComponent();
@@ -89,9 +90,10 @@ namespace PointOfSale
                     dr = cm.ExecuteReader();
                     dr.Read();
                     if (dr.HasRows)
-                    {
+                     {
+                        qty = int.Parse(dr["qty"].ToString());
                         frmQty frm = new frmQty(this);
-                        frm.ProductDetail(dr["pcode"].ToString(), double.Parse(dr["price"].ToString()), lblTransNo.Text);
+                        frm.ProductDetail(dr["pcode"].ToString(), double.Parse(dr["price"].ToString()), lblTransNo.Text,qty);
                         dr.Close();
                         cn.Close();
                         frm.ShowDialog();
@@ -243,5 +245,6 @@ namespace PointOfSale
             frm.cboCashier.Text = lblUser.Text;
             frm.ShowDialog();
         }
+
     }
 }

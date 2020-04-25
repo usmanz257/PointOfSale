@@ -102,8 +102,34 @@ namespace PointOfSale
                 cn.Close();
                 MessageBox.Show(ex.Message);
             }
+        }
+        public void LoadInventory()
+        {
+            try
+            {
+                int i = 0;
+                dataGridInventory.Rows.Clear();
+                cn.Open();
+                string sqlQuery = "Select p.pcode,p.barcode, p.pdesc, b.brand, category, p.price ,p.qty, p.reorder from tblProduct as p inner join tblbrand as b on p.bid= b.id inner join tblcategory as c on p.cid = c.id";
+                cm = new SqlCommand(sqlQuery, cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i++;
+                    dataGridInventory.Rows.Add(i, dr["pcode"].ToString(), dr["barcode"].ToString(), dr["pdesc"].ToString(), dr["brand"].ToString(), dr["Category"].ToString(), dr["price"].ToString(), dr["reorder"].ToString(), dr[6].ToString(), dr["qty"].ToString()) ;
+                }
+                this.cn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
+
+     
     }
 }

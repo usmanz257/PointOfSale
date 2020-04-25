@@ -58,7 +58,7 @@ namespace PointOfSale
                 {
                     
                         frmQty frm = new frmQty(f);
-                        frm.ProductDetail(dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dataGridProduct.Rows[e.RowIndex].Cells[6].Value.ToString()), f.lblTransNo.Text);
+                        frm.ProductDetail(dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dataGridProduct.Rows[e.RowIndex].Cells[6].Value.ToString()), f.lblTransNo.Text, int.Parse(dataGridProduct.Rows[e.RowIndex].Cells[7].Value.ToString()));
                         dr.Close();
                         cn.Close();
                         frm.ShowDialog();

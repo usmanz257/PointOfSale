@@ -18,6 +18,7 @@ namespace PointOfSale
         DBConnection dbcon = new DBConnection();
         private String pcode;
         private double price;
+        private int qty;
         private String transno;
         frmPOS fpos;
         public frmQty(frmPOS frmpos)
@@ -31,11 +32,12 @@ namespace PointOfSale
         {
 
         }
-        public void ProductDetail( String pcode,double price, String transno)
+        public void ProductDetail( String pcode,double price, String transno, int qty)
         {
             this.pcode = pcode;
             this.price = price;
             this.transno = transno;
+            this.qty = qty;
         }
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
@@ -43,7 +45,13 @@ namespace PointOfSale
             if ((e.KeyChar == 13) && (txtQty.Text != String.Empty))
             {
                 String id="";
+                int cart_qty=0;
                 bool found = false;
+                if (qty<int.Parse(txtQty.Text))
+                {
+                    MessageBox.Show("Unable to proceed. remaining qty on hand is " + qty,"Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 cn.Open();
                 cm = new SqlCommand("Select * from tblcart where transno = @transno and pcode =@pcode", cn);
                 cm.Parameters.AddWithValue("@transno",fpos.lblTransNo.Text);
@@ -54,12 +62,18 @@ namespace PointOfSale
                 {
                     found = true;
                     id = dr["id"].ToString();
+                    cart_qty = int.Parse(dr["qty"].ToString());
                 }
                 else { found = false; }
                 dr.Close();
                 cn.Close();
                 if (found == true)
                 {
+                    if (qty < int.Parse(txtQty.Text)+cart_qty)
+                    {
+                        MessageBox.Show("Unable to proceed. remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     cn.Close();
                     cn.Open();
                     cm = new SqlCommand("update tblCart set qty = (qty + " + int.Parse(txtQty.Text) + ") where id = '" + id + "'", cn);           

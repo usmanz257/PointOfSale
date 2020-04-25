@@ -108,6 +108,7 @@ namespace PointOfSale
             frmRecords frm = new frmRecords();
             frm.TopLevel = false;
             frm.LoadCriticalItems();
+            frm.LoadInventory();
             MainPanel.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
