@@ -27,33 +27,33 @@ namespace PointOfSale
         }
         public void getTransNo()
         {
-            try 
+            try
             {
                 string sdate = DateTime.Now.ToString("yyyyMMdd");
                 string transNo;
                 int count;
                 cn.Close();
                 cn.Open();
-                cm = new SqlCommand("select top 1 transno from tblCart where transno like'" + sdate + "%' order by id desc",cn);
+                cm = new SqlCommand("select top 1 transno from tblCart where transno like'" + sdate + "%' order by id desc", cn);
                 dr = cm.ExecuteReader();
                 dr.Read();
                 if (dr.HasRows) {
                     transNo = dr[0].ToString();
-                    count = int.Parse(transNo.Substring(8,4));
+                    count = int.Parse(transNo.Substring(8, 4));
                     lblTransNo.Text = sdate + (count + 1);
-                } 
+                }
                 else {
                     transNo = sdate + "1001";
                     this.lblTransNo.Text = transNo;
-                } 
+                }
                 dr.Close();
                 cn.Close();
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 cn.Close();
-                MessageBox.Show(ex.Message, "",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
         }
@@ -78,28 +78,37 @@ namespace PointOfSale
             try
             {
                 if (txtSearchProduct.Text == string.Empty) { return; }
-                if(lblTransNo.Text == "0000000000000000") 
-                { 
+                if (lblTransNo.Text == "0000000000000000")
+                {
                     MessageBox.Show("Please Click on new transection button first", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return; }
                 else
                 {
+                    String _pcode;
+                    double _price;
+                    int _qty;
                     cn.Close();
                     cn.Open();
                     cm = new SqlCommand("select * from tblProduct where barcode like '" + txtSearchProduct.Text + "'", cn);
                     dr = cm.ExecuteReader();
                     dr.Read();
                     if (dr.HasRows)
-                     {
-                        qty = int.Parse(dr["qty"].ToString());
-                        frmQty frm = new frmQty(this);
-                        frm.ProductDetail(dr["pcode"].ToString(), double.Parse(dr["price"].ToString()), lblTransNo.Text,qty);
+                    {
+                        this.qty = int.Parse(dr["qty"].ToString());
+                        _pcode = dr["pcode"].ToString();
+                        _price = double.Parse(dr["price"].ToString());
+                        _qty = int.Parse(txtQty.Text);
                         dr.Close();
                         cn.Close();
-                        frm.ShowDialog();
+
+                        AddToCart(_pcode,_price, _qty);
+                    }
+                    else 
+                    {
+                        dr.Close();
+                        cn.Close();
 
                     }
-                    cn.Close();
 
                 }
             }
@@ -108,6 +117,66 @@ namespace PointOfSale
                 cn.Close();
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        private void AddToCart(String _pcode, double _price, int _qty)
+            {
+            String id = "";
+            bool found = false;
+            int cart_qty=0;
+            cn.Open();
+            cm = new SqlCommand("Select * from tblcart where transno = @transno and pcode =@pcode", cn);
+            cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+            cm.Parameters.AddWithValue("@pcode", _pcode);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                found = true;
+                id = dr["id"].ToString();
+                cart_qty = int.Parse(dr["qty"].ToString());
+            }
+            else { found = false; }
+            dr.Close();
+            cn.Close();
+
+            if (found == true)
+            {
+                if (qty < int.Parse(txtQty.Text) + cart_qty)
+                {
+                    MessageBox.Show("Unable to proceed. remaining qty on hand is " + qty, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                cn.Close();
+                cn.Open();
+                cm = new SqlCommand("update tblCart set qty = (qty + " + _qty + ") where id = '" + id + "'", cn);
+                cm.ExecuteNonQuery();
+                cn.Close();
+                txtSearchProduct.SelectionStart = 0;
+                txtSearchProduct.SelectionLength = txtSearchProduct.Text.Length;
+                loadCart();
+               
+
+            }
+            else
+            {
+                cn.Close();
+                cn.Open();
+                cm = new SqlCommand("insert into tblCart (transno, pcode, price, qty, sdate, cashier)values(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
+                cm.Parameters.AddWithValue("@pcode", _pcode);
+                cm.Parameters.AddWithValue("@price", _price);
+                cm.Parameters.AddWithValue("@qty", _qty);
+                cm.Parameters.AddWithValue("@sdate", DateTime.Now);
+                cm.Parameters.AddWithValue("@cashier", lblUser.Text);
+                cm.ExecuteNonQuery();
+                cn.Close();
+
+                txtSearchProduct.Clear();
+                txtSearchProduct.Focus();
+                loadCart();
+            
+            }
+
         }
         public void loadCart()
         {
@@ -127,7 +196,7 @@ namespace PointOfSale
                     i++;
                     total += Double.Parse(dr["Total"].ToString());
                     discount += Double.Parse(dr["disc"].ToString());
-                    dataGridSale.Rows.Add(i, dr["Id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["Total"].ToString()).ToString("#,##0.00"));
+                    dataGridSale.Rows.Add(i, dr["Id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["Total"].ToString()).ToString("#,##0.00"),"[ + ]","[ - ]");
                     hasrecord = true;
                 }
                 dr.Close();
@@ -193,12 +262,56 @@ namespace PointOfSale
                 if (MessageBox.Show("Are you sure to remove this item?", "Delete item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("delete from tblCart where id like '" + dataGridSale.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
+                    cm = new SqlCommand("delete from tblproduct where id like '" + dataGridSale.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
+                     
                     cm.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("item Successfully removed.","Item removed",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     loadCart();
                 }
+            }
+            else if (colName == "colAdd")
+            {
+                int i = 0;
+                cn.Open();
+                cm = new SqlCommand("Select sum(qty) as qty from tblproduct where pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "' group by pcode",cn);
+                i = int.Parse(cm.ExecuteScalar().ToString());
+                cn.Close();
+
+                if (int.Parse(dataGridSale.Rows[e.RowIndex].Cells[5].Value.ToString()) <= i)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("update tblcart set qty  = qty + '" + int.Parse(txtQty.Text) + "' where transno like '" + lblTransNo.Text + "' and  pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    loadCart();
+                }
+                else {
+                    MessageBox.Show("Remaining qty on hand is " + i + " !", "Out of stock",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+            }
+            else if (colName == "colRemove")
+            {
+                int i = 0;
+                cn.Open();
+                cm = new SqlCommand("Select sum(qty) as qty from tblcart where pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "' and transno like '"+ lblTransNo.Text +"' group by transno, pcode", cn);
+                i = int.Parse(cm.ExecuteScalar().ToString());
+                cn.Close();
+
+                if (i > 1)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("update tblcart set qty  = qty - '" + int.Parse(txtQty.Text) + "' where transno like '" + lblTransNo.Text + "' and  pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    loadCart();
+                }
+                else
+                {
+                    MessageBox.Show("Remaining qty on cart is " + i + " !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
             }
         }
 
@@ -246,6 +359,14 @@ namespace PointOfSale
             frm.ShowDialog();
         }
 
+        //public void ProductDetail(String pcode, double price, String transno, int qty)
+        //{
+        //    this.pcode = pcode;
+        //    this.price = price;
+        //    this.transno = transno;
+        //    this.qty = qty;
+        //}
+
         private void frmPOS_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -263,6 +384,23 @@ namespace PointOfSale
             if (e.KeyCode == Keys.F4)
             {
                 btnSettle_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                btnSettle_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F6)
+            {
+                btnDailySale_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F10)
+            {
+                btnExit_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.F8)
+            {
+                txtSearchProduct.SelectionStart = 0;
+                txtSearchProduct.SelectionLength = txtSearchProduct.Text.Length;
             }
         }
     }

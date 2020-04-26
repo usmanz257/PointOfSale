@@ -47,6 +47,7 @@ namespace PointOfSale
                 String id="";
                 int cart_qty=0;
                 bool found = false;
+                
                 if (qty<int.Parse(txtQty.Text))
                 {
                     MessageBox.Show("Unable to proceed. remaining qty on hand is " + qty,"Warning",MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -105,11 +106,7 @@ namespace PointOfSale
                     fpos.loadCart();
                     this.Dispose();
 
-                }
-
-
-             
-                
+                }                
             }
         }
 

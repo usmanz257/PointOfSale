@@ -69,6 +69,14 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridSale = new System.Windows.Forms.DataGridView();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDateDay = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtQty = new MetroFramework.Controls.MetroTextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,14 +85,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdd = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDateDay = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -169,6 +172,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtQty);
             this.panel3.Controls.Add(this.txtSearchProduct);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.lblDate);
@@ -221,9 +225,9 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(23, 71);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 23);
+            this.label16.Size = new System.Drawing.Size(104, 23);
             this.label16.TabIndex = 5;
-            this.label16.Text = "Barcode";
+            this.label16.Text = "[F8] Barcode";
             // 
             // lblDate
             // 
@@ -596,6 +600,8 @@
             this.Column4,
             this.Column5,
             this.Column6,
+            this.colAdd,
+            this.colRemove,
             this.Delete});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
@@ -617,6 +623,109 @@
             this.dataGridSale.TabIndex = 7;
             this.dataGridSale.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSale_CellContentClick);
             this.dataGridSale.SelectionChanged += new System.EventHandler(this.dataGridSale_SelectionChanged);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.dataGridSale);
+            this.panel7.Location = new System.Drawing.Point(0, 192);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1038, 319);
+            this.panel7.TabIndex = 7;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.lblDateDay);
+            this.panel2.Controls.Add(this.lblTime);
+            this.panel2.Location = new System.Drawing.Point(0, 517);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(757, 144);
+            this.panel2.TabIndex = 11;
+            // 
+            // lblDateDay
+            // 
+            this.lblDateDay.AutoSize = true;
+            this.lblDateDay.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateDay.ForeColor = System.Drawing.Color.White;
+            this.lblDateDay.Location = new System.Drawing.Point(24, 98);
+            this.lblDateDay.Name = "lblDateDay";
+            this.lblDateDay.Size = new System.Drawing.Size(99, 34);
+            this.lblDateDay.TabIndex = 1;
+            this.lblDateDay.Text = "label4";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(6, 5);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(392, 94);
+            this.lblTime.TabIndex = 0;
+            this.lblTime.Text = "00:00:00";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1039, 424);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(259, 237);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtQty
+            // 
+            // 
+            // 
+            // 
+            this.txtQty.CustomButton.Image = null;
+            this.txtQty.CustomButton.Location = new System.Drawing.Point(38, 1);
+            this.txtQty.CustomButton.Name = "";
+            this.txtQty.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtQty.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtQty.CustomButton.TabIndex = 1;
+            this.txtQty.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtQty.CustomButton.UseSelectable = true;
+            this.txtQty.CustomButton.Visible = false;
+            this.txtQty.DisplayIcon = true;
+            this.txtQty.Enabled = false;
+            this.txtQty.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.txtQty.Lines = new string[] {
+        "1"};
+            this.txtQty.Location = new System.Drawing.Point(787, 71);
+            this.txtQty.MaxLength = 32767;
+            this.txtQty.Name = "txtQty";
+            this.txtQty.PasswordChar = '\0';
+            this.txtQty.PromptText = "QTY";
+            this.txtQty.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtQty.SelectedText = "";
+            this.txtQty.SelectionLength = 0;
+            this.txtQty.SelectionStart = 0;
+            this.txtQty.ShortcutsEnabled = true;
+            this.txtQty.Size = new System.Drawing.Size(62, 25);
+            this.txtQty.TabIndex = 7;
+            this.txtQty.Text = "1";
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtQty.UseSelectable = true;
+            this.txtQty.WaterMark = "QTY";
+            this.txtQty.WaterMarkColor = System.Drawing.Color.SteelBlue;
+            this.txtQty.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // Column1
             // 
@@ -693,6 +802,22 @@
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Width = 73;
             // 
+            // colAdd
+            // 
+            this.colAdd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colAdd.HeaderText = "";
+            this.colAdd.MinimumWidth = 6;
+            this.colAdd.Name = "colAdd";
+            this.colAdd.Width = 6;
+            // 
+            // colRemove
+            // 
+            this.colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colRemove.HeaderText = "";
+            this.colRemove.MinimumWidth = 6;
+            this.colRemove.Name = "colRemove";
+            this.colRemove.Width = 6;
+            // 
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -703,71 +828,6 @@
             this.Delete.Name = "Delete";
             this.Delete.ToolTipText = "delete item";
             this.Delete.Width = 6;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.dataGridSale);
-            this.panel7.Location = new System.Drawing.Point(0, 192);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1038, 319);
-            this.panel7.TabIndex = 7;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.lblDateDay);
-            this.panel2.Controls.Add(this.lblTime);
-            this.panel2.Location = new System.Drawing.Point(0, 517);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(757, 144);
-            this.panel2.TabIndex = 11;
-            // 
-            // lblDateDay
-            // 
-            this.lblDateDay.AutoSize = true;
-            this.lblDateDay.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDay.ForeColor = System.Drawing.Color.White;
-            this.lblDateDay.Location = new System.Drawing.Point(24, 98);
-            this.lblDateDay.Name = "lblDateDay";
-            this.lblDateDay.Size = new System.Drawing.Size(99, 34);
-            this.lblDateDay.TabIndex = 1;
-            this.lblDateDay.Text = "label4";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(6, 5);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(392, 94);
-            this.lblTime.TabIndex = 0;
-            this.lblTime.Text = "00:00:00";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1039, 424);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(259, 237);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
             // 
             // frmPOS
             // 
@@ -845,6 +905,9 @@
         private System.Windows.Forms.Label lblDateDay;
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.DataGridView dataGridSale;
+        public System.Windows.Forms.Label lblUser;
+        public System.Windows.Forms.Label lblRole;
+        public MetroFramework.Controls.MetroTextBox txtQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -853,8 +916,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewButtonColumn colAdd;
+        private System.Windows.Forms.DataGridViewButtonColumn colRemove;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        public System.Windows.Forms.Label lblUser;
-        public System.Windows.Forms.Label lblRole;
     }
 }
