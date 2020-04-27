@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSoldItems));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,16 +38,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSoldItems));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridSaleHistory = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cboCashier = new System.Windows.Forms.ComboBox();
-            this.lblDailyTotal = new System.Windows.Forms.Label();
-            this.dt2 = new System.Windows.Forms.DateTimePicker();
-            this.dt1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +51,14 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.colCancel = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cboCashier = new System.Windows.Forms.ComboBox();
+            this.lblDailyTotal = new System.Windows.Forms.Label();
+            this.dt2 = new System.Windows.Forms.DateTimePicker();
+            this.dt1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSaleHistory)).BeginInit();
             this.panel2.SuspendLayout();
@@ -66,15 +66,31 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1182, 45);
             this.panel1.TabIndex = 4;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1143, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(39, 45);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -90,6 +106,9 @@
             // dataGridSaleHistory
             // 
             this.dataGridSaleHistory.AllowUserToAddRows = false;
+            this.dataGridSaleHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridSaleHistory.BackgroundColor = System.Drawing.Color.White;
             this.dataGridSaleHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridSaleHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -132,67 +151,6 @@
             this.dataGridSaleHistory.Size = new System.Drawing.Size(1182, 466);
             this.dataGridSaleHistory.TabIndex = 8;
             this.dataGridSaleHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSale_CellContentClick);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.cboCashier);
-            this.panel2.Controls.Add(this.lblDailyTotal);
-            this.panel2.Controls.Add(this.dt2);
-            this.panel2.Controls.Add(this.dt1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 45);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1182, 39);
-            this.panel2.TabIndex = 9;
-            // 
-            // cboCashier
-            // 
-            this.cboCashier.FormattingEnabled = true;
-            this.cboCashier.Location = new System.Drawing.Point(559, 5);
-            this.cboCashier.Name = "cboCashier";
-            this.cboCashier.Size = new System.Drawing.Size(344, 31);
-            this.cboCashier.TabIndex = 4;
-            this.cboCashier.SelectedIndexChanged += new System.EventHandler(this.cboCashier_SelectedIndexChanged);
-            this.cboCashier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCashier_KeyPress);
-            // 
-            // lblDailyTotal
-            // 
-            this.lblDailyTotal.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDailyTotal.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblDailyTotal.Location = new System.Drawing.Point(1007, 1);
-            this.lblDailyTotal.Name = "lblDailyTotal";
-            this.lblDailyTotal.Size = new System.Drawing.Size(143, 34);
-            this.lblDailyTotal.TabIndex = 3;
-            this.lblDailyTotal.Text = "0.00";
-            this.lblDailyTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dt2
-            // 
-            this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt2.Location = new System.Drawing.Point(399, 6);
-            this.dt2.Name = "dt2";
-            this.dt2.Size = new System.Drawing.Size(154, 30);
-            this.dt2.TabIndex = 2;
-            this.dt2.ValueChanged += new System.EventHandler(this.dt2_ValueChanged);
-            // 
-            // dt1
-            // 
-            this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt1.Location = new System.Drawing.Point(230, 7);
-            this.dt1.Name = "dt1";
-            this.dt1.Size = new System.Drawing.Size(159, 30);
-            this.dt1.TabIndex = 1;
-            this.dt1.ValueChanged += new System.EventHandler(this.dt1_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Filter By Date (From - To)";
             // 
             // Column1
             // 
@@ -282,15 +240,6 @@
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Width = 84;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 6;
-            // 
             // colCancel
             // 
             this.colCancel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -300,20 +249,76 @@
             this.colCancel.Name = "colCancel";
             this.colCancel.Width = 6;
             // 
-            // btnClose
+            // panel2
             // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1143, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 45);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.cboCashier);
+            this.panel2.Controls.Add(this.lblDailyTotal);
+            this.panel2.Controls.Add(this.dt2);
+            this.panel2.Controls.Add(this.dt1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1182, 39);
+            this.panel2.TabIndex = 9;
+            // 
+            // cboCashier
+            // 
+            this.cboCashier.FormattingEnabled = true;
+            this.cboCashier.Location = new System.Drawing.Point(559, 5);
+            this.cboCashier.Name = "cboCashier";
+            this.cboCashier.Size = new System.Drawing.Size(344, 31);
+            this.cboCashier.TabIndex = 4;
+            this.cboCashier.SelectedIndexChanged += new System.EventHandler(this.cboCashier_SelectedIndexChanged);
+            this.cboCashier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCashier_KeyPress);
+            // 
+            // lblDailyTotal
+            // 
+            this.lblDailyTotal.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDailyTotal.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblDailyTotal.Location = new System.Drawing.Point(1007, 1);
+            this.lblDailyTotal.Name = "lblDailyTotal";
+            this.lblDailyTotal.Size = new System.Drawing.Size(143, 34);
+            this.lblDailyTotal.TabIndex = 3;
+            this.lblDailyTotal.Text = "0.00";
+            this.lblDailyTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dt2
+            // 
+            this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt2.Location = new System.Drawing.Point(399, 6);
+            this.dt2.Name = "dt2";
+            this.dt2.Size = new System.Drawing.Size(154, 30);
+            this.dt2.TabIndex = 2;
+            this.dt2.ValueChanged += new System.EventHandler(this.dt2_ValueChanged);
+            // 
+            // dt1
+            // 
+            this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt1.Location = new System.Drawing.Point(230, 7);
+            this.dt1.Name = "dt1";
+            this.dt1.Size = new System.Drawing.Size(159, 30);
+            this.dt1.TabIndex = 1;
+            this.dt1.ValueChanged += new System.EventHandler(this.dt1_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 23);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Filter By Date (From - To)";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // frmSoldItems
             // 
@@ -329,6 +334,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmSoldItems";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSaleHistory)).EndInit();

@@ -40,12 +40,12 @@ namespace PointOfSale
             cn.Open();
             if (cboCashier.Text == "All Cashier")
             {
-                String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}'", this.dt1.Value, this.dt1.Value);
+                String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}'", this.dt1.Value, this.dt2.Value);
                 cm = new SqlCommand(query, cn);
             }
             else 
             {
-                String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}' and cashier like'{2}'", this.dt1.Value, this.dt1.Value, cboCashier.Text);
+                String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}' and cashier like'{2}'", this.dt1.Value, this.dt2.Value, cboCashier.Text);
                 cm = new SqlCommand(query, cn);
             }
             dr = cm.ExecuteReader();

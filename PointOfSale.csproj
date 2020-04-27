@@ -89,6 +89,12 @@
     <Compile Include="frmCategoryList.Designer.cs">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangepassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangepassword.Designer.cs">
+      <DependentUpon>frmChangepassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDiscount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     <Compile Include="frmStockIn.Designer.cs">
       <DependentUpon>frmStockIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStore.Designer.cs">
+      <DependentUpon>frmStore.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUserAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +223,9 @@
     <EmbeddedResource Include="frmCategoryList.resx">
       <DependentUpon>frmCategoryList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangepassword.resx">
+      <DependentUpon>frmChangepassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDiscount.resx">
       <DependentUpon>frmDiscount.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockIn.resx">
       <DependentUpon>frmStockIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStore.resx">
+      <DependentUpon>frmStore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserAccounts.resx">
       <DependentUpon>frmUserAccounts.cs</DependentUpon>

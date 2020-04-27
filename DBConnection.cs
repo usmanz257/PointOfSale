@@ -39,6 +39,23 @@ namespace PointOfSale
             }
             return vat;
         }
+        public string GetPassword(string user)
+        {
+            string password="";
+            cn.ConnectionString = MyConnection();
+            cn.Open();
+            cm = new SqlCommand("select * from tbluser where username = @username", cn);
+            cm.Parameters.AddWithValue("@username", user);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows) 
+            {
+                password = dr["password"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+            return password;
+        }
     
     }
 }

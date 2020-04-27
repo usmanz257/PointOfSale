@@ -55,11 +55,11 @@ namespace PointOfSale
                     txtUsername.Clear();
                     this.Hide();
                     frmPOS frm = new frmPOS();
-                    frm.lblUser.Text = _name;
+                    frm.lblUser.Text = _userName;
                     frm.lblRole.Text= " | " + _role;
                     frm.lblRole.Visible = true;
                     frm.ShowDialog();
-
+                    
                 }
                 if (_role == "System Administrator")
                 {
@@ -86,13 +86,17 @@ namespace PointOfSale
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtPassword.Clear();
             txtUsername.Clear();
+            txtPassword.Clear();
+            txtUsername.Focus();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+             if(MessageBox.Show("Exit Application?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

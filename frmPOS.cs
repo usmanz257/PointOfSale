@@ -204,7 +204,7 @@ namespace PointOfSale
                 this.lblTotal.Text = total.ToString("#,##0.00");
                 this.lblDiscount.Text = discount.ToString("#,##0.00");
                 GetCartTotal();
-                if (hasrecord == true) { btnSettle.Enabled = true; btnDiscount.Enabled = true; } else { btnSettle.Enabled = false; btnDiscount.Enabled = false; };
+                if (hasrecord == true) { btnSettle.Enabled = true; btnDiscount.Enabled = true; btnCancelSale.Enabled = true; } else { btnSettle.Enabled = false; btnDiscount.Enabled = false; btnCancelSale.Enabled = false; };
             }
             catch (Exception ex)
             {
@@ -337,8 +337,8 @@ namespace PointOfSale
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //lblTime.Text = DateTime.Now.ToString("hh:MM:ss tt");
-            //lblDateDay.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToString("hh:MM:ss tt");
+            lblDateDay.Text = DateTime.Now.ToLongDateString();
         }
 
         private void btnSettle_Click(object sender, EventArgs e)
@@ -379,19 +379,38 @@ namespace PointOfSale
             }
             if (e.KeyCode == Keys.F3)
             {
+                if(btnDiscount.Enabled == false)
+                {
+                    MessageBox.Show("Add Product in cart please");
+                    return;
+                }
                 btnDiscount_Click(sender, e);
             }
             if (e.KeyCode == Keys.F4)
             {
+                if (btnDiscount.Enabled == false)
+                {
+                    MessageBox.Show("Add Product in cart please");
+                    return;
+                }
                 btnSettle_Click(sender, e);
             }
-            if (e.KeyCode == Keys.F4)
+            if (e.KeyCode == Keys.F5)
             {
-                btnSettle_Click(sender, e);
+                if (btnDiscount.Enabled == false)
+                {
+                    MessageBox.Show("Add Product in cart please");
+                    return;
+                }
+                btnCancelSale_Click(sender, e);
             }
             if (e.KeyCode == Keys.F6)
             {
                 btnDailySale_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F7)
+            {
+                btnChangePassword_Click(sender, e);
             }
             if (e.KeyCode == Keys.F10)
             {
@@ -401,7 +420,34 @@ namespace PointOfSale
             {
                 txtSearchProduct.SelectionStart = 0;
                 txtSearchProduct.SelectionLength = txtSearchProduct.Text.Length;
+                txtSearchProduct.Focus();
             }
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangepassword frm =new frmChangepassword(this);
+            frm.ShowDialog();
+
+        }
+
+        private void btnCancelSale_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Remove all iterms from cart","Confirm",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cn.Open();
+                cm = new SqlCommand("delete from tblcart where transno like '" + lblTransNo.Text + "'", cn);
+                cm.ExecuteNonQuery();
+                cn.Close();
+                MessageBox.Show("all iterms has been successfully remove!", "Remove Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.loadCart();
+            }
+
+        }
+
+        private void frmPOS_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

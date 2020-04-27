@@ -38,7 +38,13 @@ namespace PointOfSale
 
         private void btnCloseMainForm_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (MessageBox.Show("Are you sure to Exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                frmSecurity frm = new frmSecurity();
+                frm.ShowDialog();
+            }
+
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
@@ -99,8 +105,10 @@ namespace PointOfSale
         private void btnSold_Click(object sender, EventArgs e)
         {
             frmSoldItems frm = new frmSoldItems();
-            frm.ShowDialog();
-
+            frm.TopLevel = false;
+            MainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
         }
 
         private void btnRecords_Click(object sender, EventArgs e)
@@ -109,9 +117,29 @@ namespace PointOfSale
             frm.TopLevel = false;
             frm.LoadCriticalItems();
             frm.LoadInventory();
+            frm.LoadCancelledOrders();
+            frm.LoadStockInHistory();
             MainPanel.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Do you realy want to Logout?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Hide();
+                frmSecurity frm = new frmSecurity();
+                frm.ShowDialog();
+            }
+            
+        }
+
+        private void btnStoreSettings_Click(object sender, EventArgs e)
+        {
+            frmStore frm = new frmStore();
+            frm.LoadRecords();
+            frm.ShowDialog();
         }
     }
 }
