@@ -23,7 +23,31 @@ namespace PointOfSale
             InitializeComponent();
             lblDate.Text = DateTime.Now.ToShortDateString();
             cn = new SqlConnection(dbcon.MyConnection());
+            NotifyCriticalItems(); 
             this.KeyPreview = true;
+        }
+        public void NotifyCriticalItems()
+        {
+            string _critical = "";
+            int i = 0;
+            string count = "";
+            cn.Open();
+            cm = new SqlCommand("select count(*) from vwCriticalItems", cn);
+            count = cm.ExecuteScalar().ToString();
+            cn.Close();
+            cn.Open();
+            cm = new SqlCommand("select * from vwCriticalItems", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                _critical += i + "." + dr["pdesc"].ToString() + Environment.NewLine;
+            }
+            dr.Close();
+            cn.Close();
+
+            MessageBox.Show("Critical stock is :" + Environment.NewLine + _critical, count + " Critical items", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         public void getTransNo()
         {

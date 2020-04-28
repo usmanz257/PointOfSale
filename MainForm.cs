@@ -14,19 +14,44 @@ namespace PointOfSale
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
         public MainForm()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             cn.Close();
+            NotifyCriticalItems();
+            
            //cn.Open();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            btnDashBoard_Click(sender, e);
+        }
+        public void NotifyCriticalItems() 
+        {
+            string _critical = "";
+            int i = 0;
+            string count="";
+            cn.Open();
+            cm = new SqlCommand("select count(*) from vwCriticalItems", cn);
+            count = cm.ExecuteScalar().ToString();
+            cn.Close();
+            cn.Open();
+            cm = new SqlCommand("select * from vwCriticalItems", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                _critical += i +"."+ dr["pdesc"].ToString() + Environment.NewLine;
+            }
+            dr.Close();
+            cn.Close();
+
+            MessageBox.Show("Critical stock is :" + Environment.NewLine + _critical, count + " Critical items",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
         }
-
         private void btnbrand_Click(object sender, EventArgs e)
         {
             frmBrandList frmBrand = new frmBrandList();
@@ -85,6 +110,15 @@ namespace PointOfSale
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
+            frmDashboard frm = new frmDashboard();
+            frm.TopLevel = false;
+            MainPanel.Controls.Add(frm);
+            frm.lblDailySales.Text = dbcon.DailySales().ToString("#,##0.00");
+            frm.lblTotalProducts.Text = dbcon.ProductLine().ToString();
+            frm.lblStockOnHand.Text = dbcon.StockOnHand().ToString();
+            frm.lblCritical.Text = dbcon.CriticalStock().ToString();
+            frm.BringToFront();
+            frm.Show();
 
         }
 
