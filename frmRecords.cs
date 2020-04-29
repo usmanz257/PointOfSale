@@ -34,16 +34,31 @@ namespace PointOfSale
         }
         private void LoadRecord()
         {
+            string query = "";
             dataGridProduct.Rows.Clear();
             int i = 0;
             cn.Open();
-            string query = string.Format("select top 10 pcode, pdesc, sum(qty) as qty from vwSold where sdate between '{0}' and '{1}' and status like '{2}' group by pcode,pdesc order by qty desc", dt1.Value, dt1.Value, "Sold");
+            if(cboTopSelect.Text== string.Empty)
+            {
+                MessageBox.Show("Please select sort type from the dropdown list","Suggestion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                cn.Close();
+                return;
+            }
+            else if (cboTopSelect.Text == "SORT BY QTY")
+            {
+                query = string.Format("select top 10 pcode, pdesc, isnull(sum(qty),0) as qty, isnull(sum(total),0) as total from vwSold where sdate between '{0}' and '{1}' and status like '{2}' group by pcode,pdesc order by qty desc", dt1.Value, dt2.Value, "Sold");
+            
+            }
+            else if (cboTopSelect.Text == "SORT BY TOTAL")
+            {
+                query = string.Format("select top 10 pcode, pdesc, isnull(sum(qty),0) as qty, isnull(sum(total),0) as total from vwSold where sdate between '{0}' and '{1}' and status like '{2}' group by pcode,pdesc order by total desc", dt1.Value, dt2.Value, "Sold");
+            }
             cm = new SqlCommand(query, cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dataGridProduct.Rows.Add(i, dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString());
+                dataGridProduct.Rows.Add(i, dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), double.Parse(dr["total"].ToString()).ToString("#,##0.00"));
             }
             dr.Close();
             cn.Close();
@@ -180,6 +195,31 @@ namespace PointOfSale
         private void btnLoadStock_Click(object sender, EventArgs e)
         {
             this.LoadStockInHistory();
+        }
+
+        private void dataGridProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboTopSelect_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.LoadInventory();
+        }
+
+        private void btnReloadCriticalStock_Click(object sender, EventArgs e)
+        {
+            this.LoadCriticalItems();
         }
     }
 }

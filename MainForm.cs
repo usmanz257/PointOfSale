@@ -15,6 +15,7 @@ namespace PointOfSale
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        public string Name;
         public MainForm()
         {
             InitializeComponent();
@@ -184,6 +185,20 @@ namespace PointOfSale
             MainPanel.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
+        }
+
+        private void btnStockAdjustment_Click(object sender, EventArgs e)
+        {
+            frmStockAdjustment frm = new frmStockAdjustment(this);
+            frm.TopLevel = false;
+            frm.LoadProducts();
+            frm.txtUser.Text = lblName.Text;
+            frm.txtUser.Text = this.Name;
+            frm.ReferenceNo();
+            MainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+
         }
     }
 }

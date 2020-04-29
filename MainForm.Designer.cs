@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.btnVendor = new System.Windows.Forms.Button();
             this.btnSold = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
@@ -42,10 +45,8 @@
             this.btnCategory = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnDashBoard = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MainPanel = new System.Windows.Forms.Panel();
+            this.btnStockAdjustment = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel2.Controls.Add(this.btnStockAdjustment);
             this.panel2.Controls.Add(this.btnVendor);
             this.panel2.Controls.Add(this.btnSold);
             this.panel2.Controls.Add(this.btnStock);
@@ -82,6 +84,38 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 733);
             this.panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(17, 111);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(206, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Administrator";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblName.Location = new System.Drawing.Point(17, 90);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(206, 23);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Username";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainPanel.Location = new System.Drawing.Point(303, 10);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1277, 733);
+            this.MainPanel.TabIndex = 2;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
             // btnVendor
             // 
@@ -110,7 +144,7 @@
             this.btnSold.ForeColor = System.Drawing.Color.White;
             this.btnSold.Image = ((System.Drawing.Image)(resources.GetObject("btnSold.Image")));
             this.btnSold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSold.Location = new System.Drawing.Point(2, 459);
+            this.btnSold.Location = new System.Drawing.Point(2, 506);
             this.btnSold.Name = "btnSold";
             this.btnSold.Size = new System.Drawing.Size(297, 39);
             this.btnSold.TabIndex = 4;
@@ -168,7 +202,7 @@
             this.btnUserSettings.ForeColor = System.Drawing.Color.White;
             this.btnUserSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnUserSettings.Image")));
             this.btnUserSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserSettings.Location = new System.Drawing.Point(3, 551);
+            this.btnUserSettings.Location = new System.Drawing.Point(3, 598);
             this.btnUserSettings.Name = "btnUserSettings";
             this.btnUserSettings.Size = new System.Drawing.Size(297, 39);
             this.btnUserSettings.TabIndex = 2;
@@ -187,7 +221,7 @@
             this.btnStoreSettings.ForeColor = System.Drawing.Color.White;
             this.btnStoreSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnStoreSettings.Image")));
             this.btnStoreSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStoreSettings.Location = new System.Drawing.Point(2, 504);
+            this.btnStoreSettings.Location = new System.Drawing.Point(2, 551);
             this.btnStoreSettings.Name = "btnStoreSettings";
             this.btnStoreSettings.Size = new System.Drawing.Size(297, 39);
             this.btnStoreSettings.TabIndex = 2;
@@ -206,7 +240,7 @@
             this.btnRecords.ForeColor = System.Drawing.Color.White;
             this.btnRecords.Image = ((System.Drawing.Image)(resources.GetObject("btnRecords.Image")));
             this.btnRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecords.Location = new System.Drawing.Point(2, 414);
+            this.btnRecords.Location = new System.Drawing.Point(2, 461);
             this.btnRecords.Name = "btnRecords";
             this.btnRecords.Size = new System.Drawing.Size(297, 39);
             this.btnRecords.TabIndex = 2;
@@ -225,7 +259,7 @@
             this.btnbrand.ForeColor = System.Drawing.Color.White;
             this.btnbrand.Image = ((System.Drawing.Image)(resources.GetObject("btnbrand.Image")));
             this.btnbrand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbrand.Location = new System.Drawing.Point(2, 367);
+            this.btnbrand.Location = new System.Drawing.Point(2, 414);
             this.btnbrand.Name = "btnbrand";
             this.btnbrand.Size = new System.Drawing.Size(297, 39);
             this.btnbrand.TabIndex = 2;
@@ -244,7 +278,7 @@
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategory.Location = new System.Drawing.Point(2, 320);
+            this.btnCategory.Location = new System.Drawing.Point(2, 367);
             this.btnCategory.Name = "btnCategory";
             this.btnCategory.Size = new System.Drawing.Size(297, 39);
             this.btnCategory.TabIndex = 2;
@@ -290,27 +324,6 @@
             this.btnDashBoard.UseVisualStyleBackColor = true;
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
-            // label2
-            // 
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Administrator";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblName
-            // 
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblName.Location = new System.Drawing.Point(17, 90);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(206, 23);
-            this.lblName.TabIndex = 1;
-            this.lblName.Text = "Username";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.man_user_pngrepo_com;
@@ -321,16 +334,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // MainPanel
+            // btnStockAdjustment
             // 
-            this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.Location = new System.Drawing.Point(303, 10);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1277, 733);
-            this.MainPanel.TabIndex = 2;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            this.btnStockAdjustment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStockAdjustment.FlatAppearance.BorderSize = 0;
+            this.btnStockAdjustment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockAdjustment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStockAdjustment.ForeColor = System.Drawing.Color.White;
+            this.btnStockAdjustment.Image = ((System.Drawing.Image)(resources.GetObject("btnStockAdjustment.Image")));
+            this.btnStockAdjustment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockAdjustment.Location = new System.Drawing.Point(3, 322);
+            this.btnStockAdjustment.Name = "btnStockAdjustment";
+            this.btnStockAdjustment.Size = new System.Drawing.Size(297, 39);
+            this.btnStockAdjustment.TabIndex = 6;
+            this.btnStockAdjustment.Text = "   STOCK  ADJUSTMENT";
+            this.btnStockAdjustment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStockAdjustment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStockAdjustment.UseVisualStyleBackColor = true;
+            this.btnStockAdjustment.Click += new System.EventHandler(this.btnStockAdjustment_Click);
             // 
             // MainForm
             // 
@@ -372,5 +393,6 @@
         public System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnSold;
         private System.Windows.Forms.Button btnVendor;
+        private System.Windows.Forms.Button btnStockAdjustment;
     }
 }

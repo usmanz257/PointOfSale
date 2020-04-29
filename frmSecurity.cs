@@ -69,6 +69,7 @@ namespace PointOfSale
                     this.Hide();
                     MainForm frm = new MainForm();
                     frm.lblName.Text = _name;
+                    frm.Name = _name;
                     frm.ShowDialog();
 
                 }
