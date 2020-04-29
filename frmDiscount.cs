@@ -47,8 +47,9 @@ namespace PointOfSale
         {
             try {
                 cn.Open();
-                cm = new SqlCommand("Update tblCart set Disc = @disc where id = @id", cn);
+                cm = new SqlCommand("Update tblCart set disc = @disc, disc_percent= @disc_percent where id = @id", cn);
                 cm.Parameters.AddWithValue("@disc", double.Parse(txtAmount.Text));
+                cm.Parameters.AddWithValue("@disc_percent", double.Parse(txtPercent.Text));
                 cm.Parameters.AddWithValue("@id", int.Parse(lblID.Text));
                 cm.ExecuteNonQuery();
                 cn.Close();
