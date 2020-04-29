@@ -175,5 +175,15 @@ namespace PointOfSale
             frm.LoadRecords();
             frm.ShowDialog();
         }
+
+        private void btnVendor_Click(object sender, EventArgs e)
+        {
+            frmVendorList frm = new frmVendorList();
+            frm.TopLevel = false;
+            frm.LoadVandors();
+            MainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

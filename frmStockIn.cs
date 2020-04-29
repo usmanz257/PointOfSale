@@ -15,10 +15,12 @@ namespace PointOfSale
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        public string _vandorId;
         public frmStockIn()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            this.LoadVandors();
         }
        
 
@@ -43,7 +45,7 @@ namespace PointOfSale
             while (dr.Read())
             {
                 i++;
-                dataGridStockInHistory.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), DateTime.Parse(dr["sdate"].ToString()).ToShortDateString(), dr["stockinby"].ToString());
+                dataGridStockInHistory.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), DateTime.Parse(dr["sdate"].ToString()).ToShortDateString(), dr["stockinby"].ToString(), dr["vendor"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -63,7 +65,7 @@ namespace PointOfSale
             while (dr.Read()) 
             {
                 i++;
-                dataGridStockIn.Rows.Add(i,dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(),dr["stockinby"].ToString());
+                dataGridStockIn.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["stockinby"].ToString(), dr["vendor"].ToString()) ;
             }
             dr.Close();
             cn.Close();
@@ -110,13 +112,13 @@ namespace PointOfSale
                         {
                             // update product quantity
                             cn.Open();
-                            cm = new SqlCommand("Update tblproduct set qty=qty + "+ int.Parse(dataGridStockIn.Rows[i].Cells[5].Value.ToString())+" where pcode like '"+ dataGridStockIn.Rows[i].Cells[3].Value.ToString() +"'" ,cn);
+                            cm = new SqlCommand("Update tblproduct set qty=qty + "+ int.Parse(dataGridStockIn.Rows[i].Cells[6].Value.ToString())+" where pcode like '"+ dataGridStockIn.Rows[i].Cells[4].Value.ToString() +"'" ,cn);
                             cm.ExecuteNonQuery();
                             cn.Close();
 
                             //update tblstock in qty
                             cn.Open();
-                            cm = new SqlCommand("Update tblstockin set qty=qty +  " + int.Parse(dataGridStockIn.Rows[i].Cells[5].Value.ToString()) + ", status  = 'Done' where id like '" + dataGridStockIn.Rows[i].Cells[1].Value.ToString() + "'", cn);
+                            cm = new SqlCommand("Update tblstockin set qty=qty +  " + int.Parse(dataGridStockIn.Rows[i].Cells[6].Value.ToString()) + ", status  = 'Done' where id like '" + dataGridStockIn.Rows[i].Cells[1].Value.ToString() + "'", cn);
                             cm.ExecuteNonQuery();
                             cn.Close();
                         }
@@ -136,6 +138,51 @@ namespace PointOfSale
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadStockInHistory();
+        }
+
+        public void LoadVandors()
+        {
+           
+            
+            cn.Close();
+            cn.Open();
+            cm = new SqlCommand("select * from tblVendor order by vendor", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                cboVandor.Items.Add(dr["vendor"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+        private void cboVandor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cboVandor_TextChanged(object sender, EventArgs e)
+        {
+            cn.Open();
+            cm = new SqlCommand("Select * from tblvendor where vendor like '" + cboVandor.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if(dr.HasRows)
+            {
+                _vandorId = dr["id"].ToString();
+                txtContactPerson.Text = dr["contactperson"].ToString();
+                txtAddress.Text = dr["address"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Random rnd = new Random();
+            int i = 0;
+            txtRefNo.Clear();
+            txtRefNo.Text += rnd.Next();
+           
         }
     }
 }

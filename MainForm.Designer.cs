@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCloseMainForm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVendor = new System.Windows.Forms.Button();
             this.btnSold = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -46,38 +46,23 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.btnCloseMainForm);
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1580, 45);
+            this.panel1.Size = new System.Drawing.Size(1580, 10);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCloseMainForm
-            // 
-            this.btnCloseMainForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseMainForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCloseMainForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseMainForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseMainForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseMainForm.Image")));
-            this.btnCloseMainForm.Location = new System.Drawing.Point(1541, 0);
-            this.btnCloseMainForm.Name = "btnCloseMainForm";
-            this.btnCloseMainForm.Size = new System.Drawing.Size(39, 45);
-            this.btnCloseMainForm.TabIndex = 2;
-            this.btnCloseMainForm.UseVisualStyleBackColor = true;
-            this.btnCloseMainForm.Click += new System.EventHandler(this.btnCloseMainForm_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.panel2.Controls.Add(this.btnVendor);
             this.panel2.Controls.Add(this.btnSold);
             this.panel2.Controls.Add(this.btnStock);
             this.panel2.Controls.Add(this.btnLogout);
@@ -93,10 +78,28 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Location = new System.Drawing.Point(0, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 646);
+            this.panel2.Size = new System.Drawing.Size(303, 733);
             this.panel2.TabIndex = 1;
+            // 
+            // btnVendor
+            // 
+            this.btnVendor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendor.FlatAppearance.BorderSize = 0;
+            this.btnVendor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendor.ForeColor = System.Drawing.Color.White;
+            this.btnVendor.Image = ((System.Drawing.Image)(resources.GetObject("btnVendor.Image")));
+            this.btnVendor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVendor.Location = new System.Drawing.Point(3, 228);
+            this.btnVendor.Name = "btnVendor";
+            this.btnVendor.Size = new System.Drawing.Size(297, 39);
+            this.btnVendor.TabIndex = 5;
+            this.btnVendor.Text = "  VENDOR";
+            this.btnVendor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVendor.UseVisualStyleBackColor = true;
+            this.btnVendor.Click += new System.EventHandler(this.btnVendor_Click);
             // 
             // btnSold
             // 
@@ -107,9 +110,9 @@
             this.btnSold.ForeColor = System.Drawing.Color.White;
             this.btnSold.Image = ((System.Drawing.Image)(resources.GetObject("btnSold.Image")));
             this.btnSold.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSold.Location = new System.Drawing.Point(2, 420);
+            this.btnSold.Location = new System.Drawing.Point(2, 459);
             this.btnSold.Name = "btnSold";
-            this.btnSold.Size = new System.Drawing.Size(245, 39);
+            this.btnSold.Size = new System.Drawing.Size(297, 39);
             this.btnSold.TabIndex = 4;
             this.btnSold.Text = "   SALES HISTORY";
             this.btnSold.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -126,9 +129,9 @@
             this.btnStock.ForeColor = System.Drawing.Color.White;
             this.btnStock.Image = ((System.Drawing.Image)(resources.GetObject("btnStock.Image")));
             this.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStock.Location = new System.Drawing.Point(3, 234);
+            this.btnStock.Location = new System.Drawing.Point(3, 273);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(245, 39);
+            this.btnStock.Size = new System.Drawing.Size(297, 39);
             this.btnStock.TabIndex = 3;
             this.btnStock.Text = "   STOCK";
             this.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -139,15 +142,16 @@
             // btnLogout
             // 
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 600);
+            this.btnLogout.Location = new System.Drawing.Point(0, 694);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(245, 39);
+            this.btnLogout.Size = new System.Drawing.Size(303, 39);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "     LOGOUT";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,9 +168,9 @@
             this.btnUserSettings.ForeColor = System.Drawing.Color.White;
             this.btnUserSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnUserSettings.Image")));
             this.btnUserSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserSettings.Location = new System.Drawing.Point(3, 512);
+            this.btnUserSettings.Location = new System.Drawing.Point(3, 551);
             this.btnUserSettings.Name = "btnUserSettings";
-            this.btnUserSettings.Size = new System.Drawing.Size(245, 39);
+            this.btnUserSettings.Size = new System.Drawing.Size(297, 39);
             this.btnUserSettings.TabIndex = 2;
             this.btnUserSettings.Text = "  USER SETTINGS";
             this.btnUserSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,9 +187,9 @@
             this.btnStoreSettings.ForeColor = System.Drawing.Color.White;
             this.btnStoreSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnStoreSettings.Image")));
             this.btnStoreSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStoreSettings.Location = new System.Drawing.Point(2, 465);
+            this.btnStoreSettings.Location = new System.Drawing.Point(2, 504);
             this.btnStoreSettings.Name = "btnStoreSettings";
-            this.btnStoreSettings.Size = new System.Drawing.Size(245, 39);
+            this.btnStoreSettings.Size = new System.Drawing.Size(297, 39);
             this.btnStoreSettings.TabIndex = 2;
             this.btnStoreSettings.Text = "  STORE SETTINGS";
             this.btnStoreSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,9 +206,9 @@
             this.btnRecords.ForeColor = System.Drawing.Color.White;
             this.btnRecords.Image = ((System.Drawing.Image)(resources.GetObject("btnRecords.Image")));
             this.btnRecords.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRecords.Location = new System.Drawing.Point(2, 375);
+            this.btnRecords.Location = new System.Drawing.Point(2, 414);
             this.btnRecords.Name = "btnRecords";
-            this.btnRecords.Size = new System.Drawing.Size(245, 39);
+            this.btnRecords.Size = new System.Drawing.Size(297, 39);
             this.btnRecords.TabIndex = 2;
             this.btnRecords.Text = "   RECORDS";
             this.btnRecords.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,9 +225,9 @@
             this.btnbrand.ForeColor = System.Drawing.Color.White;
             this.btnbrand.Image = ((System.Drawing.Image)(resources.GetObject("btnbrand.Image")));
             this.btnbrand.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbrand.Location = new System.Drawing.Point(2, 328);
+            this.btnbrand.Location = new System.Drawing.Point(2, 367);
             this.btnbrand.Name = "btnbrand";
-            this.btnbrand.Size = new System.Drawing.Size(245, 39);
+            this.btnbrand.Size = new System.Drawing.Size(297, 39);
             this.btnbrand.TabIndex = 2;
             this.btnbrand.Text = "  BRANDS";
             this.btnbrand.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,9 +244,9 @@
             this.btnCategory.ForeColor = System.Drawing.Color.White;
             this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
             this.btnCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategory.Location = new System.Drawing.Point(2, 281);
+            this.btnCategory.Location = new System.Drawing.Point(2, 320);
             this.btnCategory.Name = "btnCategory";
-            this.btnCategory.Size = new System.Drawing.Size(245, 39);
+            this.btnCategory.Size = new System.Drawing.Size(297, 39);
             this.btnCategory.TabIndex = 2;
             this.btnCategory.Text = "   CATEGORY";
             this.btnCategory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,9 +263,9 @@
             this.btnProduct.ForeColor = System.Drawing.Color.White;
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
             this.btnProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProduct.Location = new System.Drawing.Point(2, 187);
+            this.btnProduct.Location = new System.Drawing.Point(2, 182);
             this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(245, 39);
+            this.btnProduct.Size = new System.Drawing.Size(297, 39);
             this.btnProduct.TabIndex = 2;
             this.btnProduct.Text = "  PRODUCTS";
             this.btnProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -279,9 +283,9 @@
             this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashBoard.Location = new System.Drawing.Point(2, 136);
             this.btnDashBoard.Name = "btnDashBoard";
-            this.btnDashBoard.Size = new System.Drawing.Size(245, 39);
+            this.btnDashBoard.Size = new System.Drawing.Size(297, 39);
             this.btnDashBoard.TabIndex = 2;
-            this.btnDashBoard.Text = "DASHBOARD";
+            this.btnDashBoard.Text = " DASHBOARD";
             this.btnDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashBoard.UseVisualStyleBackColor = true;
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
@@ -322,9 +326,9 @@
             this.MainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.MainPanel.Location = new System.Drawing.Point(253, 45);
+            this.MainPanel.Location = new System.Drawing.Point(303, 10);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1327, 646);
+            this.MainPanel.Size = new System.Drawing.Size(1277, 733);
             this.MainPanel.TabIndex = 2;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
@@ -332,7 +336,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1580, 691);
+            this.ClientSize = new System.Drawing.Size(1580, 743);
             this.ControlBox = false;
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel2);
@@ -343,7 +347,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -365,9 +368,9 @@
         private System.Windows.Forms.Button btnCategory;
         private System.Windows.Forms.Button btnDashBoard;
         private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Button btnCloseMainForm;
         private System.Windows.Forms.Button btnStock;
         public System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnSold;
+        private System.Windows.Forms.Button btnVendor;
     }
 }

@@ -191,6 +191,18 @@
     <Compile Include="frmUserAccounts.Designer.cs">
       <DependentUpon>frmUserAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVendorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendorList.Designer.cs">
+      <DependentUpon>frmVendorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendor.Designer.cs">
+      <DependentUpon>frmVendor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVoid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +291,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserAccounts.resx">
       <DependentUpon>frmUserAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendor.resx">
+      <DependentUpon>frmVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendorList.resx">
+      <DependentUpon>frmVendorList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVoid.resx">
       <DependentUpon>frmVoid.cs</DependentUpon>

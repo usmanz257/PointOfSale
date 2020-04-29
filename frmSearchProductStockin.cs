@@ -62,11 +62,12 @@ namespace PointOfSale
                         //<task>inserting stock 
                         //<author>usman zulfiqar 
                         //<date>13/04/2020
-                        cm = new SqlCommand("Insert into tblstockin(refno,pcode,sdate,stockinby)values(@refno,@pcode,@sdate,@stockinby)", cn);
+                        cm = new SqlCommand("Insert into tblstockin(refno,pcode,sdate,stockinby,vendorid)values(@refno,@pcode,@sdate,@stockinby,@vendorid)", cn);
                         cm.Parameters.AddWithValue("@refno", slist.txtRefNo.Text);
                         cm.Parameters.AddWithValue("@pcode", getPcode);
                         cm.Parameters.AddWithValue("@sdate", slist.txtStockInDate.Value);
                         cm.Parameters.AddWithValue("@stockinby", slist.txtStockInBy.Text);
+                        cm.Parameters.AddWithValue("@vendorid", slist._vandorId); 
                         cm.ExecuteNonQuery();
                         cn.Close();
                         MessageBox.Show("Successfully Added!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
