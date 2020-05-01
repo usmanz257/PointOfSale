@@ -45,6 +45,11 @@ namespace PointOfSale
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            if ((int.Parse(txtPercent.Text) < 0) || (int.Parse(txtPercent.Text) > 100))
+            {
+                MessageBox.Show("Please enter valid amount of discount", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else { 
             try {
                 cn.Open();
                 cm = new SqlCommand("Update tblCart set disc = @disc, disc_percent= @disc_percent where id = @id", cn);
@@ -62,15 +67,35 @@ namespace PointOfSale
                 MessageBox.Show(ex.Message);
 
             }
+            }
         }
 
         private void frmDiscount_KeyDown(object sender, KeyEventArgs e)
         {
+
 
             if (e.KeyCode == Keys.Escape)
             {
                 this.Dispose();
             }
         }
+
+        private void txtPercent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar == 46))
+            {
+                //accept . char
+            }
+            else if (e.KeyChar == 8)
+            {
+                //accept backspace
+            }
+            else if ((e.KeyChar < 48) || (e.KeyChar > 57))// ascii code 48-57 between 0-9
+            {
+                e.Handled = true;
+            }
+
+        }
+
     }
 }

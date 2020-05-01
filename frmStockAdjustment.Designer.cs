@@ -75,7 +75,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1250, 40);
+            this.panel1.Size = new System.Drawing.Size(1250, 56);
             this.panel1.TabIndex = 2;
             // 
             // txtSearchProduct
@@ -85,15 +85,16 @@
             // 
             // 
             this.txtSearchProduct.CustomButton.Image = null;
-            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(436, 1);
+            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(422, 2);
             this.txtSearchProduct.CustomButton.Name = "";
-            this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSearchProduct.CustomButton.TabIndex = 1;
             this.txtSearchProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtSearchProduct.CustomButton.UseSelectable = true;
             this.txtSearchProduct.CustomButton.Visible = false;
             this.txtSearchProduct.DisplayIcon = true;
+            this.txtSearchProduct.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSearchProduct.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.Icon")));
             this.txtSearchProduct.Lines = new string[0];
             this.txtSearchProduct.Location = new System.Drawing.Point(723, 8);
@@ -106,12 +107,12 @@
             this.txtSearchProduct.SelectionLength = 0;
             this.txtSearchProduct.SelectionStart = 0;
             this.txtSearchProduct.ShortcutsEnabled = true;
-            this.txtSearchProduct.Size = new System.Drawing.Size(460, 25);
-            this.txtSearchProduct.TabIndex = 3;
+            this.txtSearchProduct.Size = new System.Drawing.Size(460, 40);
+            this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.UseSelectable = true;
             this.txtSearchProduct.WaterMark = "Search Product";
             this.txtSearchProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSearchProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSearchProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // btnClose
@@ -123,7 +124,7 @@
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(1215, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.Size = new System.Drawing.Size(35, 56);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -142,7 +143,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 444);
+            this.label2.Location = new System.Drawing.Point(30, 467);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 23);
             this.label2.TabIndex = 3;
@@ -151,7 +152,7 @@
             // txtRefNo
             // 
             this.txtRefNo.Enabled = false;
-            this.txtRefNo.Location = new System.Drawing.Point(172, 441);
+            this.txtRefNo.Location = new System.Drawing.Point(172, 464);
             this.txtRefNo.Name = "txtRefNo";
             this.txtRefNo.Size = new System.Drawing.Size(330, 30);
             this.txtRefNo.TabIndex = 4;
@@ -159,15 +160,15 @@
             // txtPcode
             // 
             this.txtPcode.Enabled = false;
-            this.txtPcode.Location = new System.Drawing.Point(172, 477);
+            this.txtPcode.Location = new System.Drawing.Point(172, 500);
             this.txtPcode.Name = "txtPcode";
             this.txtPcode.Size = new System.Drawing.Size(455, 30);
-            this.txtPcode.TabIndex = 6;
+            this.txtPcode.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 480);
+            this.label3.Location = new System.Drawing.Point(30, 503);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 23);
             this.label3.TabIndex = 5;
@@ -175,15 +176,15 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(173, 513);
+            this.txtDescription.Location = new System.Drawing.Point(173, 536);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(455, 30);
-            this.txtDescription.TabIndex = 8;
+            this.txtDescription.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 516);
+            this.label4.Location = new System.Drawing.Point(30, 539);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 23);
             this.label4.TabIndex = 7;
@@ -191,15 +192,15 @@
             // 
             // txtQty
             // 
-            this.txtQty.Location = new System.Drawing.Point(172, 549);
+            this.txtQty.Location = new System.Drawing.Point(172, 572);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(455, 30);
-            this.txtQty.TabIndex = 10;
+            this.txtQty.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 552);
+            this.label5.Location = new System.Drawing.Point(30, 575);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 23);
             this.label5.TabIndex = 9;
@@ -208,7 +209,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(664, 446);
+            this.label6.Location = new System.Drawing.Point(664, 469);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 23);
             this.label6.TabIndex = 11;
@@ -220,22 +221,22 @@
             this.cboCommand.Items.AddRange(new object[] {
             "REMOVE FROM INVENTORY",
             "ADD TO INVENTORY"});
-            this.cboCommand.Location = new System.Drawing.Point(783, 443);
+            this.cboCommand.Location = new System.Drawing.Point(783, 466);
             this.cboCommand.Name = "cboCommand";
             this.cboCommand.Size = new System.Drawing.Size(455, 31);
-            this.cboCommand.TabIndex = 12;
+            this.cboCommand.TabIndex = 6;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(783, 480);
+            this.txtRemarks.Location = new System.Drawing.Point(783, 503);
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(455, 30);
-            this.txtRemarks.TabIndex = 14;
+            this.txtRemarks.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(664, 477);
+            this.label7.Location = new System.Drawing.Point(664, 500);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 23);
             this.label7.TabIndex = 13;
@@ -244,15 +245,15 @@
             // txtUser
             // 
             this.txtUser.Enabled = false;
-            this.txtUser.Location = new System.Drawing.Point(783, 516);
+            this.txtUser.Location = new System.Drawing.Point(783, 539);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(455, 30);
-            this.txtUser.TabIndex = 16;
+            this.txtUser.TabIndex = 10;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(664, 519);
+            this.label8.Location = new System.Drawing.Point(664, 542);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 23);
             this.label8.TabIndex = 15;
@@ -294,14 +295,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridStockAdjustment.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridStockAdjustment.EnableHeadersVisualStyles = false;
-            this.dataGridStockAdjustment.Location = new System.Drawing.Point(12, 46);
+            this.dataGridStockAdjustment.Location = new System.Drawing.Point(12, 59);
             this.dataGridStockAdjustment.Name = "dataGridStockAdjustment";
             this.dataGridStockAdjustment.RowHeadersVisible = false;
             this.dataGridStockAdjustment.RowHeadersWidth = 51;
             this.dataGridStockAdjustment.RowTemplate.Height = 24;
             this.dataGridStockAdjustment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridStockAdjustment.Size = new System.Drawing.Size(1226, 388);
-            this.dataGridStockAdjustment.TabIndex = 17;
+            this.dataGridStockAdjustment.Size = new System.Drawing.Size(1226, 401);
+            this.dataGridStockAdjustment.TabIndex = 3;
             this.dataGridStockAdjustment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridStockAdjustment_CellContentClick);
             // 
             // Column1
@@ -310,6 +311,8 @@
             this.Column1.HeaderText = "#";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.Width = 47;
             // 
             // Column2
@@ -318,6 +321,8 @@
             this.Column2.HeaderText = "PCODE";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.Width = 92;
             // 
             // Column8
@@ -326,6 +331,8 @@
             this.Column8.HeaderText = "BARCODE";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column8.Width = 113;
             // 
             // Column4
@@ -334,6 +341,8 @@
             this.Column4.HeaderText = "DESCRIPTION";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column3
             // 
@@ -341,6 +350,8 @@
             this.Column3.HeaderText = "BRAND";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column3.Width = 93;
             // 
             // Column5
@@ -349,6 +360,8 @@
             this.Column5.HeaderText = "CATEGORY";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column5.Width = 120;
             // 
             // Column6
@@ -357,6 +370,8 @@
             this.Column6.HeaderText = "PRICE";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Width = 82;
             // 
             // Column7
@@ -365,6 +380,8 @@
             this.Column7.HeaderText = "STOCK ON HAND";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column7.Width = 172;
             // 
             // Select
@@ -375,6 +392,7 @@
             this.Select.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Select.MinimumWidth = 6;
             this.Select.Name = "Select";
+            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Select.Width = 6;
             // 
             // btnSave
@@ -382,11 +400,12 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1130, 552);
+            this.btnSave.Location = new System.Drawing.Point(1130, 575);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 40);
-            this.btnSave.TabIndex = 18;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -395,10 +414,10 @@
             // 
             this.lnkGenerate.AutoSize = true;
             this.lnkGenerate.LinkColor = System.Drawing.Color.Gray;
-            this.lnkGenerate.Location = new System.Drawing.Point(511, 443);
+            this.lnkGenerate.Location = new System.Drawing.Point(511, 466);
             this.lnkGenerate.Name = "lnkGenerate";
             this.lnkGenerate.Size = new System.Drawing.Size(116, 23);
-            this.lnkGenerate.TabIndex = 27;
+            this.lnkGenerate.TabIndex = 5;
             this.lnkGenerate.TabStop = true;
             this.lnkGenerate.Text = " [ GENERATE ]";
             this.lnkGenerate.VisitedLinkColor = System.Drawing.Color.Gray;
@@ -408,7 +427,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 603);
+            this.ClientSize = new System.Drawing.Size(1250, 626);
             this.ControlBox = false;
             this.Controls.Add(this.lnkGenerate);
             this.Controls.Add(this.btnSave);
@@ -464,6 +483,7 @@
         private System.Windows.Forms.DataGridView dataGridStockAdjustment;
         public System.Windows.Forms.Button btnSave;
         private MetroFramework.Controls.MetroTextBox txtSearchProduct;
+        private System.Windows.Forms.LinkLabel lnkGenerate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -473,6 +493,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn Select;
-        private System.Windows.Forms.LinkLabel lnkGenerate;
     }
 }

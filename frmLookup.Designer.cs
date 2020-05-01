@@ -74,7 +74,7 @@
             this.btnClose.Location = new System.Drawing.Point(1115, 0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 40);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -96,7 +96,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1150, 40);
+            this.panel2.Size = new System.Drawing.Size(1150, 60);
             this.panel2.TabIndex = 7;
             // 
             // panel3
@@ -105,7 +105,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(676, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(474, 40);
+            this.panel3.Size = new System.Drawing.Size(474, 60);
             this.panel3.TabIndex = 3;
             // 
             // txtSearchProduct
@@ -114,18 +114,19 @@
             // 
             // 
             this.txtSearchProduct.CustomButton.Image = null;
-            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(421, 1);
+            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(407, 2);
             this.txtSearchProduct.CustomButton.Name = "";
-            this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSearchProduct.CustomButton.TabIndex = 1;
             this.txtSearchProduct.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtSearchProduct.CustomButton.UseSelectable = true;
             this.txtSearchProduct.CustomButton.Visible = false;
             this.txtSearchProduct.DisplayIcon = true;
+            this.txtSearchProduct.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSearchProduct.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.Icon")));
             this.txtSearchProduct.Lines = new string[0];
-            this.txtSearchProduct.Location = new System.Drawing.Point(22, 9);
+            this.txtSearchProduct.Location = new System.Drawing.Point(22, 11);
             this.txtSearchProduct.MaxLength = 32767;
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.PasswordChar = '\0';
@@ -135,19 +136,22 @@
             this.txtSearchProduct.SelectionLength = 0;
             this.txtSearchProduct.SelectionStart = 0;
             this.txtSearchProduct.ShortcutsEnabled = true;
-            this.txtSearchProduct.Size = new System.Drawing.Size(445, 25);
-            this.txtSearchProduct.TabIndex = 0;
+            this.txtSearchProduct.Size = new System.Drawing.Size(445, 40);
+            this.txtSearchProduct.TabIndex = 2;
             this.txtSearchProduct.UseCustomBackColor = true;
             this.txtSearchProduct.UseSelectable = true;
             this.txtSearchProduct.WaterMark = "Search Product";
             this.txtSearchProduct.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSearchProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSearchProduct.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             this.txtSearchProduct.Click += new System.EventHandler(this.txtSearchProduct_Click);
             // 
             // dataGridProduct
             // 
             this.dataGridProduct.AllowUserToAddRows = false;
+            this.dataGridProduct.AllowUserToDeleteRows = false;
+            this.dataGridProduct.AllowUserToResizeColumns = false;
+            this.dataGridProduct.AllowUserToResizeRows = false;
             this.dataGridProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -182,13 +186,14 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridProduct.EnableHeadersVisualStyles = false;
-            this.dataGridProduct.Location = new System.Drawing.Point(0, 80);
+            this.dataGridProduct.Location = new System.Drawing.Point(0, 106);
+            this.dataGridProduct.MultiSelect = false;
             this.dataGridProduct.Name = "dataGridProduct";
             this.dataGridProduct.RowHeadersVisible = false;
             this.dataGridProduct.RowHeadersWidth = 51;
             this.dataGridProduct.RowTemplate.Height = 24;
             this.dataGridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProduct.Size = new System.Drawing.Size(1150, 470);
+            this.dataGridProduct.Size = new System.Drawing.Size(1150, 444);
             this.dataGridProduct.TabIndex = 8;
             this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
             // 
@@ -198,6 +203,8 @@
             this.Column1.HeaderText = "#";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.Width = 47;
             // 
             // Column2
@@ -205,6 +212,8 @@
             this.Column2.HeaderText = "PCODE";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.Width = 125;
             // 
             // Column8
@@ -213,6 +222,8 @@
             this.Column8.HeaderText = "BARCODE";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column8.Width = 113;
             // 
             // Column4
@@ -221,6 +232,8 @@
             this.Column4.HeaderText = "DESCRIPTION";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column4.Width = 143;
             // 
             // Column3
@@ -229,6 +242,8 @@
             this.Column3.HeaderText = "BRAND";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column5
             // 
@@ -236,6 +251,8 @@
             this.Column5.HeaderText = "CATEGORY";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column5.Width = 120;
             // 
             // Column6
@@ -244,6 +261,8 @@
             this.Column6.HeaderText = "PRICE";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column6.Width = 82;
             // 
             // Column7
@@ -252,6 +271,8 @@
             this.Column7.HeaderText = "QTY";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column7.Width = 67;
             // 
             // Select
@@ -262,6 +283,7 @@
             this.Select.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Select.MinimumWidth = 6;
             this.Select.Name = "Select";
+            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Select.Width = 6;
             // 
             // frmLookup

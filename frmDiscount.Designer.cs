@@ -84,7 +84,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(30, 199);
+            this.lblID.Location = new System.Drawing.Point(28, 240);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(27, 23);
             this.lblID.TabIndex = 3;
@@ -93,59 +93,67 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 80);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 91);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 23);
+            this.label2.Size = new System.Drawing.Size(49, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Price";
             // 
             // txtprice
             // 
             this.txtprice.Enabled = false;
-            this.txtprice.Location = new System.Drawing.Point(187, 80);
+            this.txtprice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Location = new System.Drawing.Point(187, 83);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Size = new System.Drawing.Size(470, 30);
+            this.txtprice.Size = new System.Drawing.Size(470, 34);
             this.txtprice.TabIndex = 5;
             // 
             // txtPercent
             // 
-            this.txtPercent.Location = new System.Drawing.Point(187, 116);
+            this.txtPercent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPercent.Location = new System.Drawing.Point(187, 123);
             this.txtPercent.Name = "txtPercent";
-            this.txtPercent.Size = new System.Drawing.Size(470, 30);
+            this.txtPercent.Size = new System.Drawing.Size(470, 34);
             this.txtPercent.TabIndex = 7;
             this.txtPercent.TextChanged += new System.EventHandler(this.txtPercent_TextChanged);
+            this.txtPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPercent_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 116);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(28, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 23);
+            this.label3.Size = new System.Drawing.Size(112, 23);
             this.label3.TabIndex = 6;
             this.label3.Text = "Discount (%)";
             // 
             // txtAmount
             // 
             this.txtAmount.Enabled = false;
-            this.txtAmount.Location = new System.Drawing.Point(187, 152);
+            this.txtAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(187, 163);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(470, 30);
+            this.txtAmount.Size = new System.Drawing.Size(470, 34);
             this.txtAmount.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 152);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 23);
+            this.label4.Size = new System.Drawing.Size(150, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "Discount Amount";
             // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(187, 188);
+            this.btnConfirm.Location = new System.Drawing.Point(187, 227);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(470, 45);
             this.btnConfirm.TabIndex = 10;
@@ -157,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 245);
+            this.ClientSize = new System.Drawing.Size(695, 295);
             this.ControlBox = false;
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtAmount);

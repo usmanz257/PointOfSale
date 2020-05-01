@@ -98,6 +98,8 @@
             // dataGridCategory
             // 
             this.dataGridCategory.AllowUserToAddRows = false;
+            this.dataGridCategory.AllowUserToResizeColumns = false;
+            this.dataGridCategory.AllowUserToResizeRows = false;
             this.dataGridCategory.BackgroundColor = System.Drawing.Color.White;
             this.dataGridCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -127,6 +129,7 @@
             this.dataGridCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridCategory.EnableHeadersVisualStyles = false;
             this.dataGridCategory.Location = new System.Drawing.Point(0, 40);
+            this.dataGridCategory.MultiSelect = false;
             this.dataGridCategory.Name = "dataGridCategory";
             this.dataGridCategory.RowHeadersVisible = false;
             this.dataGridCategory.RowHeadersWidth = 51;
@@ -142,6 +145,8 @@
             this.Column1.HeaderText = "#";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column1.Width = 45;
             // 
             // Column2
@@ -149,6 +154,8 @@
             this.Column2.HeaderText = "ID";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.Visible = false;
             this.Column2.Width = 125;
             // 
@@ -158,6 +165,8 @@
             this.Column3.HeaderText = "CATEGORY";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Edit
             // 
@@ -167,6 +176,7 @@
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Edit.Width = 6;
             // 
             // Delete
@@ -177,6 +187,7 @@
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Delete.Width = 6;
             // 
             // frmCategoryList

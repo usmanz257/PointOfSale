@@ -97,9 +97,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 28);
+            this.label1.Size = new System.Drawing.Size(227, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cancel Order Details";
+            this.label1.Text = "CANCEL ORDER DETAILS";
             // 
             // label2
             // 
@@ -113,7 +113,7 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(196, 88);
+            this.txtID.Location = new System.Drawing.Point(211, 88);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(300, 30);
             this.txtID.TabIndex = 4;
@@ -131,14 +131,14 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(532, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
+            this.label3.Size = new System.Drawing.Size(144, 23);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Transection No";
+            this.label3.Text = "TRASECTION NO.";
             // 
             // txtPcode
             // 
             this.txtPcode.Enabled = false;
-            this.txtPcode.Location = new System.Drawing.Point(196, 124);
+            this.txtPcode.Location = new System.Drawing.Point(211, 124);
             this.txtPcode.Name = "txtPcode";
             this.txtPcode.Size = new System.Drawing.Size(300, 30);
             this.txtPcode.TabIndex = 8;
@@ -148,14 +148,14 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(34, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 23);
+            this.label4.Size = new System.Drawing.Size(137, 23);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Product Code";
+            this.label4.Text = "PRODUCT CODE";
             // 
             // txtDescription
             // 
             this.txtDescription.Enabled = false;
-            this.txtDescription.Location = new System.Drawing.Point(196, 160);
+            this.txtDescription.Location = new System.Drawing.Point(211, 160);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(300, 62);
@@ -167,9 +167,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(36, 163);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 23);
+            this.label5.Size = new System.Drawing.Size(116, 23);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Description";
+            this.label5.Text = "DESCRIPTION";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtPrice
@@ -186,9 +186,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(532, 127);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 23);
+            this.label6.Size = new System.Drawing.Size(55, 23);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Price ";
+            this.label6.Text = "PRICE";
             // 
             // txtCancelQty
             // 
@@ -196,15 +196,16 @@
             this.txtCancelQty.Name = "txtCancelQty";
             this.txtCancelQty.Size = new System.Drawing.Size(325, 30);
             this.txtCancelQty.TabIndex = 14;
+            this.txtCancelQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCancelQty_KeyPress);
             // 
             // lblCancelQty
             // 
             this.lblCancelQty.AutoSize = true;
             this.lblCancelQty.Location = new System.Drawing.Point(532, 279);
             this.lblCancelQty.Name = "lblCancelQty";
-            this.lblCancelQty.Size = new System.Drawing.Size(132, 23);
+            this.lblCancelQty.Size = new System.Drawing.Size(159, 23);
             this.lblCancelQty.TabIndex = 13;
-            this.lblCancelQty.Text = "Cancel Quantity";
+            this.lblCancelQty.Text = "CANCEL QUANTITY";
             // 
             // txtTotal
             // 
@@ -220,14 +221,14 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(533, 199);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 23);
+            this.label8.Size = new System.Drawing.Size(57, 23);
             this.label8.TabIndex = 15;
-            this.label8.Text = "Total";
+            this.label8.Text = "TOTAL";
             // 
             // txtVoid
             // 
             this.txtVoid.Enabled = false;
-            this.txtVoid.Location = new System.Drawing.Point(196, 272);
+            this.txtVoid.Location = new System.Drawing.Point(211, 272);
             this.txtVoid.Name = "txtVoid";
             this.txtVoid.Size = new System.Drawing.Size(300, 30);
             this.txtVoid.TabIndex = 18;
@@ -237,9 +238,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(34, 279);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 23);
+            this.label9.Size = new System.Drawing.Size(74, 23);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Void By";
+            this.label9.Text = "VOID BY";
             // 
             // label10
             // 
@@ -266,7 +267,7 @@
             // txtCancel
             // 
             this.txtCancel.Enabled = false;
-            this.txtCancel.Location = new System.Drawing.Point(196, 308);
+            this.txtCancel.Location = new System.Drawing.Point(211, 308);
             this.txtCancel.Name = "txtCancel";
             this.txtCancel.Size = new System.Drawing.Size(300, 30);
             this.txtCancel.TabIndex = 22;
@@ -276,9 +277,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(34, 315);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(107, 23);
+            this.label12.Size = new System.Drawing.Size(125, 23);
             this.label12.TabIndex = 21;
-            this.label12.Text = "Cancelled By";
+            this.label12.Text = "CANCELLED BY";
             // 
             // txtReason
             // 
@@ -293,18 +294,18 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(533, 308);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 23);
+            this.label13.Size = new System.Drawing.Size(92, 23);
             this.label13.TabIndex = 23;
-            this.label13.Text = "Reason(s)";
+            this.label13.Text = "REASON(s)";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(34, 351);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(147, 23);
+            this.label14.Size = new System.Drawing.Size(167, 23);
             this.label14.TabIndex = 25;
-            this.label14.Text = "Add to Inventory?";
+            this.label14.Text = "ADD TO INVENTORY";
             // 
             // cboAction
             // 
@@ -312,7 +313,7 @@
             this.cboAction.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.cboAction.Location = new System.Drawing.Point(196, 343);
+            this.cboAction.Location = new System.Drawing.Point(211, 343);
             this.cboAction.Name = "cboAction";
             this.cboAction.Size = new System.Drawing.Size(300, 31);
             this.cboAction.TabIndex = 26;
@@ -323,12 +324,13 @@
             this.btnCancelOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnCancelOrder.FlatAppearance.BorderSize = 0;
             this.btnCancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelOrder.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelOrder.ForeColor = System.Drawing.Color.White;
             this.btnCancelOrder.Location = new System.Drawing.Point(815, 400);
             this.btnCancelOrder.Name = "btnCancelOrder";
             this.btnCancelOrder.Size = new System.Drawing.Size(202, 45);
             this.btnCancelOrder.TabIndex = 27;
-            this.btnCancelOrder.Text = "Cancel Order";
+            this.btnCancelOrder.Text = "CANCEL ORDER";
             this.btnCancelOrder.UseVisualStyleBackColor = false;
             this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
             // 
@@ -346,9 +348,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(532, 163);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 23);
+            this.label15.Size = new System.Drawing.Size(141, 23);
             this.label15.TabIndex = 28;
-            this.label15.Text = "Qty / Discount";
+            this.label15.Text = "QTY / DISCOUNT";
             // 
             // txtDiscount
             // 

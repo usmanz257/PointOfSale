@@ -42,6 +42,10 @@ namespace PointOfSale
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
             if ((e.KeyChar == 13) && (txtQty.Text != String.Empty))
             {
                 String id="";
@@ -112,7 +116,7 @@ namespace PointOfSale
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

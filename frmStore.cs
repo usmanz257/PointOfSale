@@ -88,5 +88,10 @@ namespace PointOfSale
             cn.Close();
             return count;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

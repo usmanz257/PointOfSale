@@ -18,12 +18,12 @@ namespace PointOfSale
         SqlDataReader dr;
         DBConnection dbcon = new DBConnection();
         frmPOS fpos;
-        public frmSettle( frmPOS fp)
+        public frmSettle(frmPOS fp)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             fpos = fp;
-            this.KeyPreview = true;
+            //this.KeyPreview = true;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -153,6 +153,19 @@ namespace PointOfSale
             {
                 this.Dispose();
             }else if (e.KeyCode == Keys.Enter)
+            {
+                btnEnter_Click(sender, e);
+            }
+        }
+
+        private void frmSettle_Load(object sender, EventArgs e)
+        {
+            txtCash.Focus();
+        }
+
+        private void txtCash_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
             {
                 btnEnter_Click(sender, e);
             }

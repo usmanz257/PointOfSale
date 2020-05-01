@@ -286,7 +286,7 @@ namespace PointOfSale
                 if (MessageBox.Show("Are you sure to remove this item?", "Delete item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("delete from tblproduct where id like '" + dataGridSale.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
+                    cm = new SqlCommand("delete from tblcart where id like '" + dataGridSale.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
                      
                     cm.ExecuteNonQuery();
                     cn.Close();
@@ -470,6 +470,11 @@ namespace PointOfSale
         }
 
         private void frmPOS_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

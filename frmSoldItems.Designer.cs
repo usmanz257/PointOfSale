@@ -88,7 +88,7 @@
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(39, 45);
-            this.btnClose.TabIndex = 2;
+            this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -106,6 +106,9 @@
             // dataGridSaleHistory
             // 
             this.dataGridSaleHistory.AllowUserToAddRows = false;
+            this.dataGridSaleHistory.AllowUserToDeleteRows = false;
+            this.dataGridSaleHistory.AllowUserToResizeColumns = false;
+            this.dataGridSaleHistory.AllowUserToResizeRows = false;
             this.dataGridSaleHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -114,7 +117,7 @@
             this.dataGridSaleHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -143,6 +146,7 @@
             this.dataGridSaleHistory.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridSaleHistory.EnableHeadersVisualStyles = false;
             this.dataGridSaleHistory.Location = new System.Drawing.Point(0, 85);
+            this.dataGridSaleHistory.MultiSelect = false;
             this.dataGridSaleHistory.Name = "dataGridSaleHistory";
             this.dataGridSaleHistory.RowHeadersVisible = false;
             this.dataGridSaleHistory.RowHeadersWidth = 51;
@@ -158,13 +162,16 @@
             this.Column1.HeaderText = "#";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 47;
+            this.Column1.ReadOnly = true;
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column1.Width = 51;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "ID";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column2.Visible = false;
             this.Column2.Width = 125;
@@ -176,6 +183,8 @@
             this.Column9.HeaderText = "INVOICE #";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column9.Width = 125;
             // 
             // Column8
@@ -185,6 +194,8 @@
             this.Column8.HeaderText = "PCODE";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column8.Width = 125;
             // 
             // Column3
@@ -195,6 +206,7 @@
             this.Column3.HeaderText = "DESCRIPTION";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Column7
@@ -204,6 +216,7 @@
             this.Column7.HeaderText = "PRICE";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column7.Width = 125;
             // 
@@ -215,8 +228,9 @@
             this.Column4.HeaderText = "QTY";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.Width = 67;
+            this.Column4.Width = 74;
             // 
             // Column5
             // 
@@ -226,8 +240,9 @@
             this.Column5.HeaderText = "DISCOUNT";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.Width = 121;
+            this.Column5.Width = 134;
             // 
             // Column6
             // 
@@ -237,8 +252,9 @@
             this.Column6.HeaderText = "TOTAL";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column6.Width = 84;
+            this.Column6.Width = 93;
             // 
             // colCancel
             // 
@@ -247,6 +263,7 @@
             this.colCancel.Image = ((System.Drawing.Image)(resources.GetObject("colCancel.Image")));
             this.colCancel.MinimumWidth = 6;
             this.colCancel.Name = "colCancel";
+            this.colCancel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colCancel.Width = 6;
             // 
             // panel2
@@ -290,7 +307,7 @@
             this.dt2.Location = new System.Drawing.Point(399, 6);
             this.dt2.Name = "dt2";
             this.dt2.Size = new System.Drawing.Size(154, 30);
-            this.dt2.TabIndex = 2;
+            this.dt2.TabIndex = 3;
             this.dt2.ValueChanged += new System.EventHandler(this.dt2_ValueChanged);
             // 
             // dt1
@@ -299,7 +316,7 @@
             this.dt1.Location = new System.Drawing.Point(230, 7);
             this.dt1.Name = "dt1";
             this.dt1.Size = new System.Drawing.Size(159, 30);
-            this.dt1.TabIndex = 1;
+            this.dt1.TabIndex = 2;
             this.dt1.ValueChanged += new System.EventHandler(this.dt1_ValueChanged);
             // 
             // label2
@@ -356,6 +373,7 @@
         public System.Windows.Forms.DateTimePicker dt2;
         public System.Windows.Forms.DateTimePicker dt1;
         public System.Windows.Forms.ComboBox cboCashier;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
@@ -366,6 +384,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewImageColumn colCancel;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

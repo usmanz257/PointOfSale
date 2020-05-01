@@ -48,6 +48,11 @@ namespace PointOfSale
         {
             try
             {
+                if(slist.cboVandor.Text == string.Empty)
+                {
+                    MessageBox.Show("Please Select the vendor first", "CAUTION", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 string colName = dataGridProduct.Columns[e.ColumnIndex].Name;
                 if (colName == "colSelect")
                 {

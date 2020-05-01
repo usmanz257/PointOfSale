@@ -96,6 +96,7 @@ namespace PointOfSale
 
         private void lnkProducts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+           
             frmSearchProductStockin frm = new frmSearchProductStockin(this);
             frm.LoadProduct();
             frm.ShowDialog();
@@ -183,6 +184,11 @@ namespace PointOfSale
             txtRefNo.Clear();
             txtRefNo.Text += rnd.Next();
            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            dataGridStockIn.Rows.Clear();
         }
     }
 }

@@ -15,7 +15,11 @@ namespace PointOfSale
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        Form ReferenceFrm = new frmDashboard();
         public string Name;
+        public string _pass;
+        Button ReferenceBtn;
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,6 +32,8 @@ namespace PointOfSale
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Button test = new Button();
+            ReferenceBtn = test;
             btnDashBoard_Click(sender, e);
         }
         public void NotifyCriticalItems() 
@@ -55,7 +61,12 @@ namespace PointOfSale
         }
         private void btnbrand_Click(object sender, EventArgs e)
         {
+            btnbrand.Enabled = false;
+            ReferenceFrm.Dispose();
+            ReferenceBtn.Enabled = true;
             frmBrandList frmBrand = new frmBrandList();
+            ReferenceFrm = frmBrand;
+            ReferenceBtn = btnbrand;
             frmBrand.TopLevel = false;
             MainPanel.Controls.Add(frmBrand);
             frmBrand.BringToFront();
@@ -75,7 +86,12 @@ namespace PointOfSale
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
+            btnCategory.Enabled = false;
+            ReferenceFrm.Dispose();
+            ReferenceBtn.Enabled = true;
             frmCategoryList frmCategory = new frmCategoryList();
+            ReferenceFrm = frmCategory;
+            ReferenceBtn = btnCategory;
             frmCategory.TopLevel = false;
             MainPanel.Controls.Add(frmCategory);
             frmCategory.BringToFront();
@@ -85,7 +101,12 @@ namespace PointOfSale
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnProduct.Enabled = false;
             frmProductList frmProduct = new frmProductList();
+            ReferenceFrm = frmProduct;
+            ReferenceBtn = btnProduct;
             frmProduct.TopLevel = false;
             MainPanel.Controls.Add(frmProduct);
             frmProduct.BringToFront();
@@ -96,7 +117,12 @@ namespace PointOfSale
 
         private void btnStock_Click(object sender, EventArgs e)
         {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnStock.Enabled = false;
             frmStockIn frmStock = new frmStockIn();
+            ReferenceFrm = frmStock;
+            ReferenceBtn = btnStock;
             frmStock.TopLevel = false;
             MainPanel.Controls.Add(frmStock);
             frmStock.BringToFront();
@@ -111,25 +137,36 @@ namespace PointOfSale
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
-            frmDashboard frm = new frmDashboard();
-            frm.TopLevel = false;
-            MainPanel.Controls.Add(frm);
-            frm.lblDailySales.Text = dbcon.DailySales().ToString("#,##0.00");
-            frm.lblTotalProducts.Text = dbcon.ProductLine().ToString();
-            frm.lblStockOnHand.Text = dbcon.StockOnHand().ToString();
-            frm.lblCritical.Text = dbcon.CriticalStock().ToString();
-            frm.BringToFront();
-            frm.Show();
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnDashBoard.Enabled = false;
+            frmDashboard frmDashBoard = new frmDashboard();
+            ReferenceFrm = frmDashBoard;
+            ReferenceBtn = btnDashBoard;
+            frmDashBoard.TopLevel = false;
+            MainPanel.Controls.Add(frmDashBoard);
+            frmDashBoard.lblDailySales.Text = dbcon.DailySales().ToString("#,##0.00");
+            frmDashBoard.lblTotalProducts.Text = dbcon.ProductLine().ToString();
+            frmDashBoard.lblStockOnHand.Text = dbcon.StockOnHand().ToString();
+            frmDashBoard.lblCritical.Text = dbcon.CriticalStock().ToString();
+            frmDashBoard.BringToFront();
+            frmDashBoard.Show();
 
         }
 
         private void btnUserSettings_Click(object sender, EventArgs e)
         {
-            frmUserAccounts frm = new frmUserAccounts();
-            frm.TopLevel = false;
-            MainPanel.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnUserSettings.Enabled = false;
+            frmUserAccounts frmAccounts = new frmUserAccounts(this);
+            ReferenceFrm = frmAccounts;
+            ReferenceBtn = btnUserSettings;
+            frmAccounts.TopLevel = false;
+            frmAccounts.LoadUser();
+            MainPanel.Controls.Add(frmAccounts);
+            frmAccounts.BringToFront();
+            frmAccounts.Show();
         }
 
         private void MainPanel_Paint(object sender, PaintEventArgs e)
@@ -139,16 +176,26 @@ namespace PointOfSale
 
         private void btnSold_Click(object sender, EventArgs e)
         {
-            frmSoldItems frm = new frmSoldItems();
-            frm.TopLevel = false;
-            MainPanel.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnSold.Enabled = false;
+            frmSoldItems frmSolid = new frmSoldItems();
+            ReferenceFrm = frmSolid;
+            ReferenceBtn = btnSold;
+            frmSolid.TopLevel = false;
+            MainPanel.Controls.Add(frmSolid);
+            frmSolid.BringToFront();
+            frmSolid.Show();
         }
 
         private void btnRecords_Click(object sender, EventArgs e)
         {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnRecords.Enabled = false;
             frmRecords frm = new frmRecords();
+            ReferenceFrm = frm;
+            ReferenceBtn = btnRecords;
             frm.TopLevel = false;
             frm.LoadCriticalItems();
             frm.LoadInventory();
@@ -172,24 +219,40 @@ namespace PointOfSale
 
         private void btnStoreSettings_Click(object sender, EventArgs e)
         {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnStoreSettings.Enabled = false;
             frmStore frm = new frmStore();
+            ReferenceFrm = frm;
+            ReferenceBtn = btnStoreSettings;
             frm.LoadRecords();
             frm.ShowDialog();
         }
 
         private void btnVendor_Click(object sender, EventArgs e)
         {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Close();
+            btnVendor.Enabled = false;
             frmVendorList frm = new frmVendorList();
+            ReferenceFrm = frm;
+            ReferenceBtn = btnVendor;
             frm.TopLevel = false;
             frm.LoadVandors();
             MainPanel.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
         }
+        
 
         private void btnStockAdjustment_Click(object sender, EventArgs e)
         {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Close();
+            btnStockAdjustment.Enabled = false;
             frmStockAdjustment frm = new frmStockAdjustment(this);
+            ReferenceFrm = frm;
+            ReferenceBtn = btnStockAdjustment;
             frm.TopLevel = false;
             frm.LoadProducts();
             frm.txtUser.Text = lblName.Text;
