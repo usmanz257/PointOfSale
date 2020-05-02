@@ -38,25 +38,37 @@ namespace PointOfSale
         }
         public void NotifyCriticalItems() 
         {
+            frmNotification frm = new frmNotification();
             string _critical = "";
             int i = 0;
             string count="";
             cn.Open();
             cm = new SqlCommand("select count(*) from vwCriticalItems", cn);
             count = cm.ExecuteScalar().ToString();
-            cn.Close();
-            cn.Open();
-            cm = new SqlCommand("select * from vwCriticalItems", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
+            if ((count == string.Empty) || (count == "0"))
             {
-                i++;
-                _critical += i +"."+ dr["pdesc"].ToString() + Environment.NewLine;
+                frm.lblNotificationCounter.Text = "CRITICAL STOCK";
+                frm.lblNotifications.Text = "No Critical item";
             }
+            else 
+            {
+                frm.lblNotificationCounter.Text = count + " Critical items";
+                cn.Close();
+                cn.Open();
+                cm = new SqlCommand("select * from vwCriticalItems", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i++;
+                    _critical += i + "." + dr["pdesc"].ToString() + Environment.NewLine;
+                }
+
+            }
+          
             dr.Close();
             cn.Close();
-
-            MessageBox.Show("Critical stock is :" + Environment.NewLine + _critical, count + " Critical items",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            frm.lblNotifications.Text ="Critical stock is :" + Environment.NewLine + _critical;
+            frm.ShowDialog();
 
         }
         private void btnbrand_Click(object sender, EventArgs e)

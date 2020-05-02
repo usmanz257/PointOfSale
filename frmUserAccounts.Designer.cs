@@ -170,8 +170,9 @@
             this.tabUserStatus.Controls.Add(this.tabPage3);
             this.tabUserStatus.Location = new System.Drawing.Point(12, 65);
             this.tabUserStatus.Name = "tabUserStatus";
-            this.tabUserStatus.SelectedIndex = 2;
-            this.tabUserStatus.Size = new System.Drawing.Size(1091, 548);
+            this.tabUserStatus.SelectedIndex = 1;
+            this.tabUserStatus.Size = new System.Drawing.Size(1082, 548);
+            this.tabUserStatus.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabUserStatus.TabIndex = 9;
             this.tabUserStatus.UseSelectable = true;
             // 
@@ -180,7 +181,7 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 38);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1083, 506);
+            this.tabPage1.Size = new System.Drawing.Size(1074, 506);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create User";
             // 
@@ -203,21 +204,20 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1083, 520);
+            this.panel2.Size = new System.Drawing.Size(1074, 520);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(801, 244);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 38);
+            this.btnCancel.Size = new System.Drawing.Size(99, 38);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -225,15 +225,14 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(687, 244);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(108, 38);
+            this.btnSave.Size = new System.Drawing.Size(99, 38);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -246,7 +245,7 @@
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(339, 204);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(570, 34);
+            this.txtName.Size = new System.Drawing.Size(561, 34);
             this.txtName.TabIndex = 7;
             // 
             // label6
@@ -273,7 +272,7 @@
             "Cashier"});
             this.cboRole.Location = new System.Drawing.Point(339, 162);
             this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(570, 36);
+            this.cboRole.Size = new System.Drawing.Size(561, 36);
             this.cboRole.TabIndex = 6;
             // 
             // label5
@@ -296,7 +295,7 @@
             this.txtRetypePassword.Location = new System.Drawing.Point(339, 122);
             this.txtRetypePassword.Name = "txtRetypePassword";
             this.txtRetypePassword.PasswordChar = '*';
-            this.txtRetypePassword.Size = new System.Drawing.Size(570, 34);
+            this.txtRetypePassword.Size = new System.Drawing.Size(561, 34);
             this.txtRetypePassword.TabIndex = 5;
             // 
             // label4
@@ -319,7 +318,7 @@
             this.txtPassword.Location = new System.Drawing.Point(339, 82);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(570, 34);
+            this.txtPassword.Size = new System.Drawing.Size(561, 34);
             this.txtPassword.TabIndex = 4;
             // 
             // label3
@@ -341,7 +340,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(339, 42);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(570, 34);
+            this.txtUsername.Size = new System.Drawing.Size(561, 34);
             this.txtUsername.TabIndex = 3;
             // 
             // label2
@@ -361,7 +360,7 @@
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1083, 506);
+            this.tabPage2.Size = new System.Drawing.Size(1074, 506);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Change Password";
             // 
@@ -381,20 +380,19 @@
             this.panel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1083, 506);
+            this.panel3.Size = new System.Drawing.Size(1074, 506);
             this.panel3.TabIndex = 0;
             // 
             // btnClear
             // 
-            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(836, 206);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(108, 38);
+            this.btnClear.Size = new System.Drawing.Size(99, 38);
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Cancel";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -402,15 +400,14 @@
             // 
             // btnChange
             // 
-            this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChange.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
             this.btnChange.FlatAppearance.BorderSize = 0;
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.ForeColor = System.Drawing.Color.White;
             this.btnChange.Location = new System.Drawing.Point(722, 206);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(108, 38);
+            this.btnChange.Size = new System.Drawing.Size(99, 38);
             this.btnChange.TabIndex = 7;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = false;
@@ -423,7 +420,7 @@
             this.txtConfirmNewPassword.Location = new System.Drawing.Point(377, 166);
             this.txtConfirmNewPassword.Name = "txtConfirmNewPassword";
             this.txtConfirmNewPassword.PasswordChar = '*';
-            this.txtConfirmNewPassword.Size = new System.Drawing.Size(570, 34);
+            this.txtConfirmNewPassword.Size = new System.Drawing.Size(561, 34);
             this.txtConfirmNewPassword.TabIndex = 6;
             // 
             // label7
@@ -445,7 +442,7 @@
             this.txtNewPassword.Location = new System.Drawing.Point(377, 126);
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.Size = new System.Drawing.Size(570, 34);
+            this.txtNewPassword.Size = new System.Drawing.Size(561, 34);
             this.txtNewPassword.TabIndex = 5;
             // 
             // label8
@@ -467,7 +464,7 @@
             this.txtOldPassword.Location = new System.Drawing.Point(377, 86);
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
-            this.txtOldPassword.Size = new System.Drawing.Size(570, 34);
+            this.txtOldPassword.Size = new System.Drawing.Size(561, 34);
             this.txtOldPassword.TabIndex = 4;
             // 
             // label9
@@ -489,7 +486,7 @@
             this.txtUserNameChange.Enabled = false;
             this.txtUserNameChange.Location = new System.Drawing.Point(377, 43);
             this.txtUserNameChange.Name = "txtUserNameChange";
-            this.txtUserNameChange.Size = new System.Drawing.Size(570, 34);
+            this.txtUserNameChange.Size = new System.Drawing.Size(561, 34);
             this.txtUserNameChange.TabIndex = 3;
             // 
             // label10
@@ -509,7 +506,7 @@
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Location = new System.Drawing.Point(4, 38);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1083, 506);
+            this.tabPage3.Size = new System.Drawing.Size(1074, 506);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Active / Deactive Accounts";
             // 
@@ -522,7 +519,7 @@
             this.panel4.Controls.Add(this.dataGridUser);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1087, 510);
+            this.panel4.Size = new System.Drawing.Size(1078, 510);
             this.panel4.TabIndex = 0;
             // 
             // groupBox1
@@ -648,7 +645,7 @@
             this.dataGridUser.RowHeadersWidth = 51;
             this.dataGridUser.RowTemplate.Height = 24;
             this.dataGridUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUser.Size = new System.Drawing.Size(1077, 310);
+            this.dataGridUser.Size = new System.Drawing.Size(1068, 310);
             this.dataGridUser.TabIndex = 14;
             this.dataGridUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUser_CellContentClick);
             // 

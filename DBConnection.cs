@@ -19,6 +19,8 @@ namespace PointOfSale
         public string MyConnection()
         {
             string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSale;Integrated Security=True";
+            //string _provider= string.Format("providername = \"{0}\"","System.Data.SqlClient");
+          // string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFileName=|DataDirectory|\DATA\PointOfSale.mdf;Initial Catalog=PointOfSale;Integrated Security=True;";
             return con;
         }
         public double DailySales()
