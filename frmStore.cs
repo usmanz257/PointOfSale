@@ -91,7 +91,8 @@ namespace PointOfSale
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            txtStoreName.Clear();
+            txtAddress.Clear();
         }
     }
 }

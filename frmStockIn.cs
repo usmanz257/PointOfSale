@@ -113,17 +113,19 @@ namespace PointOfSale
                         {
                             // update product quantity
                             cn.Open();
-                            cm = new SqlCommand("Update tblproduct set qty=qty + "+ int.Parse(dataGridStockIn.Rows[i].Cells[6].Value.ToString())+" where pcode like '"+ dataGridStockIn.Rows[i].Cells[4].Value.ToString() +"'" ,cn);
+                            cm = new SqlCommand("Update tblproduct set qty=qty + "+ int.Parse(dataGridStockIn.Rows[i].Cells[5].Value.ToString())+" where pcode like '"+ dataGridStockIn.Rows[i].Cells[3].Value.ToString() +"'" ,cn);
                             cm.ExecuteNonQuery();
                             cn.Close();
 
                             //update tblstock in qty
                             cn.Open();
-                            cm = new SqlCommand("Update tblstockin set qty=qty +  " + int.Parse(dataGridStockIn.Rows[i].Cells[6].Value.ToString()) + ", status  = 'Done' where id like '" + dataGridStockIn.Rows[i].Cells[1].Value.ToString() + "'", cn);
+                            int _idStockIn = int.Parse(dataGridStockIn.Rows[i].Cells[1].Value.ToString());
+                            cm = new SqlCommand("Update tblstockin set qty=qty +  " + int.Parse(dataGridStockIn.Rows[i].Cells[5].Value.ToString()) + ", status  = 'Done' where id like '" + _idStockIn + "'", cn);
                             cm.ExecuteNonQuery();
                             cn.Close();
                         }
                         Clear();
+                        dataGridStockIn.Rows.Clear();
                         LoadStockIn();
                     }
                 }

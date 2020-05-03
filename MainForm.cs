@@ -45,7 +45,7 @@ namespace PointOfSale
             cn.Open();
             cm = new SqlCommand("select count(*) from vwCriticalItems", cn);
             count = cm.ExecuteScalar().ToString();
-            if ((count == string.Empty) || (count == "0"))
+            if (count == string.Empty)
             {
                 frm.lblNotificationCounter.Text = "CRITICAL STOCK";
                 frm.lblNotifications.Text = "No Critical item";
