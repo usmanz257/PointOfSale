@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNotification));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblNotificationCounter = new System.Windows.Forms.Label();
             this.lblNotifications = new System.Windows.Forms.Label();
+            this.lblNotificationCounter = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -52,6 +52,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(611, 40);
             this.panel1.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(576, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -71,7 +85,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(239, 400);
+            this.btnOK.Location = new System.Drawing.Point(239, 407);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(108, 38);
             this.btnOK.TabIndex = 5;
@@ -89,17 +103,6 @@
             this.panel2.Size = new System.Drawing.Size(562, 296);
             this.panel2.TabIndex = 6;
             // 
-            // lblNotificationCounter
-            // 
-            this.lblNotificationCounter.AutoSize = true;
-            this.lblNotificationCounter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotificationCounter.ForeColor = System.Drawing.Color.White;
-            this.lblNotificationCounter.Location = new System.Drawing.Point(29, 9);
-            this.lblNotificationCounter.Name = "lblNotificationCounter";
-            this.lblNotificationCounter.Size = new System.Drawing.Size(70, 28);
-            this.lblNotificationCounter.TabIndex = 0;
-            this.lblNotificationCounter.Text = "label2";
-            // 
             // lblNotifications
             // 
             this.lblNotifications.AutoSize = true;
@@ -111,6 +114,17 @@
             this.lblNotifications.TabIndex = 1;
             this.lblNotifications.Text = "label2";
             // 
+            // lblNotificationCounter
+            // 
+            this.lblNotificationCounter.AutoSize = true;
+            this.lblNotificationCounter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificationCounter.ForeColor = System.Drawing.Color.White;
+            this.lblNotificationCounter.Location = new System.Drawing.Point(29, 9);
+            this.lblNotificationCounter.Name = "lblNotificationCounter";
+            this.lblNotificationCounter.Size = new System.Drawing.Size(70, 28);
+            this.lblNotificationCounter.TabIndex = 0;
+            this.lblNotificationCounter.Text = "label2";
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -121,26 +135,12 @@
             this.panel3.Size = new System.Drawing.Size(562, 47);
             this.panel3.TabIndex = 7;
             // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(576, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // frmNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
-            this.ClientSize = new System.Drawing.Size(611, 442);
+            this.ClientSize = new System.Drawing.Size(611, 455);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnOK);

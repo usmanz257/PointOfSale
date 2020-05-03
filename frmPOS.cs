@@ -35,7 +35,7 @@ namespace PointOfSale
             cn.Open();
             cm = new SqlCommand("select count(*) from vwCriticalItems", cn);
             count = cm.ExecuteScalar().ToString();
-            if (count == string.Empty)
+            if (count == "0")
             {
                 frm.lblNotificationCounter.Text = "CRITICAL STOCK";
                 frm.lblNotifications.Text = "No Critical item";
@@ -52,12 +52,11 @@ namespace PointOfSale
                     i++;
                     _critical += i + "." + dr["pdesc"].ToString() + Environment.NewLine;
                 }
-
+                dr.Close();
+                frm.lblNotifications.Text = "Critical stock is :" + Environment.NewLine + _critical;
             }
 
-            dr.Close();
             cn.Close();
-            frm.lblNotifications.Text = "Critical stock is :" + Environment.NewLine + _critical;
             frm.ShowDialog();
 
         }
