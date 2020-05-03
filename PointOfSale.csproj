@@ -414,9 +414,9 @@
     <None Include="Resources\81-dashboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DATA\PointOfSaleNew.mdf">
+    <None Include="DATA\PointOfSaleNew.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
