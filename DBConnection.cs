@@ -19,7 +19,7 @@ namespace PointOfSale
         private int critical;
         public string MyConnection()
         {
-            string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSaleNew;Integrated Security=True";
+            string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSale;Integrated Security=True";
             //string _provider= string.Format("providername = \"{0}\"","System.Data.SqlClient");
            // string con = ConfigurationManager.ConnectionStrings["CharityManagement"].ConnectionString;
            // string con= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDBFilename=|DataDirectory|\PointOfSale.mdf; Initial Catalog=PointOfSale;Integrated Security=True";
