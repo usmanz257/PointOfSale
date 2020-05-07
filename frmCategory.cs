@@ -83,5 +83,15 @@ namespace PointOfSale
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void frmCategory_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
+        }
+
+       
     }
 }

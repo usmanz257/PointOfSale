@@ -15,7 +15,8 @@ namespace PointOfSale
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         frmBrandList frmlist;
-        public frmBrand(frmBrandList flist,bool btnEnablevalue)
+        MainForm mainFrm;
+        public frmBrand(frmBrandList flist, bool btnEnablevalue)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
@@ -27,6 +28,7 @@ namespace PointOfSale
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+
         }
 
         private void frmBrand_Load(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace PointOfSale
         {
             try
             {
-                if(MessageBox.Show("Are you sure to save this brand?","Save Record",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure to save this brand?", "Save Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Close();
                     cn.Open();
@@ -52,11 +54,11 @@ namespace PointOfSale
                     cm.Parameters.AddWithValue("@brand", txtBrand.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
-                    MessageBox.Show("Record has been successfully saved.","POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record has been successfully saved.", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
                     frmlist.loadRecords();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -70,10 +72,10 @@ namespace PointOfSale
             {
                 if (MessageBox.Show("Are you sure to update this brand?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                   
+
                     cn.Close();
                     cn.Open();
-                    cm = new SqlCommand("update tblbrand set brand = @brand where id like'"+lblID.Text+"'", cn);
+                    cm = new SqlCommand("update tblbrand set brand = @brand where id like'" + lblID.Text + "'", cn);
                     cm.Parameters.AddWithValue("@brand", txtBrand.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
@@ -87,6 +89,14 @@ namespace PointOfSale
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void frmBrand_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
             }
         }
     }

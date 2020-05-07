@@ -20,6 +20,7 @@ namespace PointOfSale
         private double price;
         private int qty;
         private String transno;
+        private double disc_per;
         frmPOS fpos;
         public frmQty(frmPOS frmpos)
         {
@@ -32,12 +33,13 @@ namespace PointOfSale
         {
 
         }
-        public void ProductDetail( String pcode,double price, String transno, int qty)
+        public void ProductDetail( String pcode,double price, String transno, int qty,double disc_per)
         {
             this.pcode = pcode;
             this.price = price;
             this.transno = transno;
             this.qty = qty;
+            this.disc_per = disc_per;
         }
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
@@ -95,10 +97,11 @@ namespace PointOfSale
                 {
                     cn.Close();
                     cn.Open();
-                    cm = new SqlCommand("insert into tblCart (transno, pcode, price, qty, sdate, cashier)values(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                    cm = new SqlCommand("insert into tblCart (transno, pcode, price,disc_percent, qty, sdate, cashier)values(@transno, @pcode, @price,@disc_percent, @qty, @sdate, @cashier)", cn);
                     cm.Parameters.AddWithValue("@transno", transno);
                     cm.Parameters.AddWithValue("@pcode", pcode);
                     cm.Parameters.AddWithValue("@price", price);
+                    cm.Parameters.AddWithValue("@disc_percent", disc_per);
                     cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));
                     cm.Parameters.AddWithValue("@sdate", DateTime.Now);
                     cm.Parameters.AddWithValue("@cashier", fpos.lblUser.Text);

@@ -184,8 +184,8 @@ namespace PointOfSale
             Random rnd = new Random();
             int i = 0;
             txtRefNo.Clear();
-            txtRefNo.Text += rnd.Next();
-           
+            txtRefNo.Text = "S-" + DateTime.Now.ToString("MMyyyy") + rnd.Next();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

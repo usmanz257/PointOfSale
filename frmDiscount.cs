@@ -97,5 +97,18 @@ namespace PointOfSale
 
         }
 
+        private void frmDiscount_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPercent_KeyDown(object sender, KeyEventArgs e)
+        {
+
+           if (e.KeyCode == Keys.Enter)
+            {
+                btnConfirm_Click(sender, e);
+            }
+        }
     }
 }

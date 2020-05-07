@@ -21,10 +21,11 @@ namespace PointOfSale
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             plist = frm;
+
         }
         private void frmProduct_Load(object sender, EventArgs e)
         {
-
+            GenrateProductCode();
         }
 
         public void LoadBrand()
@@ -71,6 +72,7 @@ namespace PointOfSale
             txtPrice.Clear();
             txtDescription.Clear();
             txtPrice.Clear();
+            txtReorder.Clear();
             cboBrands.Text = "";
             cboCategory.Text = "";
             txtPCode.Focus();
@@ -212,6 +214,28 @@ namespace PointOfSale
             {
                 e.Handled = true;
             }
+        }
+
+        private void cboBrands_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cboCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            GenrateProductCode();
+        }
+        private void GenrateProductCode()
+        {
+            Random rnd = new Random();
+            int i = 0;
+            txtPCode.Clear();
+            txtPCode.Text = "P-" + DateTime.Now.ToString("MMyyyy") + rnd.Next();
         }
     }
 }

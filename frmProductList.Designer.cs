@@ -41,15 +41,19 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lnkDiscount = new System.Windows.Forms.LinkLabel();
             this.txtSearchProduct = new MetroFramework.Controls.MetroTextBox();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,6 +87,7 @@
             this.Column5,
             this.Column6,
             this.Column7,
+            this.Column10,
             this.Column9,
             this.Edit,
             this.Delete});
@@ -186,6 +191,15 @@
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Column7.Width = 67;
             // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "DISCOUNT";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column10.Width = 125;
+            // 
             // Column9
             // 
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -232,14 +246,28 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lnkDiscount);
             this.panel2.Controls.Add(this.txtSearchProduct);
             this.panel2.Controls.Add(this.btnAddProduct);
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(481, 0);
+            this.panel2.Location = new System.Drawing.Point(292, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(496, 53);
+            this.panel2.Size = new System.Drawing.Size(685, 53);
             this.panel2.TabIndex = 3;
+            // 
+            // lnkDiscount
+            // 
+            this.lnkDiscount.AutoSize = true;
+            this.lnkDiscount.LinkColor = System.Drawing.Color.Gray;
+            this.lnkDiscount.Location = new System.Drawing.Point(370, 16);
+            this.lnkDiscount.Name = "lnkDiscount";
+            this.lnkDiscount.Size = new System.Drawing.Size(230, 23);
+            this.lnkDiscount.TabIndex = 38;
+            this.lnkDiscount.TabStop = true;
+            this.lnkDiscount.Text = "[Discount On Every Product ]";
+            this.lnkDiscount.VisitedLinkColor = System.Drawing.Color.Gray;
+            this.lnkDiscount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkDiscount_LinkClicked);
             // 
             // txtSearchProduct
             // 
@@ -247,7 +275,7 @@
             // 
             // 
             this.txtSearchProduct.CustomButton.Image = null;
-            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(356, 1);
+            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(311, 1);
             this.txtSearchProduct.CustomButton.Name = "";
             this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -259,7 +287,7 @@
             this.txtSearchProduct.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSearchProduct.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.Icon")));
             this.txtSearchProduct.Lines = new string[0];
-            this.txtSearchProduct.Location = new System.Drawing.Point(21, 8);
+            this.txtSearchProduct.Location = new System.Drawing.Point(13, 9);
             this.txtSearchProduct.MaxLength = 32767;
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.PasswordChar = '\0';
@@ -269,7 +297,7 @@
             this.txtSearchProduct.SelectionLength = 0;
             this.txtSearchProduct.SelectionStart = 0;
             this.txtSearchProduct.ShortcutsEnabled = true;
-            this.txtSearchProduct.Size = new System.Drawing.Size(390, 35);
+            this.txtSearchProduct.Size = new System.Drawing.Size(345, 35);
             this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.UseSelectable = true;
             this.txtSearchProduct.WaterMark = "Search Product";
@@ -284,10 +312,11 @@
             this.btnAddProduct.FlatAppearance.BorderSize = 0;
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAddProduct.Image")));
-            this.btnAddProduct.Location = new System.Drawing.Point(417, 10);
+            this.btnAddProduct.Location = new System.Drawing.Point(606, 10);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(33, 34);
             this.btnAddProduct.TabIndex = 2;
+            this.btnAddProduct.Text = "``";
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
@@ -297,10 +326,11 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(456, 7);
+            this.btnClose.Location = new System.Drawing.Point(645, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(33, 40);
             this.btnClose.TabIndex = 3;
+            this.btnClose.Text = "``";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -313,6 +343,28 @@
             this.label1.Size = new System.Drawing.Size(146, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "PRODUCT LIST";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn2.Width = 125;
             // 
             // frmProductList
             // 
@@ -330,6 +382,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -343,6 +396,9 @@
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroTextBox txtSearchProduct;
         private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.LinkLabel lnkDiscount;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -351,6 +407,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;

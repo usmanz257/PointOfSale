@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace PointOfSale
 {
@@ -19,9 +20,8 @@ namespace PointOfSale
         private int critical;
         public string MyConnection()
         {
-            string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSale;Integrated Security=True";
-            //string _provider= string.Format("providername = \"{0}\"","System.Data.SqlClient");
-           // string con = ConfigurationManager.ConnectionStrings["CharityManagement"].ConnectionString;
+            string con = ConfigurationManager.ConnectionStrings["PointOfSaleConnectionString"].ToString();
+           // string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSale;Integrated Security=True";
             //string con= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDBFilename=|DataDirectory|\PointOfSaleNew.mdf; Initial Catalog=PointOfSale;Integrated Security=True;";
             return con;
         }

@@ -49,6 +49,7 @@
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.txtReorder = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             this.txtPCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPCode.Location = new System.Drawing.Point(198, 71);
             this.txtPCode.Name = "txtPCode";
-            this.txtPCode.Size = new System.Drawing.Size(574, 34);
+            this.txtPCode.Size = new System.Drawing.Size(426, 34);
             this.txtPCode.TabIndex = 2;
             // 
             // label2
@@ -142,6 +143,7 @@
             this.cboBrands.Name = "cboBrands";
             this.cboBrands.Size = new System.Drawing.Size(574, 36);
             this.cboBrands.TabIndex = 5;
+            this.cboBrands.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboBrands_KeyPress);
             // 
             // cboCategory
             // 
@@ -151,6 +153,7 @@
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(574, 36);
             this.cboCategory.TabIndex = 6;
+            this.cboCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCategory_KeyPress);
             // 
             // label5
             // 
@@ -263,12 +266,26 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Re-Order";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
+            this.linkLabel1.Location = new System.Drawing.Point(630, 79);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(116, 23);
+            this.linkLabel1.TabIndex = 37;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = " [ GENERATE ]";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Gray;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // frmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 483);
             this.ControlBox = false;
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtReorder);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtBarcode);
@@ -322,5 +339,6 @@
         public System.Windows.Forms.TextBox txtBarcode;
         public System.Windows.Forms.TextBox txtReorder;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

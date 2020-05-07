@@ -1,8 +1,8 @@
-﻿namespace PointOfSale
+﻿namespace PointOfSale.CrystalReport.DataSet
 {
 
 
-    partial class Receipt
+    partial class dsSales
     {
         partial class dtSoldDataTable
         {

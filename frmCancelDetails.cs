@@ -66,6 +66,20 @@ namespace PointOfSale
 
         }
 
+        private void frmCancelDetails_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Dispose();
+            }
+        }
 
+        private void txtReason_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnCancelOrder_Click(sender, e);
+            }
+        }
     }
 }

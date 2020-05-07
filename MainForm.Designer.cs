@@ -154,7 +154,7 @@
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(311, 39);
             this.btnStock.TabIndex = 3;
-            this.btnStock.Text = "    STOCK";
+            this.btnStock.Text = "  STOCK IN";
             this.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStock.UseVisualStyleBackColor = true;

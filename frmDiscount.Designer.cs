@@ -117,6 +117,7 @@
             this.txtPercent.Size = new System.Drawing.Size(470, 34);
             this.txtPercent.TabIndex = 7;
             this.txtPercent.TextChanged += new System.EventHandler(this.txtPercent_TextChanged);
+            this.txtPercent.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPercent_KeyDown);
             this.txtPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPercent_KeyPress);
             // 
             // label3
@@ -180,6 +181,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmDiscount";
+            this.Load += new System.EventHandler(this.frmDiscount_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDiscount_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

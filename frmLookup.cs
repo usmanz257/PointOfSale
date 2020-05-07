@@ -39,12 +39,12 @@ namespace PointOfSale
             int i = 0;
             dataGridProduct.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("Select p.pcode,p.barcode, p.pdesc, b.brand, c.category, p.price, p.qty from tblProduct as p inner join tblBrand as b on b.id = p.bid inner join tblCategory as c on c.id = p.cid where p.pdesc like '" + txtSearchProduct.Text + "%'", cn);
+            cm = new SqlCommand("Select p.pcode,p.barcode, p.pdesc, b.brand, c.category, p.price, p.qty, p.disc_per from tblProduct as p inner join tblBrand as b on b.id = p.bid inner join tblCategory as c on c.id = p.cid where p.pdesc like '" + txtSearchProduct.Text + "%'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dataGridProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString());
+                dataGridProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr["disc_per"].ToString(), dr[6].ToString());
             }
             cn.Close();
         }
@@ -56,13 +56,16 @@ namespace PointOfSale
                 string colName = dataGridProduct.Columns[e.ColumnIndex].Name;
                 if (colName == "Select")
                 {
-                    
+                        double discount;
                         frmQty frm = new frmQty(f);
-                        frm.ProductDetail(dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dataGridProduct.Rows[e.RowIndex].Cells[6].Value.ToString()), f.lblTransNo.Text, int.Parse(dataGridProduct.Rows[e.RowIndex].Cells[7].Value.ToString()));
-                        dr.Close();
-                        cn.Close();
+           
+                        int qty = int.Parse(dataGridProduct.Rows[e.RowIndex].Cells[8].Value.ToString());
+                        double disc_per = double.Parse(dataGridProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        frm.ProductDetail(dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString(), double.Parse(dataGridProduct.Rows[e.RowIndex].Cells[6].Value.ToString()), f.lblTransNo.Text,qty,disc_per);
+                        f.loadCart();
                         frm.ShowDialog();
-                    
+
+
                 }
             }
             catch (Exception ex)

@@ -379,7 +379,7 @@ namespace PointOfSale
         private void btnSettle_Click(object sender, EventArgs e)
         {
             frmSettle frm = new frmSettle(this);
-            frm.txtSale.Text = lblDisplayTotal.Text;
+            frm.txtSale.Text = Convert.ToString (double.Parse(lblDisplayTotal.Text) - double.Parse(lblDiscount.Text));
             frm.ShowDialog();
         }
 

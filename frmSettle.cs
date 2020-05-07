@@ -7,7 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 namespace PointOfSale
 {
 
@@ -70,9 +71,9 @@ namespace PointOfSale
                         cn.Close();
                         
                     }
-                    //frmReceipt frm = new frmReceipt(fpos);
+                    frmReceipt frm = new frmReceipt(fpos);
                     //frm.Loadreport(txtCash.Text, txtChange.Text);
-                    //frm.ShowDialog();
+                    frm.ShowDialog();
                     MessageBox.Show("Payment successfully saved!", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     fpos.getTransNo();
                     fpos.loadCart();
@@ -85,6 +86,8 @@ namespace PointOfSale
                 cn.Close();
                 MessageBox.Show(ex.Message);
             }
+            
+            
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -170,5 +173,6 @@ namespace PointOfSale
                 btnEnter_Click(sender, e);
             }
         }
+
     } 
 }

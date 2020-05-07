@@ -179,6 +179,7 @@
             this.txtConfirmNewPassword.WaterMark = "Confirm New password";
             this.txtConfirmNewPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtConfirmNewPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmNewPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirmNewPassword_KeyDown);
             // 
             // btnSave
             // 
@@ -212,6 +213,8 @@
             this.Name = "frmChangepassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangepassword";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmChangepassword_KeyDown);
+            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
