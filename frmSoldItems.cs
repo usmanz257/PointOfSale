@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.Preview_forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace PointOfSale
             dt1.Value = DateTime.Now;
             LoadRecord();
             LoadCashier();
-       
+         
         }
 
         private void dt1_ValueChanged(object sender, EventArgs e)
@@ -36,16 +37,20 @@ namespace PointOfSale
         {
             int counter = 0;
             double _total = 0;
+            
             dataGridSaleHistory.Rows.Clear();
             cn.Open();
             if (cboCashier.Text == "All Cashier")
             {
-                String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}'", this.dt1.Value, this.dt2.Value);
+                string query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}'", this.dt1.Value, this.dt2.Value);
                 cm = new SqlCommand(query, cn);
             }
-            else 
+            else
             {
-                String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}' and cashier like'{2}'", this.dt1.Value, this.dt2.Value, cboCashier.Text);
+                string query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between'{0}' and '{1}' and cashier = '{2}'", dt1.Value ,dt2.Value ,cboCashier.Text);
+                //String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold' and sdate between '{0}' and '{1}'", dt1.Value, dt2.Value);
+                //String query = string.Format("Select c.id ,c.transno,c.pcode, p.pdesc, c.price, c.qty,c.disc,c.total from tblCart as c inner join tblproduct as p on c.pcode=p.pcode where status like 'Sold'");
+                
                 cm = new SqlCommand(query, cn);
             }
             dr = cm.ExecuteReader();
@@ -118,7 +123,9 @@ namespace PointOfSale
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-
+            frmdailysalesReportPreview frm = new frmdailysalesReportPreview(this);
+            frm.ShowDialog();
         }
+
     }
 }

@@ -21,7 +21,7 @@ namespace PointOfSale
         public string MyConnection()
         {
             string con = ConfigurationManager.ConnectionStrings["PointOfSaleConnectionString"].ToString();
-           // string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSale;Integrated Security=True";
+            //string con = @"Data Source=DESKTOP-LQJTKTO\USMAN;Initial Catalog=PointOfSale;Integrated Security=True";
             //string con= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDBFilename=|DataDirectory|\PointOfSaleNew.mdf; Initial Catalog=PointOfSale;Integrated Security=True;";
             return con;
         }

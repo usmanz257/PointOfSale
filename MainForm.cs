@@ -193,6 +193,7 @@ namespace PointOfSale
             frmSoldItems frmSolid = new frmSoldItems();
             ReferenceFrm = frmSolid;
             ReferenceBtn = btnSold;
+            frmSolid.LoadCashier();
             frmSolid.TopLevel = false;
             MainPanel.Controls.Add(frmSolid);
             frmSolid.BringToFront();

@@ -102,10 +102,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReport\crptCriticaltems.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crptCriticaltems.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport\crptSales.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crptSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\crptTopSellingitem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crptTopSellingitem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\DailySales.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailySales.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CrystalReport\DataSet\dsSales.cs">
@@ -291,12 +309,42 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preview forms\frmCriticalStockPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview forms\frmCriticalStockPreview.Designer.cs">
+      <DependentUpon>frmCriticalStockPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preview forms\frmdailysalesReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview forms\frmdailysalesReportPreview.Designer.cs">
+      <DependentUpon>frmdailysalesReportPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preview forms\frmTopSellingItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview forms\frmTopSellingItem.Designer.cs">
+      <DependentUpon>frmTopSellingItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="CrystalReport\crptCriticaltems.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crptCriticaltems.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\crptSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crptSales.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\crptTopSellingitem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crptTopSellingitem.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\DailySales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailySales.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAllStockDiscount.resx">
       <DependentUpon>frmAllStockDiscount.cs</DependentUpon>
@@ -385,6 +433,15 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Preview forms\frmCriticalStockPreview.resx">
+      <DependentUpon>frmCriticalStockPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview forms\frmdailysalesReportPreview.resx">
+      <DependentUpon>frmdailysalesReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview forms\frmTopSellingItem.resx">
+      <DependentUpon>frmTopSellingItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -439,9 +496,6 @@
     <None Include="Resources\81-dashboard.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DATA\PointOfSaleNew.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -463,7 +517,9 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DATA\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

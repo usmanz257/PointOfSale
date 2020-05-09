@@ -386,12 +386,13 @@ namespace PointOfSale
         private void btnDailySale_Click(object sender, EventArgs e)
         {
             frmSoldItems frm = new frmSoldItems();
-            frm.dt1.Enabled = false;
-            frm.dt2.Enabled = false;
+            //frm.dt1.Enabled = false;
+            //frm.dt2.Enabled = false;
             frm.suser = this.lblUser.Text;
             frm.cboCashier.Enabled = false;
             frm.cboCashier.Text = lblUser.Text;
             frm.ShowDialog();
+            frm.LoadRecord();
         }
 
         //public void ProductDetail(String pcode, double price, String transno, int qty)

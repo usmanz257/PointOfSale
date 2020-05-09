@@ -53,13 +53,13 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCancel = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.cboCashier = new System.Windows.Forms.ComboBox();
             this.lblDailyTotal = new System.Windows.Forms.Label();
             this.dt2 = new System.Windows.Forms.DateTimePicker();
             this.dt1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSaleHistory)).BeginInit();
             this.panel2.SuspendLayout();
@@ -282,12 +282,27 @@
             this.panel2.Size = new System.Drawing.Size(1182, 39);
             this.panel2.TabIndex = 9;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(836, 4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(159, 32);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "PRINT PREVIEW";
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // cboCashier
             // 
             this.cboCashier.FormattingEnabled = true;
-            this.cboCashier.Location = new System.Drawing.Point(559, 5);
+            this.cboCashier.Location = new System.Drawing.Point(534, 5);
             this.cboCashier.Name = "cboCashier";
-            this.cboCashier.Size = new System.Drawing.Size(344, 31);
+            this.cboCashier.Size = new System.Drawing.Size(296, 31);
             this.cboCashier.TabIndex = 4;
             this.cboCashier.SelectedIndexChanged += new System.EventHandler(this.cboCashier_SelectedIndexChanged);
             this.cboCashier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCashier_KeyPress);
@@ -296,7 +311,7 @@
             // 
             this.lblDailyTotal.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDailyTotal.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblDailyTotal.Location = new System.Drawing.Point(1007, 1);
+            this.lblDailyTotal.Location = new System.Drawing.Point(1017, 1);
             this.lblDailyTotal.Name = "lblDailyTotal";
             this.lblDailyTotal.Size = new System.Drawing.Size(143, 34);
             this.lblDailyTotal.TabIndex = 3;
@@ -306,7 +321,7 @@
             // dt2
             // 
             this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt2.Location = new System.Drawing.Point(399, 6);
+            this.dt2.Location = new System.Drawing.Point(376, 6);
             this.dt2.Name = "dt2";
             this.dt2.Size = new System.Drawing.Size(154, 30);
             this.dt2.TabIndex = 3;
@@ -315,7 +330,7 @@
             // dt1
             // 
             this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt1.Location = new System.Drawing.Point(230, 7);
+            this.dt1.Location = new System.Drawing.Point(211, 6);
             this.dt1.Name = "dt1";
             this.dt1.Size = new System.Drawing.Size(159, 30);
             this.dt1.TabIndex = 2;
@@ -324,7 +339,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 6);
+            this.label2.Location = new System.Drawing.Point(6, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 23);
             this.label2.TabIndex = 0;
@@ -338,21 +353,6 @@
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(915, 4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(108, 32);
-            this.btnPrint.TabIndex = 5;
-            this.btnPrint.Text = "PRINT";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmSoldItems
             // 

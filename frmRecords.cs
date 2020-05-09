@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.Preview_forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,6 @@ namespace PointOfSale
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
             LoadRecord();
         }
         private void LoadRecord()
@@ -220,6 +220,18 @@ namespace PointOfSale
         private void btnReloadCriticalStock_Click(object sender, EventArgs e)
         {
             this.LoadCriticalItems();
+        }
+
+        private void btnPrintPreviewCritical_Click(object sender, EventArgs e)
+        {
+            frmCriticalStockPreview frm = new frmCriticalStockPreview();
+            frm.ShowDialog();
+        }
+
+        private void btnTopSellingPrintPreview_Click(object sender, EventArgs e)
+        {
+            frmTopSellingItem frm = new frmTopSellingItem(this);
+            frm.Show();
         }
     }
 }
