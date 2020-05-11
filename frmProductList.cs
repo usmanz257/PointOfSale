@@ -36,12 +36,12 @@ namespace PointOfSale
             int i = 0;
             dataGridProduct.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("Select p.pcode,p.barcode, p.pdesc, b.brand, c.category, p.price, p.qty,p.disc_per, p.reorder from tblProduct as p inner join tblBrand as b on b.id = p.bid inner join tblCategory as c on c.id = p.cid where p.pdesc like '" + txtSearchProduct.Text + "%'",cn);
+            cm = new SqlCommand("Select p.pcode,p.barcode, p.pdesc, b.brand, c.category,p.cost, p.price, p.qty,p.disc_per, p.reorder from tblProduct as p inner join tblBrand as b on b.id = p.bid inner join tblCategory as c on c.id = p.cid where p.pdesc like '" + txtSearchProduct.Text + "%'",cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dataGridProduct.Rows.Add(i,dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(),dr[5].ToString(), dr[6].ToString(), dr["disc_per"].ToString(), dr[8].ToString());
+                dataGridProduct.Rows.Add(i,dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(),dr[5].ToString(), dr[6].ToString(), dr[7].ToString(), dr["disc_per"].ToString(), dr[9].ToString());
             }
             cn.Close();
         }

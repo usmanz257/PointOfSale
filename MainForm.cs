@@ -275,5 +275,19 @@ namespace PointOfSale
             frm.Show();
 
         }
+
+        private void btnProfitLoss_Click(object sender, EventArgs e)
+        {
+            ReferenceBtn.Enabled = true;
+            ReferenceFrm.Dispose();
+            btnSold.Enabled = false;
+            frmProfit frm = new frmProfit();
+            ReferenceFrm = frm;
+            ReferenceBtn = btnSold;
+            frm.TopLevel = false;
+            MainPanel.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

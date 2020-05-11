@@ -29,12 +29,12 @@ namespace PointOfSale
             dataGridProduct.Rows.Clear();
             cn.Close();
             cn.Open();
-            cm = new SqlCommand("Select pcode,pdesc,qty from tblProduct where pdesc like '%" + txtSearchProduct.Text + "%' order by pdesc", cn);
+            cm = new SqlCommand("Select pcode,pdesc,cost,qty from tblProduct where pdesc like '%" + txtSearchProduct.Text + "%' order by pdesc", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dataGridProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
+                dataGridProduct.Rows.Add(i, dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString());
             }
             dr.Close();
             cn.Close();
@@ -62,14 +62,15 @@ namespace PointOfSale
                     if (MessageBox.Show("Add this item?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         string getPcode = dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        string getCost = dataGridProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
                         cn.Open();
-
                         //<task>inserting stock 
                         //<author>usman zulfiqar 
                         //<date>13/04/2020
-                        cm = new SqlCommand("Insert into tblstockin(refno,pcode,sdate,stockinby,vendorid)values(@refno,@pcode,@sdate,@stockinby,@vendorid)", cn);
+                        cm = new SqlCommand("Insert into tblstockin(refno,pcode,newCost,sdate,stockinby,vendorid)values(@refno,@pcode,@newCost,@sdate,@stockinby,@vendorid)", cn);
                         cm.Parameters.AddWithValue("@refno", slist.txtRefNo.Text);
                         cm.Parameters.AddWithValue("@pcode", getPcode);
+                        cm.Parameters.AddWithValue("@newCost", Convert.ToDouble(getCost));
                         cm.Parameters.AddWithValue("@sdate", slist.txtStockInDate.Value);
                         cm.Parameters.AddWithValue("@stockinby", slist.txtStockInBy.Text);
                         cm.Parameters.AddWithValue("@vendorid", slist._vandorId); 
@@ -83,6 +84,7 @@ namespace PointOfSale
             }
             catch (Exception ex)
             {
+                cn.Close();
                 MessageBox.Show(ex.Message);
             }
         }

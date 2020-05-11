@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace PointOfSale
         SqlDataReader dr;
         DBConnection dbcon = new DBConnection();
         private String pcode;
+        private double cost;
         private double price;
         private int qty;
         private String transno;
@@ -33,11 +35,12 @@ namespace PointOfSale
         {
 
         }
-        public void ProductDetail( String pcode,double price, String transno, int qty,double disc_per)
+        public void ProductDetail( String pcode,double price, String transno,double cost, int qty,double disc_per)
         {
             this.pcode = pcode;
             this.price = price;
             this.transno = transno;
+            this.cost = cost;
             this.qty = qty;
             this.disc_per = disc_per;
         }
@@ -97,9 +100,10 @@ namespace PointOfSale
                 {
                     cn.Close();
                     cn.Open();
-                    cm = new SqlCommand("insert into tblCart (transno, pcode, price,disc_percent, qty, sdate, cashier)values(@transno, @pcode, @price,@disc_percent, @qty, @sdate, @cashier)", cn);
+                    cm = new SqlCommand("insert into tblCart (transno, pcode,cost, price,disc_percent, qty, sdate, cashier)values(@transno, @pcode,@cost, @price,@disc_percent, @qty, @sdate, @cashier)", cn);
                     cm.Parameters.AddWithValue("@transno", transno);
                     cm.Parameters.AddWithValue("@pcode", pcode);
+                    cm.Parameters.AddWithValue("@cost", cost);
                     cm.Parameters.AddWithValue("@price", price);
                     cm.Parameters.AddWithValue("@disc_percent", disc_per);
                     cm.Parameters.AddWithValue("@qty", int.Parse(txtQty.Text));

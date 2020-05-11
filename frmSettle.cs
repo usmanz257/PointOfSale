@@ -60,7 +60,7 @@ namespace PointOfSale
                     for (int i = 0; i < fpos.dataGridSale.Rows.Count; i++)
                     {
                         cn.Open();
-                        string query = string.Format("update tblproduct set qty = qty - '{0}' where pcode = '{1}'", int.Parse(fpos.dataGridSale.Rows[i].Cells[5].Value.ToString()), fpos.dataGridSale.Rows[i].Cells[2].Value.ToString());
+                        string query = string.Format("update tblproduct set qty = qty - '{0}' where pcode = '{1}'", int.Parse(fpos.dataGridSale.Rows[i].Cells[6].Value.ToString()), fpos.dataGridSale.Rows[i].Cells[2].Value.ToString());
                         cm = new SqlCommand (query,cn);
                         cm.ExecuteNonQuery();                      
                         cn.Close();

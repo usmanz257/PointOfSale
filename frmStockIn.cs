@@ -40,12 +40,12 @@ namespace PointOfSale
             cn.Close();
             cn.Open();
 
-            cm = new SqlCommand("Select * from vwstockin where cast(sdate as date) between '"+ dt1.Value.ToShortDateString()+ "' and '"+ dt2.Value.ToShortDateString() +"'and status like 'Done'", cn);
+            cm = new SqlCommand("Select * from vwstockin where sdate between '"+ dt1.Value.ToShortDateString()+ "' and '"+ dt2.Value.ToShortDateString() +"'and status like 'Done'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i++;
-                dataGridStockInHistory.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), DateTime.Parse(dr["sdate"].ToString()).ToShortDateString(), dr["stockinby"].ToString(), dr["vendor"].ToString());
+                dataGridStockInHistory.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["newCost"].ToString(), dr["qty"].ToString(), DateTime.Parse(dr["sdate"].ToString()).ToShortDateString(), dr["stockinby"].ToString(), dr["vendor"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -65,7 +65,7 @@ namespace PointOfSale
             while (dr.Read()) 
             {
                 i++;
-                dataGridStockIn.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["stockinby"].ToString(), dr["vendor"].ToString()) ;
+                dataGridStockIn.Rows.Add(i, dr["id"].ToString(), dr["refno"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["newCost"].ToString(), dr["qty"].ToString(), dr["sdate"].ToString(), dr["stockinby"].ToString(), dr["vendor"].ToString()) ;
             }
             dr.Close();
             cn.Close();
@@ -106,21 +106,33 @@ namespace PointOfSale
         {
             try
             {
+                
+               
                 if (dataGridStockIn.Rows.Count > 0)
                 {
                     if (MessageBox.Show("Are you sure to save this recod? ","", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes) { 
                         for(int i=0; i< dataGridStockIn.Rows.Count; i++)
                         {
-                            // update product quantity
+                            // Getting Old Cost of product
+                            cn.Close();
                             cn.Open();
-                            cm = new SqlCommand("Update tblproduct set qty=qty + "+ int.Parse(dataGridStockIn.Rows[i].Cells[5].Value.ToString())+" where pcode like '"+ dataGridStockIn.Rows[i].Cells[3].Value.ToString() +"'" ,cn);
+                            cm = new SqlCommand("select cost from tblProduct where pcode like '" + dataGridStockIn.Rows[i].Cells[3].Value.ToString() +"'",cn);
+                            double oldCost = Convert.ToDouble(cm.ExecuteScalar());
+                            cn.Close();
+                            // update product quantity
+                            double newCost = Convert.ToDouble(dataGridStockIn.Rows[i].Cells[5].Value.ToString());
+                            double Cost = (oldCost + newCost )/2;
+                            int qty = int.Parse(dataGridStockIn.Rows[i].Cells[6].Value.ToString());
+                            cn.Open();
+                            cm = new SqlCommand("Update tblproduct set qty=qty + "+ qty + ", cost ="+Cost+" where pcode like '"+ dataGridStockIn.Rows[i].Cells[3].Value.ToString() +"'" ,cn);
                             cm.ExecuteNonQuery();
                             cn.Close();
 
+                            
                             //update tblstock in qty
                             cn.Open();
                             int _idStockIn = int.Parse(dataGridStockIn.Rows[i].Cells[1].Value.ToString());
-                            cm = new SqlCommand("Update tblstockin set qty=qty +  " + int.Parse(dataGridStockIn.Rows[i].Cells[5].Value.ToString()) + ", status  = 'Done' where id like '" + _idStockIn + "'", cn);
+                            cm = new SqlCommand("Update tblstockin set qty=qty +  " + qty + ", newCost= "+ newCost + ", status  = 'Done' where id like '" + _idStockIn + "'", cn);
                             cm.ExecuteNonQuery();
                             cn.Close();
                         }
@@ -191,6 +203,11 @@ namespace PointOfSale
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dataGridStockIn.Rows.Clear();
+        }
+
+        private void frmStockIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

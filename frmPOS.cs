@@ -18,6 +18,7 @@ namespace PointOfSale
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
         int qty;
+        double _cost;
         public frmPOS()
         {
             InitializeComponent();
@@ -130,13 +131,14 @@ namespace PointOfSale
                     if (dr.HasRows)
                     {
                         this.qty = int.Parse(dr["qty"].ToString());
+                        this._cost = int.Parse(dr["cost"].ToString()); ;
                         _pcode = dr["pcode"].ToString();
                         _price = double.Parse(dr["price"].ToString());
                         _qty = int.Parse(txtQty.Text);
                         dr.Close();
                         cn.Close();
 
-                        AddToCart(_pcode,_price, _qty);
+                        AddToCart(_pcode,_price, _qty,this._cost);
                     }
                     else 
                     {
@@ -153,11 +155,12 @@ namespace PointOfSale
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void AddToCart(String _pcode, double _price, int _qty)
+        private void AddToCart(String _pcode, double _price, int _qty, double cost)
             {
             String id = "";
             bool found = false;
             int cart_qty=0;
+            this._cost = cost;
             cn.Open();
             cm = new SqlCommand("Select * from tblcart where transno = @transno and pcode =@pcode", cn);
             cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
@@ -183,7 +186,7 @@ namespace PointOfSale
                 }
                 cn.Close();
                 cn.Open();
-                cm = new SqlCommand("update tblCart set qty = (qty + " + _qty + ") where id = '" + id + "'", cn);
+                cm = new SqlCommand("update tblCart set qty = (qty + " + _qty + "),cost = "+this._cost+" where id = '" + id + "'", cn);
                 cm.ExecuteNonQuery();
                 cn.Close();
                 txtSearchProduct.SelectionStart = 0;
@@ -196,9 +199,10 @@ namespace PointOfSale
             {
                 cn.Close();
                 cn.Open();
-                cm = new SqlCommand("insert into tblCart (transno, pcode, price, qty, sdate, cashier)values(@transno, @pcode, @price, @qty, @sdate, @cashier)", cn);
+                cm = new SqlCommand("insert into tblCart (transno, pcode,cost price, qty, sdate, cashier)values(@transno, @pcode,@cost, @price, @qty, @sdate, @cashier)", cn);
                 cm.Parameters.AddWithValue("@transno", lblTransNo.Text);
                 cm.Parameters.AddWithValue("@pcode", _pcode);
+                cm.Parameters.AddWithValue("@cost", this._cost);
                 cm.Parameters.AddWithValue("@price", _price);
                 cm.Parameters.AddWithValue("@qty", _qty);
                 cm.Parameters.AddWithValue("@sdate", DateTime.Now);
@@ -224,14 +228,14 @@ namespace PointOfSale
                 double discount = 0;
                 cn.Close();
                 cn.Open();
-                cm = new SqlCommand("select c.id, c.pcode, p.pdesc, c.price, c.qty, c.disc, c.total from tblCart as c inner join tblProduct as p on c.pcode=p.pcode where transno like '" + lblTransNo.Text + "' and status like 'Pending'", cn);
+                cm = new SqlCommand("select c.id, c.pcode, p.pdesc,c.cost, c.price, c.qty, c.disc, c.total from tblCart as c inner join tblProduct as p on c.pcode=p.pcode where transno like '" + lblTransNo.Text + "' and status like 'Pending'", cn);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     i++;
                     total += Double.Parse(dr["Total"].ToString());
                     discount += Double.Parse(dr["disc"].ToString());
-                    dataGridSale.Rows.Add(i, dr["Id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["Total"].ToString()).ToString("#,##0.00"),"[ + ]","[ - ]");
+                    dataGridSale.Rows.Add(i, dr["Id"].ToString(), dr["pcode"].ToString(), dr["pdesc"].ToString(), dr["cost"].ToString(), dr["price"].ToString(), dr["qty"].ToString(), dr["disc"].ToString(), double.Parse(dr["Total"].ToString()).ToString("#,##0.00"),"[ + ]","[ - ]");
                     hasrecord = true;
                 }
                 dr.Close();
@@ -313,7 +317,7 @@ namespace PointOfSale
                 i = int.Parse(cm.ExecuteScalar().ToString());
                 cn.Close();
 
-                if (int.Parse(dataGridSale.Rows[e.RowIndex].Cells[5].Value.ToString()) <= i)
+                if (int.Parse(dataGridSale.Rows[e.RowIndex].Cells[6].Value.ToString()) <= i)
                 {
                     cn.Open();
                     cm = new SqlCommand("update tblcart set qty  = qty + '" + int.Parse(txtQty.Text) + "' where transno like '" + lblTransNo.Text + "' and  pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", cn);
