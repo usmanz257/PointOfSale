@@ -4,6 +4,10 @@
 
     partial class dsSales
     {
+        partial class dtProfitDataTable
+        {
+        }
+
         partial class dtTopSelingItemsDataTable
         {
         }

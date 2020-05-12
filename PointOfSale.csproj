@@ -108,6 +108,12 @@
       <DependentUpon>crptCriticaltems.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport\crptProfit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crptProfit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CrystalReport\crptSales.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -327,6 +333,12 @@
     <Compile Include="Preview forms\frmdailysalesReportPreview.Designer.cs">
       <DependentUpon>frmdailysalesReportPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preview forms\frmProfitpreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preview forms\frmProfitpreview.Designer.cs">
+      <DependentUpon>frmProfitpreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Preview forms\frmTopSellingItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +351,10 @@
     <EmbeddedResource Include="CrystalReport\crptCriticaltems.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crptCriticaltems.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\crptProfit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crptProfit.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport\crptSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -447,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Preview forms\frmdailysalesReportPreview.resx">
       <DependentUpon>frmdailysalesReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preview forms\frmProfitpreview.resx">
+      <DependentUpon>frmProfitpreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preview forms\frmTopSellingItem.resx">
       <DependentUpon>frmTopSellingItem.cs</DependentUpon>

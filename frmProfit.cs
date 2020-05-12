@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.Preview_forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,12 @@ namespace PointOfSale
             loadRecords();
             this.profit = this.totalsales - this.TotalCost;
             this.lblProfit.Text = Convert.ToString(this.profit);
+        }
+
+        private void btnTopSellingPrintPreview_Click(object sender, EventArgs e)
+        {
+            frmProfitpreview frm = new frmProfitpreview(this);
+            frm.ShowDialog();
         }
 
         private void dataGridprofit_CellContentClick(object sender, DataGridViewCellEventArgs e)
