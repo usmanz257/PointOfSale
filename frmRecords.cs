@@ -233,5 +233,7 @@ namespace PointOfSale
             frmTopSellingItem frm = new frmTopSellingItem(this);
             frm.Show();
         }
+
+        
     }
 }

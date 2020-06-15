@@ -55,13 +55,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 40);
+            this.panel1.Size = new System.Drawing.Size(863, 50);
             this.panel1.TabIndex = 2;
             // 
             // btnClose
@@ -73,7 +73,7 @@
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(828, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.Size = new System.Drawing.Size(35, 50);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -81,18 +81,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 28);
+            this.label1.Size = new System.Drawing.Size(201, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Product Module";
+            this.label1.Text = "ADD PRODUCTS";
             // 
             // txtPCode
             // 
             this.txtPCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPCode.Location = new System.Drawing.Point(198, 71);
+            this.txtPCode.Location = new System.Drawing.Point(222, 78);
             this.txtPCode.Name = "txtPCode";
             this.txtPCode.Size = new System.Drawing.Size(426, 34);
             this.txtPCode.TabIndex = 2;
@@ -101,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 74);
+            this.label2.Location = new System.Drawing.Point(59, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 28);
             this.label2.TabIndex = 36;
@@ -111,7 +111,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 166);
+            this.label4.Location = new System.Drawing.Point(59, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 28);
             this.label4.TabIndex = 25;
@@ -120,7 +120,7 @@
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(198, 163);
+            this.txtDescription.Location = new System.Drawing.Point(222, 170);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(574, 34);
             this.txtDescription.TabIndex = 4;
@@ -129,7 +129,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 212);
+            this.label3.Location = new System.Drawing.Point(60, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 28);
             this.label3.TabIndex = 25;
@@ -139,7 +139,7 @@
             // 
             this.cboBrands.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBrands.FormattingEnabled = true;
-            this.cboBrands.Location = new System.Drawing.Point(198, 209);
+            this.cboBrands.Location = new System.Drawing.Point(222, 216);
             this.cboBrands.Name = "cboBrands";
             this.cboBrands.Size = new System.Drawing.Size(574, 36);
             this.cboBrands.TabIndex = 5;
@@ -149,7 +149,7 @@
             // 
             this.cboCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(198, 257);
+            this.cboCategory.Location = new System.Drawing.Point(222, 264);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(574, 36);
             this.cboCategory.TabIndex = 6;
@@ -159,7 +159,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 260);
+            this.label5.Location = new System.Drawing.Point(59, 267);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 28);
             this.label5.TabIndex = 25;
@@ -168,17 +168,18 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(198, 304);
+            this.txtPrice.Location = new System.Drawing.Point(222, 311);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(574, 34);
             this.txtPrice.TabIndex = 7;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 307);
+            this.label6.Location = new System.Drawing.Point(60, 314);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 28);
             this.label6.TabIndex = 12;
@@ -191,7 +192,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(426, 390);
+            this.btnCancel.Location = new System.Drawing.Point(450, 397);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(108, 46);
             this.btnCancel.TabIndex = 11;
@@ -206,7 +207,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(312, 390);
+            this.btnUpdate.Location = new System.Drawing.Point(336, 397);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 46);
             this.btnUpdate.TabIndex = 10;
@@ -221,7 +222,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(198, 390);
+            this.btnSave.Location = new System.Drawing.Point(222, 397);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 46);
             this.btnSave.TabIndex = 9;
@@ -233,7 +234,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 120);
+            this.label8.Location = new System.Drawing.Point(60, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 28);
             this.label8.TabIndex = 25;
@@ -242,7 +243,7 @@
             // txtBarcode
             // 
             this.txtBarcode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcode.Location = new System.Drawing.Point(198, 117);
+            this.txtBarcode.Location = new System.Drawing.Point(222, 124);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(574, 34);
             this.txtBarcode.TabIndex = 3;
@@ -250,7 +251,7 @@
             // txtReorder
             // 
             this.txtReorder.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReorder.Location = new System.Drawing.Point(198, 350);
+            this.txtReorder.Location = new System.Drawing.Point(222, 357);
             this.txtReorder.Name = "txtReorder";
             this.txtReorder.Size = new System.Drawing.Size(574, 34);
             this.txtReorder.TabIndex = 8;
@@ -260,7 +261,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 353);
+            this.label7.Location = new System.Drawing.Point(59, 360);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 28);
             this.label7.TabIndex = 21;
@@ -270,7 +271,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel1.Location = new System.Drawing.Point(630, 79);
+            this.linkLabel1.Location = new System.Drawing.Point(654, 86);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(116, 23);
             this.linkLabel1.TabIndex = 37;
@@ -283,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 483);
+            this.ClientSize = new System.Drawing.Size(863, 470);
             this.ControlBox = false;
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.txtReorder);

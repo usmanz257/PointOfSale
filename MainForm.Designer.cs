@@ -52,7 +52,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -81,7 +81,7 @@
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel2.Location = new System.Drawing.Point(0, 10);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 719);
+            this.panel2.Size = new System.Drawing.Size(319, 719);
             this.panel2.TabIndex = 1;
             // 
             // btnProfitLoss
@@ -188,9 +188,9 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 675);
+            this.btnLogout.Location = new System.Drawing.Point(3, 675);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(314, 39);
+            this.btnLogout.Size = new System.Drawing.Size(311, 39);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "  LOGOUT";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -40,7 +40,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -70,9 +70,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 28);
+            this.label1.Size = new System.Drawing.Size(215, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Void Cancel Order";
+            this.label1.Text = "VOID CANCEL ORDER";
             // 
             // txtPassword
             // 

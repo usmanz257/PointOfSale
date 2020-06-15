@@ -44,13 +44,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(611, 40);
+            this.panel1.Size = new System.Drawing.Size(611, 50);
             this.panel1.TabIndex = 2;
             // 
             // btnClose
@@ -62,7 +62,7 @@
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.Location = new System.Drawing.Point(576, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.Size = new System.Drawing.Size(35, 50);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -70,11 +70,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 28);
+            this.label1.Size = new System.Drawing.Size(182, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "NOTIFICATION";
             // 
@@ -85,7 +85,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(239, 407);
+            this.btnOK.Location = new System.Drawing.Point(239, 417);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(108, 38);
             this.btnOK.TabIndex = 5;
@@ -98,7 +98,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.lblNotifications);
-            this.panel2.Location = new System.Drawing.Point(27, 98);
+            this.panel2.Location = new System.Drawing.Point(27, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(562, 296);
             this.panel2.TabIndex = 6;
@@ -130,7 +130,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.lblNotificationCounter);
-            this.panel3.Location = new System.Drawing.Point(27, 46);
+            this.panel3.Location = new System.Drawing.Point(27, 56);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(562, 47);
             this.panel3.TabIndex = 7;
@@ -139,8 +139,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(125)))), ((int)(((byte)(139)))));
-            this.ClientSize = new System.Drawing.Size(611, 455);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(611, 467);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnOK);

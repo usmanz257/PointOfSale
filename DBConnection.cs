@@ -27,13 +27,20 @@ namespace PointOfSale
         }
         public double DailySales()
         {
-            string sdate = DateTime.Now.ToShortDateString();
-            
-            cn.ConnectionString = MyConnection();
-            cn.Open();
-            cm = new SqlCommand("select isnull(sum(total),0) as total from tblcart where sdate between '" + sdate + "' and '" + sdate + "' and status like 'Sold'", cn);
-            dailySales = double.Parse(cm.ExecuteScalar().ToString());
-            cn.Close();
+            try {
+                string sdate = DateTime.Now.ToString("MM/dd/yyyy");
+
+                cn.ConnectionString = MyConnection();
+                cn.Open();
+                cm = new SqlCommand("select isnull(sum(total),0) as total from tblcart where sdate between '" + sdate + "' and '" + sdate + "' and status like 'Sold'", cn);
+                dailySales = double.Parse(cm.ExecuteScalar().ToString());
+                cn.Close();
+                
+            }
+            catch (Exception ex) {
+                cn.Close();
+                MessageBox.Show(ex.Message);
+            }
             return dailySales;
         }
         public int ProductLine()

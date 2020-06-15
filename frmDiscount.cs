@@ -110,5 +110,10 @@ namespace PointOfSale
                 btnConfirm_Click(sender, e);
             }
         }
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

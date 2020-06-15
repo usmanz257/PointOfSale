@@ -39,17 +39,18 @@
             this.crvTopSellingItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvTopSellingItem.Location = new System.Drawing.Point(0, 0);
             this.crvTopSellingItem.Name = "crvTopSellingItem";
-            this.crvTopSellingItem.Size = new System.Drawing.Size(800, 450);
+            this.crvTopSellingItem.Size = new System.Drawing.Size(1132, 553);
             this.crvTopSellingItem.TabIndex = 0;
+            this.crvTopSellingItem.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmTopSellingItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1132, 553);
             this.Controls.Add(this.crvTopSellingItem);
             this.Name = "frmTopSellingItem";
-            this.Text = "frmTopSellingItem";
+            this.Text = "TOP TEN SELLING ITEMS";
             this.Load += new System.EventHandler(this.frmTopSellingItem_Load);
             this.ResumeLayout(false);
 

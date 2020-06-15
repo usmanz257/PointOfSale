@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoryList));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoryList));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAddCategory = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridCategory = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,57 +39,32 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddCategory = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCategory)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnAddCategory);
-            this.panel1.Controls.Add(this.btnClose);
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 40);
+            this.panel1.Size = new System.Drawing.Size(909, 50);
             this.panel1.TabIndex = 5;
-            // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddCategory.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAddCategory.FlatAppearance.BorderSize = 0;
-            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.Image")));
-            this.btnAddCategory.Location = new System.Drawing.Point(734, 0);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(33, 40);
-            this.btnAddCategory.TabIndex = 2;
-            this.btnAddCategory.UseVisualStyleBackColor = true;
-            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(767, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 40);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 28);
+            this.label1.Size = new System.Drawing.Size(192, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "CATEGORY LIST";
             // 
@@ -100,11 +73,14 @@
             this.dataGridCategory.AllowUserToAddRows = false;
             this.dataGridCategory.AllowUserToResizeColumns = false;
             this.dataGridCategory.AllowUserToResizeRows = false;
+            this.dataGridCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridCategory.BackgroundColor = System.Drawing.Color.White;
             this.dataGridCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -122,20 +98,19 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LemonChiffon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridCategory.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridCategory.EnableHeadersVisualStyles = false;
-            this.dataGridCategory.Location = new System.Drawing.Point(0, 40);
+            this.dataGridCategory.Location = new System.Drawing.Point(3, 100);
             this.dataGridCategory.MultiSelect = false;
             this.dataGridCategory.Name = "dataGridCategory";
             this.dataGridCategory.RowHeadersVisible = false;
             this.dataGridCategory.RowHeadersWidth = 51;
             this.dataGridCategory.RowTemplate.Height = 24;
             this.dataGridCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCategory.Size = new System.Drawing.Size(800, 523);
+            this.dataGridCategory.Size = new System.Drawing.Size(903, 457);
             this.dataGridCategory.TabIndex = 6;
             this.dataGridCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCategory_CellContentClick);
             // 
@@ -147,7 +122,7 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 45;
+            this.Column1.Width = 47;
             // 
             // Column2
             // 
@@ -190,11 +165,38 @@
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Delete.Width = 6;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnAddCategory);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(909, 49);
+            this.panel2.TabIndex = 7;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnAddCategory.FlatAppearance.BorderSize = 0;
+            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.Location = new System.Drawing.Point(702, 6);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(198, 38);
+            this.btnAddCategory.TabIndex = 4;
+            this.btnAddCategory.Text = "ADD CATEGORY";
+            this.btnAddCategory.UseVisualStyleBackColor = false;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
             // frmCategoryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 563);
+            this.ClientSize = new System.Drawing.Size(909, 569);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridCategory);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,6 +206,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCategory)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -211,8 +214,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAddCategory;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -220,5 +221,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Button btnAddCategory;
     }
 }

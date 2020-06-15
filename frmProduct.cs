@@ -237,5 +237,10 @@ namespace PointOfSale
             txtPCode.Clear();
             txtPCode.Text = "P-" + DateTime.Now.ToString("MMyyyy") + rnd.Next();
         }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

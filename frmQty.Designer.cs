@@ -35,6 +35,7 @@
             // 
             this.txtQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtQty.Font = new System.Drawing.Font("Consolas", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQty.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtQty.Location = new System.Drawing.Point(0, 0);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(365, 78);

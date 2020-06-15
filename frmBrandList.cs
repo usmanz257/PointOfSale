@@ -23,18 +23,13 @@ namespace PointOfSale
 
         }
 
-        private void btnAddBrand_Click(object sender, EventArgs e)
-        {
-            frmBrand frm = new frmBrand(this,true);
-            frm.ShowDialog();
-        }
         public void loadRecords()
         {
             int i = 0;
             dataGridBrand.Rows.Clear();
             cn.Close();
             cn.Open();
-            cm = new SqlCommand("select * from tblBrand order by brand",cn);
+            cm = new SqlCommand("select * from tblBrand where deleteStatus = 'false' order by brand", cn);
             dr= cm.ExecuteReader();
             while (dr.Read())
             {
@@ -55,16 +50,17 @@ namespace PointOfSale
             }
             if (colName == "Delete")
             {
+                //removing brand
                 try
                 {
                     if (MessageBox.Show("Are you sure to delete this brand?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cn.Close();
                         cn.Open();
-                        cm = new SqlCommand("DELETE FROM tblBrand WHERE id like'" + dataGridBrand[1, e.RowIndex].Value.ToString() + "'", cn);
+                        cm = new SqlCommand("update tblBrand set deleteStatus = 'true' WHERE id like'" + dataGridBrand[1, e.RowIndex].Value.ToString() + "'", cn);
                         cm.ExecuteNonQuery();
                         cn.Close();
-                        MessageBox.Show("Record has been successfully Deleted.","POS", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Record has been successfully Deleted.", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadRecords();
                     }
 
@@ -73,19 +69,38 @@ namespace PointOfSale
                 {
                     MessageBox.Show(ex.Message);
                 }
+                //removing brand forever 
+                //try
+                //{
+                //    if (MessageBox.Show("Are you sure to delete this brand?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                //    {
+                //        cn.Close();
+                //        cn.Open();
+                //        cm = new SqlCommand("DELETE FROM tblBrand WHERE id like'" + dataGridBrand[1, e.RowIndex].Value.ToString() + "'", cn);
+                //        cm.ExecuteNonQuery();
+                //        cn.Close();
+                //        MessageBox.Show("Record has been successfully Deleted.","POS", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                //        loadRecords();
+                //    }
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
 
             }
+        } 
+
+        private void btnAddBrand_Click(object sender, EventArgs e)
+        {
+            frmBrand frm = new frmBrand(this, true);
+            frm.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void frmBrandList_Load(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
-          
         }
     }
 }

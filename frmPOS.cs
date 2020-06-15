@@ -19,6 +19,7 @@ namespace PointOfSale
         SqlDataReader dr;
         int qty;
         double _cost;
+        string colName;
         public frmPOS()
         {
             InitializeComponent();
@@ -295,7 +296,7 @@ namespace PointOfSale
 
         private void dataGridSale_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string colName = dataGridSale.Columns[e.ColumnIndex].Name;
+            colName = dataGridSale.Columns[e.ColumnIndex].Name;
             if (colName == "Delete")
             {
                 if (MessageBox.Show("Are you sure to remove this item?", "Delete item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -311,27 +312,35 @@ namespace PointOfSale
             }
             else if (colName == "colAdd")
             {
-                int i = 0;
-                cn.Open();
-                cm = new SqlCommand("Select sum(qty) as qty from tblproduct where pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "' group by pcode",cn);
-                i = int.Parse(cm.ExecuteScalar().ToString());
-                cn.Close();
-
-                if (int.Parse(dataGridSale.Rows[e.RowIndex].Cells[6].Value.ToString()) <= i)
-                {
+                try {
+                    int i = 0;
                     cn.Open();
-                    cm = new SqlCommand("update tblcart set qty  = qty + '" + int.Parse(txtQty.Text) + "' where transno like '" + lblTransNo.Text + "' and  pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", cn);
-                    cm.ExecuteNonQuery();
-                    loadCart();
-                }
-                else {
-                    MessageBox.Show("Remaining qty on hand is " + i + " !", "Out of stock",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    cm = new SqlCommand("Select sum(qty) as qty from tblproduct where pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "' group by pcode", cn);
+                    i = int.Parse(cm.ExecuteScalar().ToString());
+                    cn.Close();
 
+                    if (int.Parse(dataGridSale.Rows[e.RowIndex].Cells[6].Value.ToString()) <= i)
+                    {
+                        cn.Open();
+                        cm = new SqlCommand("update tblcart set qty  = qty + '" + int.Parse(txtQty.Text) + "' where transno like '" + lblTransNo.Text + "' and  pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", cn);
+                        cm.ExecuteNonQuery();
+                        loadCart();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Remaining qty on hand is " + i + " !", "Out of stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please enter correct quantity","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                
             }
             else if (colName == "colRemove")
             {
+                try { 
                 int i = 0;
                 cn.Open();
                 cm = new SqlCommand("Select sum(qty) as qty from tblcart where pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "' and transno like '"+ lblTransNo.Text +"' group by transno, pcode", cn);
@@ -350,7 +359,11 @@ namespace PointOfSale
                     MessageBox.Show("Remaining qty on cart is " + i + " !", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Please enter correct quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -493,6 +506,58 @@ namespace PointOfSale
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtSearchProduct_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridSale_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if ((e.KeyChar == 46))
+            {
+                //accept . char
+            }
+            else if (e.KeyChar == 8)
+            {
+                //accept backspace
+            }
+            else if ((e.KeyChar < 48) || (e.KeyChar > 57))// ascii code 48-57 between 0-9
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void dataGridSale_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                cn.Open();
+                cm = new SqlCommand("Select sum(qty) as qty from tblproduct where pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "' group by pcode", cn);
+                i = int.Parse(cm.ExecuteScalar().ToString());
+                cn.Close();
+
+                if (int.Parse(dataGridSale.Rows[e.RowIndex].Cells[6].Value.ToString()) <= i)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("update tblcart set qty  = '" + int.Parse(dataGridSale.Rows[e.RowIndex].Cells[6].Value.ToString()) + "' where transno like '" + lblTransNo.Text + "' and  pcode like '" + dataGridSale.Rows[e.RowIndex].Cells[2].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    loadCart();
+                }
+                else
+                {
+                    MessageBox.Show("Remaining qty on hand is " + i + " !", "Out of stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter correct quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

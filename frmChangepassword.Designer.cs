@@ -41,13 +41,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 40);
+            this.panel1.Size = new System.Drawing.Size(466, 50);
             this.panel1.TabIndex = 2;
             // 
             // btnClose
@@ -57,9 +57,9 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(409, 0);
+            this.btnClose.Location = new System.Drawing.Point(431, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.Size = new System.Drawing.Size(35, 50);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -67,11 +67,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 28);
+            this.label1.Size = new System.Drawing.Size(215, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Change Password";
             // 
@@ -93,7 +93,7 @@
             this.txtOldPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtOldPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtOldPassword.Icon")));
             this.txtOldPassword.Lines = new string[0];
-            this.txtOldPassword.Location = new System.Drawing.Point(36, 57);
+            this.txtOldPassword.Location = new System.Drawing.Point(51, 63);
             this.txtOldPassword.MaxLength = 32767;
             this.txtOldPassword.Name = "txtOldPassword";
             this.txtOldPassword.PasswordChar = '*';
@@ -128,7 +128,7 @@
             this.txtNewPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNewPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtNewPassword.Icon")));
             this.txtNewPassword.Lines = new string[0];
-            this.txtNewPassword.Location = new System.Drawing.Point(36, 103);
+            this.txtNewPassword.Location = new System.Drawing.Point(51, 109);
             this.txtNewPassword.MaxLength = 32767;
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '*';
@@ -163,7 +163,7 @@
             this.txtConfirmNewPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtConfirmNewPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtConfirmNewPassword.Icon")));
             this.txtConfirmNewPassword.Lines = new string[0];
-            this.txtConfirmNewPassword.Location = new System.Drawing.Point(35, 149);
+            this.txtConfirmNewPassword.Location = new System.Drawing.Point(50, 155);
             this.txtConfirmNewPassword.MaxLength = 32767;
             this.txtConfirmNewPassword.Name = "txtConfirmNewPassword";
             this.txtConfirmNewPassword.PasswordChar = '*';
@@ -188,7 +188,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(35, 195);
+            this.btnSave.Location = new System.Drawing.Point(50, 201);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 39);
             this.btnSave.TabIndex = 5;
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 244);
+            this.ClientSize = new System.Drawing.Size(466, 266);
             this.ControlBox = false;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtConfirmNewPassword);
@@ -214,7 +214,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmChangepassword";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmChangepassword_KeyDown);
-            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

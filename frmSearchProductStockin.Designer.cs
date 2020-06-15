@@ -42,20 +42,21 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSelect = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.txtSearchProduct);
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(819, 54);
+            this.panel1.Size = new System.Drawing.Size(819, 50);
             this.panel1.TabIndex = 2;
             // 
             // txtSearchProduct
@@ -64,7 +65,7 @@
             // 
             // 
             this.txtSearchProduct.CustomButton.Image = null;
-            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(332, 2);
+            this.txtSearchProduct.CustomButton.Location = new System.Drawing.Point(399, 2);
             this.txtSearchProduct.CustomButton.Name = "";
             this.txtSearchProduct.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtSearchProduct.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -76,7 +77,7 @@
             this.txtSearchProduct.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSearchProduct.Icon = ((System.Drawing.Image)(resources.GetObject("txtSearchProduct.Icon")));
             this.txtSearchProduct.Lines = new string[0];
-            this.txtSearchProduct.Location = new System.Drawing.Point(365, 8);
+            this.txtSearchProduct.Location = new System.Drawing.Point(370, 7);
             this.txtSearchProduct.MaxLength = 32767;
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.PasswordChar = '\0';
@@ -86,7 +87,7 @@
             this.txtSearchProduct.SelectionLength = 0;
             this.txtSearchProduct.SelectionStart = 0;
             this.txtSearchProduct.ShortcutsEnabled = true;
-            this.txtSearchProduct.Size = new System.Drawing.Size(370, 40);
+            this.txtSearchProduct.Size = new System.Drawing.Size(437, 40);
             this.txtSearchProduct.TabIndex = 1;
             this.txtSearchProduct.UseSelectable = true;
             this.txtSearchProduct.WaterMark = "Search Product";
@@ -101,7 +102,7 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(784, 7);
+            this.btnClose.Location = new System.Drawing.Point(784, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 40);
             this.btnClose.TabIndex = 2;
@@ -115,9 +116,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 32);
+            this.label1.Size = new System.Drawing.Size(182, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Product List";
+            this.label1.Text = "PRODUCT LIST";
             // 
             // dataGridProduct
             // 
@@ -149,16 +150,15 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridProduct.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridProduct.EnableHeadersVisualStyles = false;
-            this.dataGridProduct.Location = new System.Drawing.Point(0, 54);
+            this.dataGridProduct.Location = new System.Drawing.Point(9, 116);
             this.dataGridProduct.MultiSelect = false;
             this.dataGridProduct.Name = "dataGridProduct";
             this.dataGridProduct.RowHeadersVisible = false;
             this.dataGridProduct.RowHeadersWidth = 51;
             this.dataGridProduct.RowTemplate.Height = 24;
             this.dataGridProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProduct.Size = new System.Drawing.Size(819, 297);
+            this.dataGridProduct.Size = new System.Drawing.Size(798, 345);
             this.dataGridProduct.TabIndex = 9;
             this.dataGridProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProduct_CellContentClick);
             // 
@@ -219,12 +219,22 @@
             this.colSelect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSelect.Width = 6;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtSearchProduct);
+            this.panel2.Location = new System.Drawing.Point(0, 52);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(819, 58);
+            this.panel2.TabIndex = 3;
+            // 
             // frmSearchProductStockin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 351);
+            this.ClientSize = new System.Drawing.Size(819, 473);
             this.ControlBox = false;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridProduct);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,6 +245,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProduct)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -252,5 +263,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewImageColumn colSelect;
+        private System.Windows.Forms.Panel panel2;
     }
 }

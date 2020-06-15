@@ -39,7 +39,7 @@
             this.crvProfit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvProfit.Location = new System.Drawing.Point(0, 0);
             this.crvProfit.Name = "crvProfit";
-            this.crvProfit.Size = new System.Drawing.Size(984, 534);
+            this.crvProfit.Size = new System.Drawing.Size(1132, 603);
             this.crvProfit.TabIndex = 0;
             this.crvProfit.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crvProfit.Load += new System.EventHandler(this.crvProfit_Load);
@@ -48,10 +48,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 534);
+            this.ClientSize = new System.Drawing.Size(1132, 603);
             this.Controls.Add(this.crvProfit);
             this.Name = "frmProfitpreview";
-            this.Text = "frmProfitpreview";
+            this.Text = "PROFIT PREVIEW";
             this.Load += new System.EventHandler(this.frmProfitpreview_Load);
             this.ResumeLayout(false);
 

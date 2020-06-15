@@ -31,7 +31,7 @@ namespace PointOfSale
             dataGridCategory.Rows.Clear();
             cn.Close();
             cn.Open();
-            cm = new SqlCommand("select * from tblCategory order by category", cn);
+            cm = new SqlCommand("select * from tblCategory where deleteStatus='false' order by category", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -39,13 +39,7 @@ namespace PointOfSale
                 dataGridCategory.Rows.Add(i, dr["id"].ToString(), dr["Category"].ToString());
             }
         }
-        private void btnAddCategory_Click(object sender, EventArgs e)
-        {
-            frmCategory frmCategory = new frmCategory(this);
-            frmCategory.btnSave.Enabled = true;
-            frmCategory.btnUpdate.Enabled = false;
-            frmCategory.ShowDialog();
-        }
+        
 
         private void dataGridCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -69,7 +63,7 @@ namespace PointOfSale
                     {
                         cn.Close();
                         cn.Open();
-                        cm = new SqlCommand("DELETE FROM tblCategory WHERE id like'" + dataGridCategory[1, e.RowIndex].Value.ToString() + "'", cn);
+                        cm = new SqlCommand("update tblCategory set deleteStatus='true' WHERE id like'" + dataGridCategory[1, e.RowIndex].Value.ToString() + "'", cn);
                         cm.ExecuteNonQuery();
                         cn.Close();
                         MessageBox.Show("Record has been successfully Deleted.", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,8 +75,32 @@ namespace PointOfSale
                 {
                     MessageBox.Show(ex.Message);
                 }
+                //try
+                //{
+                //    if (MessageBox.Show("Are you sure to delete this Category?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                //    {
+                //        cn.Close();
+                //        cn.Open();
+                //        cm = new SqlCommand("DELETE FROM tblCategory WHERE id like'" + dataGridCategory[1, e.RowIndex].Value.ToString() + "'", cn);
+                //        cm.ExecuteNonQuery();
+                //        cn.Close();
+                //        MessageBox.Show("Record has been successfully Deleted.", "POS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //        loadRecords();
+                //    }
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
 
             }
+        }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            frmCategory frm = new frmCategory(this);
+            frm.ShowDialog();
         }
     }
 }

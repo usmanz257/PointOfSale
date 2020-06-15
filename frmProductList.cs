@@ -22,21 +22,13 @@ namespace PointOfSale
             cn = new SqlConnection(dbcon.MyConnection());
         }
 
-        private void btnAddProduct_Click(object sender, EventArgs e)
-        {
-            frmProduct frmProduct = new frmProduct(this);
-            frmProduct.btnSave.Enabled = true;
-            frmProduct.btnUpdate.Enabled = false;
-            frmProduct.LoadBrand();
-            frmProduct.LoadCategory();
-            frmProduct.ShowDialog();
-        }
+      
         public void LoadProducts()
         {
             int i = 0;
             dataGridProduct.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("Select p.pcode,p.barcode, p.pdesc, b.brand, c.category,p.cost, p.price, p.qty,p.disc_per, p.reorder from tblProduct as p inner join tblBrand as b on b.id = p.bid inner join tblCategory as c on c.id = p.cid where p.pdesc like '" + txtSearchProduct.Text + "%'",cn);
+            cm = new SqlCommand("Select p.pcode,p.barcode, p.pdesc, b.brand, c.category,p.cost, p.price, p.qty,p.disc_per, p.reorder from tblProduct as p inner join tblBrand as b on b.id = p.bid inner join tblCategory as c on c.id = p.cid where p.deleteStatus='false' and p.pdesc like '" + txtSearchProduct.Text + "%'",cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -71,14 +63,23 @@ namespace PointOfSale
             }
             else 
             {
-                if(MessageBox.Show("Are you sure to delete this product?","Delete Product",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                if (MessageBox.Show("Are you sure to delete this product?", "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("delete from tblproduct where pcode like '" + dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString() +"'",cn);
+                    cm = new SqlCommand("update tblproduct set deleteStatus= 'true' where pcode like '" + dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
                     LoadProducts();
                 }
+
+                //if (MessageBox.Show("Are you sure to delete this product?","Delete Product",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                //{
+                //    cn.Open();
+                //    cm = new SqlCommand("delete from tblproduct where pcode like '" + dataGridProduct.Rows[e.RowIndex].Cells[1].Value.ToString() +"'",cn);
+                //    cm.ExecuteNonQuery();
+                //    cn.Close();
+                //    LoadProducts();
+                //}
               
             }
         }
@@ -103,6 +104,21 @@ namespace PointOfSale
             frmAllStockDiscount frm = new frmAllStockDiscount(this);
             frm.ShowDialog();
             
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            frmProduct frmProduct = new frmProduct(this);
+            frmProduct.btnSave.Enabled = true;
+            frmProduct.btnUpdate.Enabled = false;
+            frmProduct.LoadBrand();
+            frmProduct.LoadCategory();
+            frmProduct.ShowDialog();
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

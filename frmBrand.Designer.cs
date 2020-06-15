@@ -44,25 +44,25 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 40);
+            this.panel1.Size = new System.Drawing.Size(781, 52);
             this.panel1.TabIndex = 1;
             // 
             // btnClose
             // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(746, 0);
+            this.btnClose.Location = new System.Drawing.Point(742, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.Size = new System.Drawing.Size(39, 52);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -70,11 +70,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 28);
+            this.label1.Size = new System.Drawing.Size(208, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "BRAND MODULE";
             // 
@@ -148,6 +148,7 @@
             this.lblID.Size = new System.Drawing.Size(14, 23);
             this.lblID.TabIndex = 7;
             this.lblID.Text = ".";
+            this.lblID.Visible = false;
             // 
             // label3
             // 
@@ -157,11 +158,13 @@
             this.label3.Size = new System.Drawing.Size(39, 23);
             this.label3.TabIndex = 8;
             this.label3.Text = "ID=";
+            this.label3.Visible = false;
             // 
             // frmBrand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(781, 184);
             this.ControlBox = false;
             this.Controls.Add(this.label3);

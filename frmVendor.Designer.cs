@@ -52,13 +52,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(916, 40);
+            this.panel1.Size = new System.Drawing.Size(865, 50);
             this.panel1.TabIndex = 2;
             // 
             // btnClose
@@ -68,9 +68,9 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(881, 0);
+            this.btnClose.Location = new System.Drawing.Point(830, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
+            this.btnClose.Size = new System.Drawing.Size(35, 50);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -78,11 +78,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 5);
+            this.label1.Location = new System.Drawing.Point(4, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 28);
+            this.label1.Size = new System.Drawing.Size(215, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "VENDOR DETAILS";
             // 
@@ -91,7 +91,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(241, 216);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(611, 30);
+            this.txtEmail.Size = new System.Drawing.Size(562, 30);
             this.txtEmail.TabIndex = 6;
             // 
             // label7
@@ -109,7 +109,7 @@
             this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddress.Location = new System.Drawing.Point(241, 100);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(611, 30);
+            this.txtAddress.Size = new System.Drawing.Size(562, 30);
             this.txtAddress.TabIndex = 3;
             // 
             // label8
@@ -127,7 +127,7 @@
             this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelephone.Location = new System.Drawing.Point(241, 176);
             this.txtTelephone.Name = "txtTelephone";
-            this.txtTelephone.Size = new System.Drawing.Size(611, 30);
+            this.txtTelephone.Size = new System.Drawing.Size(562, 30);
             this.txtTelephone.TabIndex = 5;
             // 
             // label6
@@ -145,7 +145,7 @@
             this.txtContactPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactPerson.Location = new System.Drawing.Point(241, 139);
             this.txtContactPerson.Name = "txtContactPerson";
-            this.txtContactPerson.Size = new System.Drawing.Size(611, 30);
+            this.txtContactPerson.Size = new System.Drawing.Size(562, 30);
             this.txtContactPerson.TabIndex = 4;
             // 
             // label4
@@ -163,7 +163,7 @@
             this.txtVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVendor.Location = new System.Drawing.Point(241, 63);
             this.txtVendor.Name = "txtVendor";
-            this.txtVendor.Size = new System.Drawing.Size(611, 30);
+            this.txtVendor.Size = new System.Drawing.Size(562, 30);
             this.txtVendor.TabIndex = 2;
             // 
             // label2
@@ -181,7 +181,7 @@
             this.txtFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFax.Location = new System.Drawing.Point(241, 255);
             this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(611, 30);
+            this.txtFax.Size = new System.Drawing.Size(562, 30);
             this.txtFax.TabIndex = 7;
             // 
             // label3
@@ -201,7 +201,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(521, 296);
+            this.btnSave.Location = new System.Drawing.Point(471, 291);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 39);
             this.btnSave.TabIndex = 8;
@@ -216,7 +216,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(633, 296);
+            this.btnUpdate.Location = new System.Drawing.Point(583, 291);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 39);
             this.btnUpdate.TabIndex = 9;
@@ -231,7 +231,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(746, 296);
+            this.btnCancel.Location = new System.Drawing.Point(696, 291);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(108, 39);
             this.btnCancel.TabIndex = 10;
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 351);
+            this.ClientSize = new System.Drawing.Size(865, 351);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);

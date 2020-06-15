@@ -65,14 +65,14 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1031, 42);
+            this.panel1.Size = new System.Drawing.Size(1031, 50);
             this.panel1.TabIndex = 2;
             // 
             // btnClose
@@ -85,7 +85,7 @@
             this.btnClose.Location = new System.Drawing.Point(992, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 42);
+            this.btnClose.Size = new System.Drawing.Size(39, 50);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -93,18 +93,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 28);
+            this.label1.Size = new System.Drawing.Size(294, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "CANCEL ORDER DETAILS";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 95);
+            this.label2.Location = new System.Drawing.Point(36, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 23);
             this.label2.TabIndex = 3;
@@ -113,7 +113,7 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(211, 88);
+            this.txtID.Location = new System.Drawing.Point(211, 104);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(300, 30);
             this.txtID.TabIndex = 4;
@@ -121,7 +121,7 @@
             // txtTransno
             // 
             this.txtTransno.Enabled = false;
-            this.txtTransno.Location = new System.Drawing.Point(692, 88);
+            this.txtTransno.Location = new System.Drawing.Point(692, 104);
             this.txtTransno.Name = "txtTransno";
             this.txtTransno.Size = new System.Drawing.Size(325, 30);
             this.txtTransno.TabIndex = 6;
@@ -129,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(532, 95);
+            this.label3.Location = new System.Drawing.Point(532, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 23);
             this.label3.TabIndex = 5;
@@ -138,7 +138,7 @@
             // txtPcode
             // 
             this.txtPcode.Enabled = false;
-            this.txtPcode.Location = new System.Drawing.Point(211, 124);
+            this.txtPcode.Location = new System.Drawing.Point(211, 140);
             this.txtPcode.Name = "txtPcode";
             this.txtPcode.Size = new System.Drawing.Size(300, 30);
             this.txtPcode.TabIndex = 8;
@@ -146,7 +146,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 127);
+            this.label4.Location = new System.Drawing.Point(34, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 23);
             this.label4.TabIndex = 7;
@@ -155,7 +155,7 @@
             // txtDescription
             // 
             this.txtDescription.Enabled = false;
-            this.txtDescription.Location = new System.Drawing.Point(211, 160);
+            this.txtDescription.Location = new System.Drawing.Point(211, 176);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(300, 62);
@@ -165,7 +165,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 163);
+            this.label5.Location = new System.Drawing.Point(36, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 23);
             this.label5.TabIndex = 9;
@@ -175,7 +175,7 @@
             // txtPrice
             // 
             this.txtPrice.Enabled = false;
-            this.txtPrice.Location = new System.Drawing.Point(692, 124);
+            this.txtPrice.Location = new System.Drawing.Point(692, 140);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(325, 30);
             this.txtPrice.TabIndex = 12;
@@ -184,7 +184,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(532, 127);
+            this.label6.Location = new System.Drawing.Point(532, 143);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 23);
             this.label6.TabIndex = 11;
@@ -192,7 +192,7 @@
             // 
             // txtCancelQty
             // 
-            this.txtCancelQty.Location = new System.Drawing.Point(692, 276);
+            this.txtCancelQty.Location = new System.Drawing.Point(692, 292);
             this.txtCancelQty.Name = "txtCancelQty";
             this.txtCancelQty.Size = new System.Drawing.Size(325, 30);
             this.txtCancelQty.TabIndex = 14;
@@ -201,7 +201,7 @@
             // lblCancelQty
             // 
             this.lblCancelQty.AutoSize = true;
-            this.lblCancelQty.Location = new System.Drawing.Point(532, 279);
+            this.lblCancelQty.Location = new System.Drawing.Point(532, 295);
             this.lblCancelQty.Name = "lblCancelQty";
             this.lblCancelQty.Size = new System.Drawing.Size(159, 23);
             this.lblCancelQty.TabIndex = 13;
@@ -210,7 +210,7 @@
             // txtTotal
             // 
             this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(692, 196);
+            this.txtTotal.Location = new System.Drawing.Point(692, 212);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(325, 30);
             this.txtTotal.TabIndex = 16;
@@ -219,7 +219,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(533, 199);
+            this.label8.Location = new System.Drawing.Point(533, 215);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 23);
             this.label8.TabIndex = 15;
@@ -228,7 +228,7 @@
             // txtVoid
             // 
             this.txtVoid.Enabled = false;
-            this.txtVoid.Location = new System.Drawing.Point(211, 272);
+            this.txtVoid.Location = new System.Drawing.Point(211, 288);
             this.txtVoid.Name = "txtVoid";
             this.txtVoid.Size = new System.Drawing.Size(300, 30);
             this.txtVoid.TabIndex = 18;
@@ -236,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 279);
+            this.label9.Location = new System.Drawing.Point(34, 295);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 23);
             this.label9.TabIndex = 17;
@@ -246,8 +246,8 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Teal;
-            this.label10.Location = new System.Drawing.Point(36, 53);
+            this.label10.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label10.Location = new System.Drawing.Point(36, 69);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 23);
             this.label10.TabIndex = 19;
@@ -257,8 +257,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Teal;
-            this.label11.Location = new System.Drawing.Point(34, 240);
+            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label11.Location = new System.Drawing.Point(34, 256);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(142, 23);
             this.label11.TabIndex = 20;
@@ -267,7 +267,7 @@
             // txtCancel
             // 
             this.txtCancel.Enabled = false;
-            this.txtCancel.Location = new System.Drawing.Point(211, 308);
+            this.txtCancel.Location = new System.Drawing.Point(211, 324);
             this.txtCancel.Name = "txtCancel";
             this.txtCancel.Size = new System.Drawing.Size(300, 30);
             this.txtCancel.TabIndex = 22;
@@ -275,7 +275,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 315);
+            this.label12.Location = new System.Drawing.Point(34, 331);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(125, 23);
             this.label12.TabIndex = 21;
@@ -283,7 +283,7 @@
             // 
             // txtReason
             // 
-            this.txtReason.Location = new System.Drawing.Point(692, 312);
+            this.txtReason.Location = new System.Drawing.Point(692, 328);
             this.txtReason.Multiline = true;
             this.txtReason.Name = "txtReason";
             this.txtReason.Size = new System.Drawing.Size(325, 66);
@@ -293,7 +293,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(533, 308);
+            this.label13.Location = new System.Drawing.Point(533, 324);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(92, 23);
             this.label13.TabIndex = 23;
@@ -302,7 +302,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(34, 351);
+            this.label14.Location = new System.Drawing.Point(34, 367);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(167, 23);
             this.label14.TabIndex = 25;
@@ -314,7 +314,7 @@
             this.cboAction.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.cboAction.Location = new System.Drawing.Point(211, 343);
+            this.cboAction.Location = new System.Drawing.Point(211, 359);
             this.cboAction.Name = "cboAction";
             this.cboAction.Size = new System.Drawing.Size(300, 31);
             this.cboAction.TabIndex = 26;
@@ -327,7 +327,7 @@
             this.btnCancelOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelOrder.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelOrder.ForeColor = System.Drawing.Color.White;
-            this.btnCancelOrder.Location = new System.Drawing.Point(815, 400);
+            this.btnCancelOrder.Location = new System.Drawing.Point(815, 416);
             this.btnCancelOrder.Name = "btnCancelOrder";
             this.btnCancelOrder.Size = new System.Drawing.Size(202, 45);
             this.btnCancelOrder.TabIndex = 27;
@@ -338,7 +338,7 @@
             // txtQty
             // 
             this.txtQty.Enabled = false;
-            this.txtQty.Location = new System.Drawing.Point(692, 160);
+            this.txtQty.Location = new System.Drawing.Point(692, 176);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(163, 30);
             this.txtQty.TabIndex = 29;
@@ -347,7 +347,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(532, 163);
+            this.label15.Location = new System.Drawing.Point(532, 179);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(141, 23);
             this.label15.TabIndex = 28;
@@ -356,7 +356,7 @@
             // txtDiscount
             // 
             this.txtDiscount.Enabled = false;
-            this.txtDiscount.Location = new System.Drawing.Point(861, 160);
+            this.txtDiscount.Location = new System.Drawing.Point(861, 176);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(156, 30);
             this.txtDiscount.TabIndex = 30;
@@ -367,7 +367,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1031, 459);
+            this.ClientSize = new System.Drawing.Size(1031, 477);
             this.ControlBox = false;
             this.Controls.Add(this.txtDiscount);
             this.Controls.Add(this.txtQty);

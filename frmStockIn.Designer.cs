@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStockIn));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStockIn));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridStockIn = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,11 +72,6 @@
             this.lnkProducts = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridStockInHistory = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.dt2 = new System.Windows.Forms.DateTimePicker();
-            this.dt1 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +83,11 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.dt2 = new System.Windows.Forms.DateTimePicker();
+            this.dt1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStockIn)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -107,27 +106,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.ForeColor = System.Drawing.Color.Black;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1187, 40);
             this.panel1.TabIndex = 3;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1152, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(35, 40);
-            this.btnClose.TabIndex = 1;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -614,56 +598,6 @@
             this.dataGridStockInHistory.Size = new System.Drawing.Size(1164, 415);
             this.dataGridStockInHistory.TabIndex = 11;
             // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.btnLoad);
-            this.panel5.Controls.Add(this.dt2);
-            this.panel5.Controls.Add(this.dt1);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1164, 43);
-            this.panel5.TabIndex = 0;
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(414, 5);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(107, 36);
-            this.btnLoad.TabIndex = 5;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // dt2
-            // 
-            this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt2.Location = new System.Drawing.Point(274, 7);
-            this.dt2.Name = "dt2";
-            this.dt2.Size = new System.Drawing.Size(134, 30);
-            this.dt2.TabIndex = 2;
-            // 
-            // dt1
-            // 
-            this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt1.Location = new System.Drawing.Point(129, 7);
-            this.dt1.Name = "dt1";
-            this.dt1.Size = new System.Drawing.Size(134, 30);
-            this.dt1.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Filter by date";
-            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -683,7 +617,7 @@
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 54;
+            this.dataGridViewTextBoxColumn6.Width = 56;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -779,6 +713,56 @@
             this.dataGridViewImageColumn3.Visible = false;
             this.dataGridViewImageColumn3.Width = 6;
             // 
+            // panel5
+            // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.btnLoad);
+            this.panel5.Controls.Add(this.dt2);
+            this.panel5.Controls.Add(this.dt1);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1164, 43);
+            this.panel5.TabIndex = 0;
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.btnLoad.ForeColor = System.Drawing.Color.White;
+            this.btnLoad.Location = new System.Drawing.Point(414, 5);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(107, 36);
+            this.btnLoad.TabIndex = 5;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // dt2
+            // 
+            this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt2.Location = new System.Drawing.Point(274, 7);
+            this.dt2.Name = "dt2";
+            this.dt2.Size = new System.Drawing.Size(134, 30);
+            this.dt2.TabIndex = 2;
+            // 
+            // dt1
+            // 
+            this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt1.Location = new System.Drawing.Point(129, 7);
+            this.dt1.Name = "dt1";
+            this.dt1.Size = new System.Drawing.Size(134, 30);
+            this.dt1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 23);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Filter by date";
+            // 
             // frmStockIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -815,7 +799,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridStockIn;
         private System.Windows.Forms.Label label2;

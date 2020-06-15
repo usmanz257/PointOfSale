@@ -39,17 +39,17 @@
             this.crvCriticalStock.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvCriticalStock.Location = new System.Drawing.Point(0, 0);
             this.crvCriticalStock.Name = "crvCriticalStock";
-            this.crvCriticalStock.Size = new System.Drawing.Size(800, 450);
+            this.crvCriticalStock.Size = new System.Drawing.Size(1132, 553);
             this.crvCriticalStock.TabIndex = 0;
             // 
             // frmCriticalStockPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1132, 553);
             this.Controls.Add(this.crvCriticalStock);
             this.Name = "frmCriticalStockPreview";
-            this.Text = "frmCriticalStockPreview";
+            this.Text = "CRITICAL STOCK PREVIEW";
             this.Load += new System.EventHandler(this.frmCriticalStockPreview_Load);
             this.ResumeLayout(false);
 

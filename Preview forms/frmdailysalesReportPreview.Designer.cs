@@ -39,18 +39,19 @@
             this.crvDailySalesViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvDailySalesViewer.Location = new System.Drawing.Point(0, 0);
             this.crvDailySalesViewer.Name = "crvDailySalesViewer";
-            this.crvDailySalesViewer.Size = new System.Drawing.Size(855, 470);
+            this.crvDailySalesViewer.Size = new System.Drawing.Size(1132, 553);
             this.crvDailySalesViewer.TabIndex = 3;
+            this.crvDailySalesViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crvDailySalesViewer.Load += new System.EventHandler(this.crvDailySalesViewer_Load);
             // 
             // frmdailysalesReportPreview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 470);
+            this.ClientSize = new System.Drawing.Size(1132, 553);
             this.Controls.Add(this.crvDailySalesViewer);
             this.Name = "frmdailysalesReportPreview";
-            this.Text = "frmdailysalesReportPreview";
+            this.Text = "DAILY SALES REPORT PREVIEW";
             this.Load += new System.EventHandler(this.frmdailysalesReportPreview_Load);
             this.ResumeLayout(false);
 

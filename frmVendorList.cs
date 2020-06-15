@@ -29,10 +29,7 @@ namespace PointOfSale
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            frmVendor f = new frmVendor(this);
-            f.btnSave.Enabled = true;
-            f.btnUpdate.Enabled = false;
-            f.ShowDialog();
+            
         }
         public void LoadVandors()
         {
@@ -100,6 +97,14 @@ namespace PointOfSale
                 }
 
             }
+        }
+
+        private void btnAddVandor_Click(object sender, EventArgs e)
+        {
+            frmVendor f = new frmVendor(this);
+            f.btnSave.Enabled = true;
+            f.btnUpdate.Enabled = false;
+            f.ShowDialog();
         }
     }
 }

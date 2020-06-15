@@ -53,14 +53,14 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 45);
+            this.panel1.Size = new System.Drawing.Size(310, 50);
             this.panel1.TabIndex = 3;
             // 
             // btnClose
@@ -73,7 +73,7 @@
             this.btnClose.Location = new System.Drawing.Point(271, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 45);
+            this.btnClose.Size = new System.Drawing.Size(39, 50);
             this.btnClose.TabIndex = 1;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -81,13 +81,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 28);
+            this.label1.Size = new System.Drawing.Size(214, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Settle payment";
+            this.label1.Text = "SETTLE PAYMENT";
             // 
             // txtSale
             // 
@@ -122,7 +122,7 @@
             // 
             // btnEnter
             // 
-            this.btnEnter.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnEnter.BackColor = System.Drawing.Color.SteelBlue;
             this.btnEnter.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEnter.FlatAppearance.BorderSize = 0;
             this.btnEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -139,7 +139,7 @@
             // 
             // btn00
             // 
-            this.btn00.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn00.BackColor = System.Drawing.Color.SteelBlue;
             this.btn00.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn00.FlatAppearance.BorderSize = 0;
             this.btn00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -156,7 +156,7 @@
             // 
             // btn3
             // 
-            this.btn3.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn3.BackColor = System.Drawing.Color.SteelBlue;
             this.btn3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,7 +173,7 @@
             // 
             // btn2
             // 
-            this.btn2.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn2.BackColor = System.Drawing.Color.SteelBlue;
             this.btn2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -190,7 +190,7 @@
             // 
             // btn1
             // 
-            this.btn1.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn1.BackColor = System.Drawing.Color.SteelBlue;
             this.btn1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -207,7 +207,7 @@
             // 
             // btn0
             // 
-            this.btn0.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn0.BackColor = System.Drawing.Color.SteelBlue;
             this.btn0.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn0.FlatAppearance.BorderSize = 0;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -224,7 +224,7 @@
             // 
             // btn6
             // 
-            this.btn6.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn6.BackColor = System.Drawing.Color.SteelBlue;
             this.btn6.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -241,7 +241,7 @@
             // 
             // btn5
             // 
-            this.btn5.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn5.BackColor = System.Drawing.Color.SteelBlue;
             this.btn5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -258,7 +258,7 @@
             // 
             // btn4
             // 
-            this.btn4.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn4.BackColor = System.Drawing.Color.SteelBlue;
             this.btn4.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -275,7 +275,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnClear.BackColor = System.Drawing.Color.SteelBlue;
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -292,7 +292,7 @@
             // 
             // btn9
             // 
-            this.btn9.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn9.BackColor = System.Drawing.Color.SteelBlue;
             this.btn9.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -309,7 +309,7 @@
             // 
             // btn8
             // 
-            this.btn8.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn8.BackColor = System.Drawing.Color.SteelBlue;
             this.btn8.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -326,7 +326,7 @@
             // 
             // btn7
             // 
-            this.btn7.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn7.BackColor = System.Drawing.Color.SteelBlue;
             this.btn7.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
